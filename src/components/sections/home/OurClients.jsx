@@ -1,0 +1,90 @@
+import { Marquee } from "@/components/magicui/marquee";
+import Image from "next/image";
+import React from "react";
+
+const OurClients = () => {
+  const companies = [
+    {
+      width: 200,
+      link: "/logos/1.png",
+    },
+    {
+      width: 150,
+      link: "/logos/11.jpg",
+    },
+    {
+      width: 200,
+      link: "/logos/2.png",
+    },
+    {
+      width: 150,
+      link: "/logos/4.jpg",
+    },
+    {
+      width: 150,
+      link: "/logos/3.png",
+    },
+    {
+      width: 200,
+      link: "/logos/5.png",
+    },
+    {
+      width: 200,
+      link: "/logos/6.png",
+    },
+    {
+      width: 200,
+      link: "/logos/7.png",
+    },
+    {
+      width: 200,
+      link: "/logos/8.jpg",
+    },
+    {
+      width: 200,
+      link: "/logos/9.png",
+    },
+    {
+      width: 150,
+      link: "/logos/10.png",
+    },
+  ];
+  return (
+    <section className="relative flex flex-col items-center justify-center gap-4 py-20 md:py-40">
+      <h1 className="text-3xl font-semibold md:text-6xl">Our Clients</h1>
+      <p className="text-center font-medium text-secondary md:text-xl">
+        Successfully delivered tech solutions to more than 40 companies
+      </p>
+      <div className="flex w-full max-w-7xl justify-between overflow-hidden px-3 py-10">
+        <Marquee>
+          {companies.map((logo, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-center px-2 py-1"
+            >
+              <Image
+                width={logo.width}
+                height={20}
+                alt={"company-" + index}
+                loading="lazy"
+                quality={100}
+                className="h-fit"
+                src={logo.link}
+              />
+            </div>
+          ))}
+        </Marquee>
+      </div>
+      <Image
+        src="/bg/our-clients/arrow.png"
+        width={174}
+        height={179}
+        alt="Arrow"
+        loading="lazy"
+        className="absolute right-20 top-28 -z-10 size-10 md:size-44"
+      />
+    </section>
+  );
+};
+
+export default OurClients;
