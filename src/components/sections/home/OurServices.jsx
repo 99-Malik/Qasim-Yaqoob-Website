@@ -6,24 +6,32 @@ import { motion } from "framer-motion";
 const OurServices = () => {
   const servicesList = [
     {
-      title: "Web Development",
-      desc: "Design and create customized websites for businesses, according to your individual needs in WordPress",
+      title: "TV Repair",
+      desc: "Expert repair services for Samsung and LG TVs, including screen repairs, power issues, smart TV troubleshooting, and circuit board repairs.",
     },
     {
-      title: "Social Media Branding",
-      desc: "Social media branding creates consistent identity, messaging, and engagement across platforms.",
+      title: "Washing Machine Repair",
+      desc: "Repair solutions for Bosch, Siemens, Samsung, and LG washing machines. From drum problems to electronic faults, we fix it all.",
     },
     {
-      title: "Performance Marketing",
-      desc: "Drive measurable results through data-driven performance marketing campaigns.",
+      title: "Dryer Repair",
+      desc: "Professional dryer repair services for all major brands. We handle heating issues, motor repairs, belt replacements, and sensor problems.",
     },
     {
-      title: "Mobile App Development",
-      desc: "Developing innovative and high-performing mobile applications for iOS and Android.",
+      title: "Dishwasher Repair",
+      desc: "Specialized repairs for Bosch, Siemens, Samsung, and LG dishwashers. We fix water leaks, drainage issues, and cleaning system problems.",
     },
     {
-      title: "Graphic Designing",
-      desc: "Graphic design conveys messages visually using images, typography, and creative elements effectively.",
+      title: "Oven Repair",
+      desc: "Complete oven repair services including temperature control, heating element replacement, door repairs, and electronic control fixes.",
+    },
+    {
+      title: "Refrigerator Repair",
+      desc: "Expert refrigerator repairs covering cooling systems, compressor issues, ice maker repairs, and temperature control problems.",
+    },
+    {
+      title: "Stove/Cooker Repair",
+      desc: "Professional repair services for electric and gas stoves. We handle burner repairs, ignition problems, and control panel issues.",
     },
   ];
 
@@ -37,11 +45,10 @@ const OurServices = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex w-full flex-col items-center gap-3 text-center md:gap-5"
         >
-          <span className="text-lg text-secondary md:text-2xl">Services</span>
-          <span className="text-3xl font-medium md:text-5xl">Our Services</span>
+          <span className="text-lg text-secondary md:text-2xl">Our Services</span>
+          <span className="text-3xl font-medium md:text-5xl">Appliance Repair Services</span>
           <span className="py-2 text-center text-[#475467] md:text-xl">
-            We bring a breadth of experience and industry knowledge to help you
-            succeed.
+            Professional repair services for premium brands including Bosch, Siemens, Samsung, and LG.
           </span>
         </motion.div>
 
@@ -53,7 +60,7 @@ const OurServices = () => {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
           }}
-          className="no-scrollbar flex w-full flex-col items-center gap-4 overflow-x-auto p-2 sm:flex-row"
+          className="no-scrollbar flex w-full flex-col items-center gap-4 overflow-x-auto p-2 sm:flex-row sm:flex-wrap sm:justify-center"
         >
           {servicesList.map((service, index) => (
             <motion.div
@@ -67,7 +74,7 @@ const OurServices = () => {
                 scale: 1.02,
                 boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
               }}
-              className="flex min-h-[300px] w-full cursor-pointer flex-col gap-3 rounded-lg bg-white px-10 pb-14 pt-10 shadow-[0px_0px_4px_0px_#00000030] md:min-w-[500px]"
+              className="flex min-h-[300px] w-full cursor-pointer flex-col gap-3 rounded-lg bg-white px-10 pb-14 pt-10 shadow-[0px_0px_4px_0px_#00000030] md:min-w-[350px] md:max-w-[400px]"
             >
               {/* Icon Animation */}
               <motion.div
@@ -79,7 +86,7 @@ const OurServices = () => {
                   src={`/services-icons/${index + 1}.png`}
                   width={32}
                   height={32}
-                  alt="image"
+                  alt={service.title}
                   loading="lazy"
                   quality={100}
                 />

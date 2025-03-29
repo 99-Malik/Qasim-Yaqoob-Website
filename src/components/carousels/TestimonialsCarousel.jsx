@@ -18,24 +18,31 @@ const TestimonialsCarousel = () => {
   const testimonialsList = [
     {
       image: "/person.png",
-      name: "Kelly Williams",
-      occupation: "Head of Design, Layers",
+      name: "Sarah Mitchell",
+      occupation: "Homeowner",
       comment:
-        "Love the simplicity of the service and the prompt customer support. We can't imagine working without it.",
+        "Excellent same-day service for my Samsung washing machine. The technician was professional, diagnosed the issue quickly, and had it fixed within an hour. Highly recommended!",
     },
     {
       image: "/person.png",
-      name: "Alex Johnson",
-      occupation: "CEO, TechCorp",
+      name: "David Chen",
+      occupation: "Restaurant Owner",
       comment:
-        "An absolutely wonderful experience! Their team is highly professional and efficient.",
+        "Their team saved our business when our commercial refrigerator broke down. Fast response, expert repair of our Bosch fridge, and great follow-up service. Couldn't ask for better!",
     },
     {
       image: "/person.png",
-      name: "Samantha Lee",
-      occupation: "Marketing Manager, BrandX",
+      name: "Emily Rodriguez",
+      occupation: "Home Chef",
       comment:
-        "Highly recommended! The service exceeded my expectations in every way.",
+        "I was impressed by their knowledge of Siemens appliances. Fixed my dishwasher and oven on the same visit. Professional, courteous, and very reasonable prices.",
+    },
+    {
+      image: "/person.png",
+      name: "James Wilson",
+      occupation: "Property Manager",
+      comment:
+        "We use them for all our rental properties' appliance repairs. Their technicians are certified for all major brands and provide reliable, quality service every time.",
     },
   ];
 
@@ -64,17 +71,15 @@ const TestimonialsCarousel = () => {
       <div className="grid w-full max-w-7xl gap-8 lg:grid-cols-[482px_1fr]">
         <div className="flex w-full flex-col justify-center gap-3">
           <span className="text-xl text-secondary md:font-medium">
-            Testimonials
+            Customer Reviews
           </span>
-          <span className="text-[28px] font-medium md:text-5xl md:leading-snug">
-            What Our Clients Say About Us?
+          <span className="text-[28px] font-medium md:text-4xl md:leading-snug">
+            What Our Customers Say About Our Service?
           </span>
           <span className="text-[#475467]">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi,
+            We take pride in delivering exceptional appliance repair services that our customers can rely on. 
+            Our certified technicians are trained to work with leading brands like Bosch, Siemens, Samsung, 
+            and LG, ensuring your appliances are in expert hands.
           </span>
           <div className="flex items-center gap-1 pt-3">
             <button

@@ -41,24 +41,23 @@ const DeliveringSection = () => {
     <div className='flex w-full flex-col items-center'>
       <div className='grid w-full max-w-7xl gap-10 px-6 py-20 md:grid-cols-[5.2fr_4.8fr]'>
         <div className='flex flex-col gap-5'>
-          <h2 className='font-medium text-secondary md:text-xl'>
-            Unlocking your brand's true potential
+          <h2 className='font-medium text-secondary/70 md:text-xl'>
+            Trusted Appliance Repair Experts
           </h2>
           <h1 className='text-2xl font-medium md:text-5xl md:leading-[3.8rem]'>
-            Delivering high-quality digital experiences
+            Professional Repairs for Premium Brands
           </h1>
           <h2 className='mb-3 text-custom-black/70 md:text-xl'>
-            We are a product design and development agency. While in close
-            partnership with our clients, we design and develop intuitive,
-            reliable, and sustainable web solutions for business and social
-            purposes.
+            We are your authorized repair specialists for Bosch, Siemens, Samsung, and LG appliances. 
+            Our certified technicians provide reliable, efficient repairs for all your home appliances, 
+            ensuring minimal disruption to your daily life with quick turnaround times and quality service.
           </h2>
-          <PrimaryButton title='Reach Us Out' className='w-fit' />
+          <PrimaryButton title='Schedule Service' className='w-fit' />
         </div>
         <div className='grid sm:grid-cols-2 max-w-xl place-items-center gap-5'>
           <DeliveringStat
-            title={<Counter value='80+' />}
-            desc='Clients from different industries trust us.'
+            title={<Counter value='5000+' />}
+            desc='Successful repairs completed across all appliance types.'
           />
           <Image
             src='/logo/logo-light.png'
@@ -70,8 +69,8 @@ const DeliveringSection = () => {
             quality={100}
           />
           <DeliveringStat
-            title={<Counter value='92%' />}
-            desc='Satisfaction rate from our awesome customers.'
+            title={<Counter value='98%' />}
+            desc='First-time fix rate for all appliance repairs.'
           />
           <DeliveringStat
             title={
@@ -81,7 +80,7 @@ const DeliveringSection = () => {
                 <Counter value='5.0' />
               </div>
             }
-            desc='Average rating from our clients around the globe.'
+            desc='Customer satisfaction rating from verified reviews.'
           />
         </div>
       </div>

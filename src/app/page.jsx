@@ -15,9 +15,7 @@ export default function Home() {
       <DeliveringSection />
       <ProcessSection />
       <OurServices />
-      <OurPortfolio />
       <TestimonialsCarousel />
-      <ContactUsSection />
     </div>
   );
 }

@@ -115,21 +115,13 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="flex w-full flex-col items-center justify-center bg-primary text-white">
+    <div className="flex w-full flex-col items-center justify-center bg-primary text-black">
       <div className="flex w-full max-w-7xl flex-col gap-5 px-6 pb-20 pt-28">
-        <Image
-          width={260}
-          height={70}
-          alt="logo"
-          src="/logo/secondary-logo.png"
-          quality={100}
-          loading="eager"
-        />
+        <span className="text-2xl font-bold">Repair site</span>
         <span className="max-w-lg py-5">
-          We are a service-based company dedicated to providing top-notch
-          software and digital solutions to our clients.
+          We provide home appliance repair services for all brands and models.
         </span>
-        <div className="flex w-full flex-wrap items-center gap-5 border-b-[0.8px] px-1 py-5 text-sm font-medium">
+        <div className="flex w-full flex-wrap items-center gap-5 border-b-[0.8px] border-secondary px-1 py-5 text-sm font-medium">
           {footerLinks.map((link, index) => (
             <Link href={link.href} key={index}>
               {link.title}
@@ -153,7 +145,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex items-center justify-center bg-[#14385D] text-xs py-4 px-5">
+      <div className="w-full flex items-center justify-center bg-secondary text-white text-xs py-4 px-5">
       Copyright © 2025 Svype | Powered by Svype
       </div>
     </div>

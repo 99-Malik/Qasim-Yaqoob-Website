@@ -15,13 +15,13 @@ const GetInTouchButton = ({ className = "" }) => {
       whileTap={{ scale: 0.97 }}
       transition={{ duration: 0.15, ease: "easeOut" }}
       className={cn(
-        "flex items-center justify-center gap-3 rounded-md border-[0.6px] border-primary bg-white px-5 py-3 transition-all hover:border",
+        "flex items-center justify-center gap-3 rounded-md border-[0.6px] border-secondary bg-white px-5 py-3 transition-all hover:border",
         className,
       )}
       onClick={() => router.push("/contact")}
     >
       {phoneIcon}
-      <span className="font-medium text-primary">Get in Touch</span>
+      <span className="font-medium text-secondary">Get in Touch</span>
     </motion.button>
   );
 };

@@ -14,10 +14,10 @@ export default {
         inter: "var(--font-inter)",
       },
       colors: {
-        primary: "#0F2C4A",
-        secondary: "#367898",
+        primary: "#fbcd01",
+        secondary: "#132531",
         custom: {
-          gray: "#E6E7E8",
+          gray: "#c1bcc2",
           black: "#222222",
         },
       },

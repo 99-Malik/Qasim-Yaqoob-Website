@@ -27,7 +27,7 @@ const ProcessSection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col gap-2"
         >
-          <p className="text-center text-lg font-medium text-secondary md:text-xl">
+          <p className="text-center text-lg font-medium text-secondary/70 md:text-xl">
             Our Process
           </p>
           <h2 className="text-center text-3xl font-semibold md:text-4xl lg:text-5xl">
@@ -84,7 +84,7 @@ const ProcessSection = () => {
                 }}
                 className="relative flex w-full flex-col"
               >
-                <div className="absolute left-[calc(50%-18px)] top-[calc(50%-18px)] size-9 rotate-45 bg-[#17508F]"></div>
+                <div className="absolute left-[calc(50%-18px)] top-[calc(50%-18px)] size-9 rotate-45 bg-[#fe9d18]"></div>
                 <motion.div
                   whileHover={{
                     scale: 1.05,

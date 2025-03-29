@@ -26,7 +26,7 @@ const PrimaryButton = ({ title, className = "" }) => {
           scale: 1.05,
           transition: { duration: 0.15 },
         }}
-        className="text-white"
+        className="text-black font-bold"
       >
         {title}
       </motion.span>
@@ -54,7 +54,7 @@ const arrowRight = (
   >
     <path
       d="M1.625 8H15.625M15.625 8L8.625 1M15.625 8L8.625 15"
-      stroke="white"
+      stroke="black"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"

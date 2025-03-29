@@ -5,55 +5,27 @@ import React from "react";
 const OurClients = () => {
   const companies = [
     {
-      width: 200,
-      link: "/logos/1.png",
+      width: 150,
+      link: "/companies/1.svg",
     },
     {
       width: 150,
-      link: "/logos/11.jpg",
+      link: "/companies/2.svg",
     },
     {
-      width: 200,
-      link: "/logos/2.png",
-    },
-    {
-      width: 150,
-      link: "/logos/4.jpg",
+      width: 120,
+      link: "/companies/3.svg",
     },
     {
       width: 150,
-      link: "/logos/3.png",
-    },
-    {
-      width: 200,
-      link: "/logos/5.png",
-    },
-    {
-      width: 200,
-      link: "/logos/6.png",
-    },
-    {
-      width: 200,
-      link: "/logos/7.png",
-    },
-    {
-      width: 200,
-      link: "/logos/8.jpg",
-    },
-    {
-      width: 200,
-      link: "/logos/9.png",
-    },
-    {
-      width: 150,
-      link: "/logos/10.png",
+      link: "/companies/4.svg",
     },
   ];
   return (
     <section className="relative flex flex-col items-center justify-center gap-4 py-20 md:py-40">
-      <h1 className="text-3xl font-semibold md:text-6xl">Our Clients</h1>
-      <p className="text-center font-medium text-secondary md:text-xl">
-        Successfully delivered tech solutions to more than 40 companies
+      <h1 className="text-3xl font-semibold md:text-6xl">Companies We Serve</h1>
+      <p className="text-center font-medium text-secondary/70 md:text-xl">
+        We are your authorized repair specialists for Bosch, Siemens, Samsung, and LG appliances. 
       </p>
       <div className="flex w-full max-w-7xl justify-between overflow-hidden px-3 py-10">
         <Marquee>

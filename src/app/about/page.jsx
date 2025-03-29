@@ -11,7 +11,6 @@ const AboutPage = () => {
       <DeliveringSection />
       <TransformingSection />
       <ProcessSection />
-      <ScheduleACall />
     </div>
   )
 }
