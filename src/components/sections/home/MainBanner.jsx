@@ -25,41 +25,46 @@ const MainBanner = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="max-w-screen relative flex w-full flex-col items-center justify-center gap-3 overflow-hidden px-5 py-24 text-center md:min-h-[90vh] md:gap-5"
     >
-      <div className="flex flex-col items-center gap-3 bg-white p-10 shadow-xl rounded-2xl">
-        <h2 className="text-sm font-medium text-secondary/70 md:text-xl">
+      <div className="flex flex-col items-center gap-5 bg-gradient-to-br from-white via-white to-primary p-10 shadow-2xl rounded-3xl border-2 border-primary">
+        <h2 className="text-sm font-medium text-secondary/70 md:text-xl tracking-wide uppercase">
           Expert Appliance Repair Services
         </h2>
-        <div className="hidden max-w-[994px] flex-col gap-3 text-5xl font-medium leading-[83px] md:flex lg:text-6xl">
-          <div>Professional Repairs for</div>
+        <div className="hidden max-w-[994px] flex-col gap-3 text-5xl font-extrabold leading-[83px] text-gray-800 md:flex lg:text-6xl">
+          <div className="animate-fade-in">Professional Repairs for</div>
           <div className="flex items-start gap-1 md:gap-2">
-            <div className="mt-1 inline-block w-fit -rotate-2 rounded-lg bg-primary px-2 py-1 text-white md:mt-3 md:-rotate-3 md:rounded-3xl md:px-6 md:py-4">
+            <div className="mt-1 inline-block w-fit -rotate-2 rounded-lg bg-gradient-to-r from-primary to-secondary px-2 py-1 text-white shadow-lg md:mt-3 md:-rotate-3 md:rounded-3xl md:px-6 md:py-4">
               Premium
             </div>{" "}
-            <span className="mt-2">Home Appliances</span>
+            <span className="mt-2 text-gray-900">Home Appliances</span>
           </div>
         </div>
-        <div className="flex flex-col gap-1 text-2xl font-medium md:hidden">
-          <div>Professional Repairs</div>
+        <div className="flex flex-col gap-1 text-2xl font-semibold text-gray-800 md:hidden">
+          <div className="animate-fade-in">Professional Repairs</div>
           <div className="flex items-center justify-center gap-1 md:gap-2">
             <span className="mt-1">for</span>
-            <div className="mt-1 inline-block w-fit -rotate-3 rounded-xl bg-primary px-4 py-1 text-2xl">
+            <div className="mt-1 inline-block w-fit -rotate-3 rounded-xl bg-gradient-to-r from-primary to-secondary px-4 py-1 text-2xl text-white shadow-lg">
               Premium
             </div>{" "}
           </div>
           <span className="mt-1">Home Appliances</span>
         </div>
-        <p className="mb-4 mt-3 max-w-2xl text-custom-black/70 md:mt-8 md:text-xl">
+        <p className="mb-4 mt-3 max-w-2xl text-gray-700 md:mt-8 md:text-xl leading-relaxed">
           Specialized repair services for Bosch, Siemens, Samsung, and LG
           appliances. Expert solutions for your TVs, washing machines, dryers,
           dishwashers, ovens, fridges, and stoves. Fast, reliable service when
           you need it most.
         </p>
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-2 items-center">
           <Link href="tel:+1234567890">
-            <GetInTouchButton title="Call Us" />
+            <GetInTouchButton
+              title="Call Us"
+              className="text-nowrap"
+            />
           </Link>
           <Link href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
-            <PrimaryButton title="Whatsapp" />
+            <PrimaryButton
+              title="Whatsapp"
+            />
           </Link>
         </div>
       </div>
