@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
-const GetInTouchButton = ({ className = "" }) => {
+const GetInTouchButton = ({ title = "Get in Touch", className = "" }) => {
   const router = useRouter();
   return (
     <motion.button
@@ -21,7 +21,7 @@ const GetInTouchButton = ({ className = "" }) => {
       onClick={() => router.push("/contact")}
     >
       {phoneIcon}
-      <span className="font-medium text-secondary">Get in Touch</span>
+      <span className="font-medium text-secondary">{title}</span>
     </motion.button>
   );
 };
