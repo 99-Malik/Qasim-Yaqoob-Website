@@ -1,6 +1,6 @@
 const ContactPage = () => {
   return (
-    <div className="flex w-full flex-col gap-10 items-center">
+    <div className="flex w-full flex-col gap-10 items-center pt-36">
       <div className="flex items-center justify-center flex-col gap-3 py-20 max-w-7xl px-5">
         <h1 className="text-4xl font-medium">
           Contact Us

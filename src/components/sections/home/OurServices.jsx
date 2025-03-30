@@ -40,6 +40,11 @@ const OurServices = () => {
       desc: "Professional repair services for electric and gas stoves. We handle burner repairs, ignition problems, and control panel issues.",
       image: "/static/stove.jpeg",
     },
+    {
+      title: "AC Repair",
+      desc: "Expert AC repair services for all major brands. We fix cooling issues, compressor problems, and thermostat malfunctions.",
+      image: "/static/ac2.jpg",
+    }
   ];
 
   return (
@@ -95,7 +100,7 @@ const OurServices = () => {
                 className="grid size-16 place-items-center rounded-lg border-[1.33px] border-[#EAECF0] shadow-[0px_1px_2px_0px_#1018280D]"
               >
                 <Image
-                  src={`/services-icons/${index + 1}.png`}
+                  src={`/services-icons/${index == 0 ? 7: index}.png`}
                   width={32}
                   height={32}
                   alt={service.title}
@@ -110,6 +115,7 @@ const OurServices = () => {
               <span className="text-sm text-[#475467] md:text-base">
                 {service.desc}
               </span>
+              <div className="w-full h-64">
               <Image 
                 src={service.image}
                 loading="lazy"
@@ -117,10 +123,9 @@ const OurServices = () => {
                 height={300}
                 alt={service.title}
                 quality={100}
-                className="rounded-lg"
-                style={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
-
+                className="rounded-lg object-cover w-ful h-full"
               />
+              </div>
             </motion.div>
           ))}
         </motion.div>

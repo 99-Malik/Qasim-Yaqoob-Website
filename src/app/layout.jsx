@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           poppins.variable,
           montserrat.variable,
           inter.variable,
-          "flex flex-col font-poppins text-custom-black",
+          "flex flex-col font-poppins text-custom-black max-w-screen overflow-x-hidden",
         )}
       >
         <Header />

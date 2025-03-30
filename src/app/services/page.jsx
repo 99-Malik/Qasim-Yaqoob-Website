@@ -3,8 +3,7 @@ import ServicesMain from "@/components/sections/services/ServicesMain"
 
 const ServicesPage = () => {
   return (
-    <div className="flex flex-col w-full">
-      <ServicesMain />
+    <div className="flex flex-col w-full pt-28">
       <OurServices />
     </div>
   )
