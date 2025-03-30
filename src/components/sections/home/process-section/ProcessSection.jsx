@@ -113,6 +113,15 @@ const ProcessSection = () => {
                     </span>
                   </div>
                   <span className="text-">{item.desc}</span>
+                  <Image
+                  src={item.image}
+                  loading="lazy"
+                  width={500}
+                  height={300}
+                  alt="process image"
+                  quality={100}
+                  className="rounded-lg"
+                  />
                 </motion.div>
               </motion.div>
             ))}

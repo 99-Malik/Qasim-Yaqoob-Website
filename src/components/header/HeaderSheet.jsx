@@ -26,16 +26,7 @@ const HeaderSheet = () => {
           <SheetTitle className="flex items-center justify-between py-6">
             <SheetClose asChild>
               <Link href="/">
-                <Image
-                  src="/logo/primary-logo.png"
-                  width={198}
-                  height={54}
-                  loading="eager"
-                  priority
-                  className="w-32 md:w-48"
-                  quality={100}
-                  alt="Logo"
-                />
+                <span className="text-2xl font-bold">Repair Site</span>
               </Link>
             </SheetClose>
             <SheetClose asChild>

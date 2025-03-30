@@ -82,6 +82,7 @@ export const processData = [
       />
     ),
     title: "Initial Diagnosis",
+    image: "/static/solar-3.webp",
     desc: "Our expert technicians perform a thorough assessment of your appliance to identify the exact issue and provide an accurate quote for repairs.",
   },
   {
@@ -94,6 +95,7 @@ export const processData = [
       />
     ),
     title: "Transparent Quote",
+    image: "/static/ac4.jpg",
     desc: "We provide a detailed cost breakdown with no hidden fees, ensuring you understand exactly what needs to be fixed and the associated costs.",
   },
   {
@@ -106,6 +108,7 @@ export const processData = [
       />
     ),
     title: "Professional Repair",
+    image: "/static/solar-7.jpg",
     desc: "Using genuine parts and following manufacturer guidelines, our certified technicians complete the repairs with precision and care.",
   },
   {
@@ -118,6 +121,7 @@ export const processData = [
       />
     ),
     title: "Quality Testing",
+    image: "/static/qualtiy.jpg",
     desc: "After repairs, we thoroughly test your appliance to ensure it's working perfectly and meets all safety standards.",
   },
   {
@@ -130,6 +134,7 @@ export const processData = [
       />
     ),
     title: "Warranty Coverage",
+    image: "/static/solar-2.jpg",
     desc: "All our repairs come with a service warranty, giving you peace of mind and ensuring long-lasting results.",
   },
   {
@@ -142,6 +147,7 @@ export const processData = [
       />
     ),
     title: "After-Service Support",
+    image: "/static/support.webp",
     desc: "We provide maintenance tips and ongoing support to help prevent future issues and extend your appliance's lifespan.",
   },
 ];
