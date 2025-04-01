@@ -69,15 +69,6 @@ const DeliveringSection = () => {
             title={<Counter value="5000+" />}
             desc="Successful repairs completed across all appliance types."
           />
-          <Image
-            src="/logo/logo-light.png"
-            width={168}
-            height={168}
-            alt="logo"
-            loading="lazy"
-            className="hidden sm:flex"
-            quality={100}
-          />
           <DeliveringStat
             title={<Counter value="98%" />}
             desc="First-time fix rate for all appliance repairs."
@@ -91,6 +82,10 @@ const DeliveringSection = () => {
               </div>
             }
             desc="Customer satisfaction rating from verified reviews."
+          />
+          <DeliveringStat
+            title={<Counter value="100%" />}
+            desc="Warranty on all parts and labor for your peace of mind."
           />
         </div>
       </div>

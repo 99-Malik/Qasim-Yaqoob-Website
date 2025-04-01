@@ -6,19 +6,19 @@ const OurClients = () => {
   const companies = [
     {
       width: 150,
-      link: "/companies/1.svg",
+      link: "/companies/bosch.svg",
     },
     {
       width: 150,
-      link: "/companies/2.svg",
+      link: "/companies/siemens.svg",
     },
     {
       width: 120,
-      link: "/companies/3.svg",
+      link: "/companies/samsung.svg",
     },
     {
       width: 150,
-      link: "/companies/4.svg",
+      link: "/companies/lg.svg",
     },
   ];
   return (

@@ -5,8 +5,34 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { processData } from "@/lib/data";
+import { usePathname } from "next/navigation";
 
 const ProcessSection = () => {
+  const pathname = usePathname();
+  const company = pathname.split("/")[2];
+
+  const primaryBgColor =
+    company === "bosch"
+      ? "bg-boschPrimary"
+      : company === "siemens"
+      ? "bg-siemensPrimary"
+      : company === "samsung"
+      ? "bg-samsungPrimary"
+      : company === "lg"
+      ? "bg-lgPrimary"
+      : "bg-primary";
+
+  const primaryTextColor =
+    company === "bosch"
+      ? "text-boschPrimary"
+      : company === "siemens"
+      ? "text-siemensPrimary"
+      : company === "samsung"
+      ? "text-samsungPrimary"
+      : company === "lg"
+      ? "text-lgPrimary"
+      : "text-primary";
+
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -27,24 +53,14 @@ const ProcessSection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col gap-2"
         >
-          <p className="text-center text-lg font-medium text-secondary/70 md:text-xl">
+          <p className={`text-center text-lg font-medium ${primaryTextColor}/70 md:text-xl`}>
             Our Process
           </p>
-          <h2 className="text-center text-3xl font-semibold md:text-4xl lg:text-5xl">
+          <h2 className={`text-center text-3xl font-semibold md:text-4xl lg:text-5xl ${primaryTextColor}`}>
             How We Work
           </h2>
         </motion.div>
 
-        {/* Background Elements */}
-        <Image
-          src="/logo/logo-light.png"
-          width={168}
-          height={168}
-          alt="logo"
-          loading="lazy"
-          className="absolute right-5 top-32 -z-10 size-28 md:size-40"
-          quality={100}
-        />
         <Image
           src="/bg/main-arrow-bg.png"
           quality={100}
@@ -61,13 +77,13 @@ const ProcessSection = () => {
             {/* Scroll-animated filling */}
             <motion.div
               style={{ height: fillHeight }}
-              className="w-full bg-primary"
+              className={`w-full ${primaryBgColor}`}
             />
           </div>
 
           {/* Top Dot */}
-          <div className="z-10 mx-auto flex size-[39px] items-center justify-center rounded-full border-[3px] border-primary bg-white">
-            <div className="size-[27px] rounded-full bg-primary"></div>
+          <div className={`z-10 mx-auto flex size-[39px] items-center justify-center rounded-full border-[3px] ${primaryBgColor} bg-white`}>
+            <div className={`size-[27px] rounded-full ${primaryBgColor}`}></div>
           </div>
 
           {/* Process Steps */}
@@ -84,7 +100,7 @@ const ProcessSection = () => {
                 }}
                 className="relative flex w-full flex-col"
               >
-                <div className="absolute left-[calc(50%-18px)] top-[calc(50%-18px)] size-9 rotate-45 bg-[#fe9d18]"></div>
+                <div className={`absolute left-[calc(50%-18px)] top-[calc(50%-18px)] size-9 rotate-45 ${primaryBgColor}`}></div>
                 <motion.div
                   whileHover={{
                     scale: 1.05,
@@ -108,19 +124,19 @@ const ProcessSection = () => {
                     >
                       {item.icon}
                     </div>
-                    <span className="text-xl font-semibold text-[#101828]">
+                    <span className={`text-xl font-semibold ${primaryTextColor}`}>
                       {index + 1}. {item.title}
                     </span>
                   </div>
                   <span className="text-">{item.desc}</span>
                   <Image
-                  src={item.image}
-                  loading="lazy"
-                  width={500}
-                  height={300}
-                  alt="process image"
-                  quality={100}
-                  className="rounded-lg"
+                    src={item.image}
+                    loading="lazy"
+                    width={500}
+                    height={300}
+                    alt="process image"
+                    quality={100}
+                    className="rounded-lg"
                   />
                 </motion.div>
               </motion.div>
@@ -128,7 +144,7 @@ const ProcessSection = () => {
           </div>
 
           {/* Bottom Dot */}
-          <div className="z-10 mx-auto flex size-[34px] items-center justify-center rounded-full bg-primary"></div>
+          <div className={`z-10 mx-auto flex size-[34px] items-center justify-center rounded-full ${primaryBgColor}`}></div>
         </div>
       </div>
     </div>

@@ -6,8 +6,34 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import GetInTouchButton from "@/components/header/GetInTouchButton";
+import { usePathname } from "next/navigation";
 
 const MainBanner = () => {
+  const pathname = usePathname();
+  const company = pathname.split("/")[2];
+
+  const primaryColor =
+    company === "bosch"
+      ? "bg-boschPrimary"
+      : company === "siemens"
+      ? "bg-siemensPrimary"
+      : company === "samsung"
+      ? "bg-samsungPrimary"
+      : company === "lg"
+      ? "bg-lgPrimary"
+      : "bg-primary";
+
+  const primaryGradient =
+    company === "bosch"
+      ? "from-boschPrimary to-boschSecondary"
+      : company === "siemens"
+      ? "from-siemensPrimary to-siemensPrimary/50"
+      : company === "samsung"
+      ? "from-samsungPrimary to-samsungSecondary"
+      : company === "lg"
+      ? "from-lgPrimary to-lgSecondary"
+      : "from-primary to-secondary";
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -32,7 +58,9 @@ const MainBanner = () => {
         <div className="hidden max-w-[994px] flex-col gap-3 text-5xl font-extrabold leading-[83px] md:flex lg:text-6xl">
           <div className="animate-fade-in">Professional Repairs for</div>
           <div className="flex items-start gap-1 md:gap-2">
-            <div className="mt-1 inline-block w-fit -rotate-2 rounded-lg bg-gradient-to-r from-primary to-secondary px-2 py-1 text-white shadow-lg md:mt-3 md:-rotate-3 md:rounded-3xl md:px-6 md:py-4">
+            <div
+              className={`mt-1 inline-block w-fit -rotate-2 rounded-lg bg-gradient-to-r ${primaryGradient} px-2 py-1 text-white shadow-lg md:mt-3 md:-rotate-3 md:rounded-3xl md:px-6 md:py-4`}
+            >
               Premium
             </div>{" "}
             <span className="mt-2">Home Appliances</span>
@@ -42,7 +70,9 @@ const MainBanner = () => {
           <div className="animate-fade-in">Professional Repairs</div>
           <div className="flex items-center justify-center gap-1 md:gap-2">
             <span className="mt-1">for</span>
-            <div className="mt-1 inline-block w-fit -rotate-3 rounded-xl bg-gradient-to-r from-primary to-secondary px-4 py-1 text-2xl text-white shadow-lg">
+            <div
+              className={`mt-1 inline-block w-fit -rotate-3 rounded-xl bg-gradient-to-r ${primaryGradient} px-4 py-1 text-2xl text-white shadow-lg`}
+            >
               Premium
             </div>{" "}
           </div>
@@ -56,7 +86,7 @@ const MainBanner = () => {
         </p>
         <div className="flex items-center justify-center gap-2">
           <Link href="tel:+1234567890">
-            <GetInTouchButton title="Call Us" className="text-nowrap" />
+            <GetInTouchButton title="Call Us" />
           </Link>
           <Link
             href="https://wa.me/1234567890"

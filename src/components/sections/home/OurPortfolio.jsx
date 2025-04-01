@@ -16,15 +16,6 @@ const OurPortfolio = () => {
   return (
     <div className="relative flex w-full flex-col items-center justify-center px-5 pb-32 pt-32 md:pb-60">
       <Image
-        src="/logo/logo-light.png"
-        width={168}
-        height={168}
-        alt="logo"
-        loading="lazy"
-        className="absolute right-5 top-0 -z-10 size-28 md:size-40 lg:top-32"
-        quality={100}
-      />
-      <Image
         src="/bg/main-arrow-bg.png"
         quality={100}
         loading="lazy"

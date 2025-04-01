@@ -9,8 +9,34 @@ import {
 import { ArrowUpLeft, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const TestimonialsCarousel = () => {
+  const pathname = usePathname();
+  const company = pathname.split("/")[2];
+
+  const primaryBgColor =
+    company === "bosch"
+      ? "bg-boschPrimary"
+      : company === "siemens"
+      ? "bg-siemensPrimary"
+      : company === "samsung"
+      ? "bg-samsungPrimary"
+      : company === "lg"
+      ? "bg-lgPrimary"
+      : "bg-primary";
+
+  const primaryTextColor =
+    company === "bosch"
+      ? "text-boschPrimary"
+      : company === "siemens"
+      ? "text-siemensPrimary"
+      : company === "samsung"
+      ? "text-samsungPrimary"
+      : company === "lg"
+      ? "text-lgPrimary"
+      : "text-primary";
+
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -57,39 +83,32 @@ const TestimonialsCarousel = () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
+
   return (
     <div className="max-w-screen flex w-full flex-col items-center justify-center gap-2 overflow-hidden px-5 py-20">
-      <Image
-        src="/logo/logo-light.png"
-        width={168}
-        height={168}
-        alt="logo"
-        loading="lazy"
-        className="-z-10 size-28 self-end md:size-40"
-        quality={100}
-      />
       <div className="grid w-full max-w-7xl gap-8 lg:grid-cols-[482px_1fr]">
         <div className="flex w-full flex-col justify-center gap-3">
-          <span className="text-xl text-secondary md:font-medium">
+          <span className={`text-xl ${primaryTextColor} md:font-medium`}>
             Customer Reviews
           </span>
           <span className="text-[28px] font-medium md:text-4xl md:leading-snug">
             What Our Customers Say About Our Service?
           </span>
           <span className="text-[#475467]">
-            We take pride in delivering exceptional appliance repair services that our customers can rely on. 
-            Our certified technicians are trained to work with leading brands like Bosch, Siemens, Samsung, 
+            We take pride in delivering exceptional appliance repair services
+            that our customers can rely on. Our certified technicians are
+            trained to work with leading brands like Bosch, Siemens, Samsung,
             and LG, ensuring your appliances are in expert hands.
           </span>
           <div className="flex items-center gap-1 pt-3">
             <button
-              className="grid size-10 cursor-pointer place-items-center rounded-full border border-black/10"
+              className={`grid size-10 cursor-pointer place-items-center rounded-full border ${primaryBgColor}`}
               onClick={() => api.scrollPrev()}
             >
               <ArrowUpLeft />
             </button>
             <button
-              className="grid size-10 cursor-pointer place-items-center rounded-full border border-black/10"
+              className={`grid size-10 cursor-pointer place-items-center rounded-full border ${primaryBgColor}`}
               onClick={() => api.scrollNext()}
             >
               <ArrowUpRight />
@@ -144,7 +163,7 @@ const TestimonialsCarousel = () => {
                 onClick={() => api.scrollTo(index)}
                 className={cn(
                   "size-4 rounded-full bg-primary/20",
-                  current === index + 1 && "bg-primary",
+                  current === index + 1 && primaryBgColor,
                 )}
               ></button>
             ))}

@@ -5,15 +5,6 @@ const Testemonial = ({name, comment}) => {
     <div className="flex w-full flex-col items-center justify-center px-5 py-40">
       <div className="relative flex w-full max-w-7xl flex-col items-center gap-14">
         <Image
-          src="/logo/logo-light.png"
-          width={168}
-          height={168}
-          alt="logo"
-          loading="lazy"
-          className="absolute right-0 top-5 -z-10 size-28 md:size-40"
-          quality={100}
-        />
-        <Image
           src="/bg/main-arrow-bg.png"
           quality={100}
           loading="lazy"

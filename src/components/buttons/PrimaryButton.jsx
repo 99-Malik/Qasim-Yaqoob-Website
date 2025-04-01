@@ -3,8 +3,33 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 const PrimaryButton = ({ title, className = "" }) => {
+  const pathname = usePathname();
+  const company = pathname.split("/")[2];
+
+  const primaryBgColor =
+    company === "bosch"
+      ? "bg-boschPrimary hover:bg-boschSecondary"
+      : company === "siemens"
+      ? "bg-siemensPrimary hover:bg-siemensSecondary"
+      : company === "samsung"
+      ? "bg-samsungPrimary hover:bg-samsungSecondary"
+      : company === "lg"
+      ? "bg-lgPrimary hover:bg-lgSecondary"
+      : "bg-primary hover:bg-primary-dark";
+
+  const textColor =
+    company === "bosch" || company === "siemens" || company === "samsung" || company === "lg"
+      ? "text-white"
+      : "text-black";
+
+  const strokeColor =
+    company === "bosch" || company === "siemens" || company === "samsung" || company === "lg"
+      ? "stroke-white"
+      : "stroke-black";
+
   return (
     <motion.button
       whileHover={{
@@ -17,7 +42,7 @@ const PrimaryButton = ({ title, className = "" }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 400, damping: 15 }}
       className={cn(
-        "flex items-center gap-3 rounded-lg bg-primary px-6 py-4 font-montserrat transition-all duration-150 ease-out md:px-16",
+        `flex items-center gap-3 rounded-lg ${primaryBgColor} ${textColor} px-6 py-4 font-montserrat transition-all duration-150 ease-out md:px-16`,
         className,
       )}
     >
@@ -26,7 +51,7 @@ const PrimaryButton = ({ title, className = "" }) => {
           scale: 1.05,
           transition: { duration: 0.15 },
         }}
-        className="text-black font-bold"
+        className="font-bold"
       >
         {title}
       </motion.span>
@@ -38,13 +63,13 @@ const PrimaryButton = ({ title, className = "" }) => {
           ease: "easeInOut",
         }}
       >
-        {arrowRight}
+        {arrowRight(strokeColor)}
       </motion.div>
     </motion.button>
   );
 };
 
-const arrowRight = (
+const arrowRight = (strokeColor) => (
   <svg
     width="17"
     height="16"
@@ -54,7 +79,7 @@ const arrowRight = (
   >
     <path
       d="M1.625 8H15.625M15.625 8L8.625 1M15.625 8L8.625 15"
-      stroke="black"
+      className={strokeColor}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
