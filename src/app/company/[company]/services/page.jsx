@@ -1,5 +1,4 @@
 import OurServices from "@/components/sections/home/OurServices"
-import ServicesMain from "@/components/sections/services/ServicesMain"
 
 const ServicesPage = () => {
   return (

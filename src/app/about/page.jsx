@@ -5,7 +5,7 @@ import ProcessSection from "@/components/sections/home/process-section/ProcessSe
 
 const AboutPage = () => {
   return (
-    <div className="flex flex-col w-full pt-32">
+    <div className="flex flex-col w-full">
       <AboutMain />
       <DeliveringSection />
       <TransformingSection />

@@ -2,49 +2,59 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const OurServices = () => {
+  const pathname = usePathname();
   const servicesList = [
     {
       title: "TV Repair",
       desc: "Expert repair services for Samsung and LG TVs, including screen repairs, power issues, smart TV troubleshooting, and circuit board repairs.",
       image: "/static/tv.jpeg",
+      href: "/tv-repair",
     },
     {
       title: "Washing Machine Repair",
       desc: "Repair solutions for Bosch, Siemens, Samsung, and LG washing machines. From drum problems to electronic faults, we fix it all.",
       image: "/static/washing.jpeg",
+      href: "/washing-machine-repair",
     },
     {
       title: "Dryer Repair",
       desc: "Professional dryer repair services for all major brands. We handle heating issues, motor repairs, belt replacements, and sensor problems.",
       image: "/static/dryer.jpeg",
+      href: "/dryer-repair",
     },
     {
       title: "Dishwasher Repair",
       desc: "Specialized repairs for Bosch, Siemens, Samsung, and LG dishwashers. We fix water leaks, drainage issues, and cleaning system problems.",
       image: "/static/dishwasher.jpeg",
+      href: "/dishwasher-repair",
     },
     {
       title: "Oven Repair",
       desc: "Complete oven repair services including temperature control, heating element replacement, door repairs, and electronic control fixes.",
       image: "/static/oven.jpeg",
+      href: "/oven-repair",
     },
     {
       title: "Refrigerator Repair",
       desc: "Expert refrigerator repairs covering cooling systems, compressor issues, ice maker repairs, and temperature control problems.",
       image: "/static/fridge.jpeg",
+      href: "/refrigerator-repair",
     },
     {
       title: "Stove/Cooker Repair",
       desc: "Professional repair services for electric and gas stoves. We handle burner repairs, ignition problems, and control panel issues.",
       image: "/static/stove.jpeg",
+      href: "/stove-repair",
     },
     {
       title: "AC Repair",
       desc: "Expert AC repair services for all major brands. We fix cooling issues, compressor problems, and thermostat malfunctions.",
       image: "/static/ac2.jpg",
-    }
+      href: "/ac-repair",
+    },
   ];
 
   return (
@@ -80,7 +90,8 @@ const OurServices = () => {
           className="no-scrollbar flex w-full flex-col items-center gap-4 overflow-x-auto p-2 sm:flex-row sm:flex-wrap sm:justify-center"
         >
           {servicesList.map((service, index) => (
-            <motion.div
+            <motion.a
+              href={pathname + "/" + service.href}
               key={index}
               variants={{
                 hidden: { opacity: 0, x: 50 },
@@ -100,7 +111,7 @@ const OurServices = () => {
                 className="grid size-16 place-items-center rounded-lg border-[1.33px] border-[#EAECF0] shadow-[0px_1px_2px_0px_#1018280D]"
               >
                 <Image
-                  src={`/services-icons/${index == 0 ? 7: index}.png`}
+                  src={`/services-icons/${index == 0 ? 7 : index}.png`}
                   width={32}
                   height={32}
                   alt={service.title}
@@ -115,18 +126,18 @@ const OurServices = () => {
               <span className="text-sm text-[#475467] md:text-base">
                 {service.desc}
               </span>
-              <div className="w-full h-64">
-              <Image 
-                src={service.image}
-                loading="lazy"
-                width={500}
-                height={300}
-                alt={service.title}
-                quality={100}
-                className="rounded-lg object-cover w-ful h-full"
-              />
+              <div className="h-64 w-full">
+                <Image
+                  src={service.image}
+                  loading="lazy"
+                  width={500}
+                  height={300}
+                  alt={service.title}
+                  quality={100}
+                  className="w-ful h-full rounded-lg object-cover"
+                />
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 

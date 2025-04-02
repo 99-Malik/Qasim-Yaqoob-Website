@@ -42,7 +42,7 @@ const Header = () => {
           ) : (
             <Link href="/" className="flex items-center gap-2">
               <span className="text-2xl font-semibold text-primary">
-                Repair Site
+                Customer Service UAE
               </span>
             </Link>
           )}
@@ -65,15 +65,13 @@ const Header = () => {
             <HeaderSheet />
           </div>
         </div>
-        <div className="flex w-full items-center justify-center gap-5 border-t border-black/10 px-5 py-4 md:justify-start">
-          {companies.map((company, index) => (
-            <NavLink
-              key={index}
-              title={company.name}
-              href={company.href}
-            />
-          ))}
-        </div>
+        {!company && (
+          <div className="flex w-full items-center justify-center gap-5 border-t border-black/10 px-5 py-4 md:justify-start">
+            {companies.map((company, index) => (
+              <NavLink key={index} title={company.name} href={company.href} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

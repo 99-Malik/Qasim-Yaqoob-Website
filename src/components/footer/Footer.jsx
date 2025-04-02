@@ -117,7 +117,7 @@ const Footer = () => {
   return (
     <div className="flex w-full flex-col items-center justify-center border-t-4 border-=primary text-black">
       <div className="flex w-full max-w-7xl flex-col gap-5 px-6 pb-20 pt-20">
-        <span className="text-2xl font-bold">Repair site</span>
+        <span className="text-2xl font-bold">Customer Service UAE</span>
         <span className="max-w-lg py-5">
           We provide home appliance repair services for all brands and models.
         </span>
@@ -146,7 +146,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full flex items-center justify-center bg-secondary text-white text-xs py-4 px-5">
-      Copyright © 2025 repair site | Powered by repair site
+      Copyright © 2025 Customer Service UAE | Powered by Customer Service UAE
       </div>
     </div>
   );

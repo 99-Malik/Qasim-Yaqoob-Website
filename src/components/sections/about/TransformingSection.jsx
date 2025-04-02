@@ -1,29 +1,59 @@
+"use client";
+
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const TransformingSection = () => {
+  const pathname = usePathname();
+  const company = pathname.split("/")[2];
+
+  const primaryBgColor =
+    company === "bosch"
+      ? "bg-boschPrimary"
+      : company === "siemens"
+        ? "bg-siemensPrimary"
+        : company === "samsung"
+          ? "bg-samsungPrimary"
+          : company === "lg"
+            ? "bg-lgPrimary"
+            : "bg-primary";
+
+  const primaryTextColor =
+    company === "bosch"
+      ? "text-boschPrimary"
+      : company === "siemens"
+        ? "text-siemensPrimary"
+        : company === "samsung"
+          ? "text-samsungPrimary"
+          : company === "lg"
+            ? "text-lgPrimary"
+            : "text-primary";
+
   return (
     <div className="flex w-full flex-col items-center justify-center px-5 py-32">
       <div className="grid w-full max-w-7xl gap-8 md:grid-cols-2">
         <div className="flex w-full flex-col gap-2">
-          <span className="text-secondary">
+          <span className={`text-secondary ${primaryTextColor}`}>
             Expert Appliance Repair Services
           </span>
-          <h1 className="text-3xl font-medium leading-snug">
+          <h1
+            className={`text-3xl font-medium leading-snug ${primaryTextColor}`}
+          >
             Professional Repairs for Premium Home Appliances
           </h1>
           <span className="py-3 text-lg text-custom-black/70">
-            We specialize in repairing high-end appliances from leading brands 
-            including Bosch, Siemens, Samsung, and LG. Our certified technicians 
-            are equipped with advanced diagnostic tools and genuine parts to ensure 
-            your appliances receive the highest quality repairs.
+            We specialize in repairing high-end appliances from leading brands
+            including Bosch, Siemens, Samsung, and LG. Our certified technicians
+            are equipped with advanced diagnostic tools and genuine parts to
+            ensure your appliances receive the highest quality repairs.
           </span>
         </div>
         <div className="flex flex-col gap-5">
           <span className="py-3 text-lg text-custom-black/70">
-            From TVs and washing machines to refrigerators and ovens, we handle 
-            all major household appliances with expertise and care. Our commitment 
-            to excellence and customer satisfaction makes us the trusted choice 
-            for appliance repairs in your area.
+            From TVs and washing machines to refrigerators and ovens, we handle
+            all major household appliances with expertise and care. Our
+            commitment to excellence and customer satisfaction makes us the
+            trusted choice for appliance repairs in your area.
           </span>
           <div className="relative flex h-full w-full items-center justify-center py-14">
             <Image
@@ -32,7 +62,7 @@ const TransformingSection = () => {
               height={250}
               alt="appliance repair background"
               loading="lazy"
-              className="absolute md:hidden -z-10"
+              className="absolute -z-10 md:hidden"
             />
             <Image
               src="/bg/transforming-bg-2.png"
@@ -40,22 +70,30 @@ const TransformingSection = () => {
               height={465}
               alt="appliance repair background"
               loading="lazy"
-              className="absolute md:flex hidden -z-10"
+              className="absolute -z-10 hidden md:flex"
             />
             <div className="flex flex-col gap-y-7">
               <div className="flex items-center gap-0.5">
-                <span className="-rotate-12 text-nowrap rounded-full bg-primary px-5 py-2 text-white">
-                  Certified Experts
+                <span
+                  className={`-rotate-12 text-nowrap rounded-full ${primaryBgColor} px-5 py-2 text-white`}
+                >
+                  Pro Experts
                 </span>
-                <span className="rotate-6 text-nowrap rounded-full bg-primary px-5 py-2 text-white">
-                  Same-Day Service
+                <span
+                  className={`rotate-6 text-nowrap rounded-full ${primaryBgColor} px-5 py-2 text-white`}
+                >
+                  Sameday Service
                 </span>
               </div>
               <div className="flex items-center gap-0.5">
-                <span className="rotate-6 text-nowrap rounded-full bg-primary px-5 py-2 text-white">
+                <span
+                  className={`rotate-6 text-nowrap rounded-full ${primaryBgColor} px-5 py-2 text-white`}
+                >
                   Quality Parts
                 </span>
-                <span className="-rotate-6 text-nowrap rounded-full bg-primary px-5 py-2 text-white">
+                <span
+                  className={`-rotate-6 text-nowrap rounded-full ${primaryBgColor} px-5 py-2 text-white`}
+                >
                   Warranty Backed
                 </span>
               </div>
