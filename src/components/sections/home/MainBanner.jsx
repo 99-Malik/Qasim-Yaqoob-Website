@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import GetInTouchButton from "@/components/header/GetInTouchButton";
 import { usePathname } from "next/navigation";
+import CallButtons from "@/components/buttons/CallButtons";
 
 const MainBanner = () => {
   const pathname = usePathname();
@@ -88,18 +89,7 @@ const MainBanner = () => {
           ACs, dishwashers, ovens, fridges, and stoves. Fast, reliable service
           when you need it most.
         </p>
-        <div className="flex items-center justify-center gap-2">
-          <Link href="tel:+1234567890">
-            <GetInTouchButton title="Call Us" />
-          </Link>
-          <Link
-            href="https://wa.me/1234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <PrimaryButton title="Whatsapp" />
-          </Link>
-        </div>
+        <CallButtons />
       </div>
       <div className="absolute inset-0 -z-10 h-full w-full bg-black/80"></div>
       <Image

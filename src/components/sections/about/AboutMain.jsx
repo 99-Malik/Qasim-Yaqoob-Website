@@ -1,5 +1,6 @@
 "use client";
 
+import CallButtons from "@/components/buttons/CallButtons";
 import PrimaryButton from "@/components/buttons/PrimaryButton";
 import GetInTouchButton from "@/components/header/GetInTouchButton";
 import Image from "next/image";
@@ -30,18 +31,7 @@ const AboutMain = ({
         {title}
       </h1>
       <span className="max-w-5xl md:text-2xl md:leading-normal">{desc}</span>
-      <div className="flex items-center justify-center gap-2">
-        <Link href="tel:+1234567890">
-          <GetInTouchButton title="Call Us" />
-        </Link>
-        <Link
-          href="https://wa.me/1234567890"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <PrimaryButton title="Whatsapp" />
-        </Link>
-      </div>
+      <CallButtons />
       <Image
         src="/static/main-banner.jpg"
         quality={100}

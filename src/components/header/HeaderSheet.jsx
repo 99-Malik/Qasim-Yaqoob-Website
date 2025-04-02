@@ -12,7 +12,7 @@ import {
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import { headerLinks } from "@/lib/data";
+import { headerLinks, sendMessage } from "@/lib/data";
 import NavLink from "./NavLink";
 import GetInTouchButton from "./GetInTouchButton";
 import NavSheetLink from "./NavSheetLink";
@@ -113,7 +113,7 @@ const HeaderSheet = () => {
               </div>
             ))}
           </div>
-          <GetInTouchButton />
+          <GetInTouchButton onClick={sendMessage} />
         </div>
       </SheetContent>
     </Sheet>

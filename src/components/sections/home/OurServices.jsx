@@ -3,59 +3,75 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { dialPhone, sendMessage } from "@/lib/data";
+import Link from "next/link";
 
 const OurServices = () => {
   const pathname = usePathname();
+  const company = pathname.split("/")[2];
+
   const servicesList = [
     {
       title: "TV Repair",
       desc: "Expert repair services for Samsung and LG TVs, including screen repairs, power issues, smart TV troubleshooting, and circuit board repairs.",
       image: "/services/tv-repair.jpg",
       href: "/tv-repair",
+      companies: ["samsung", "lg"],
     },
     {
       title: "Washing Machine Repair",
       desc: "Repair solutions for Bosch, Siemens, Samsung, and LG washing machines. From drum problems to electronic faults, we fix it all.",
       image: "/services/washing-machine-repair.webp",
       href: "/washing-machine-repair",
+      companies: ["bosch", "siemens", "samsung", "lg"],
     },
     {
       title: "Dryer Repair",
       desc: "Professional dryer repair services for all major brands. We handle heating issues, motor repairs, belt replacements, and sensor problems.",
       image: "/services/dryer-repair.jpg",
       href: "/dryer-repair",
+      companies: ["bosch", "siemens", "samsung", "lg"],
     },
     {
       title: "Dishwasher Repair",
       desc: "Specialized repairs for Bosch, Siemens, Samsung, and LG dishwashers. We fix water leaks, drainage issues, and cleaning system problems.",
       image: "/services/dishwasher-repair.jpg",
       href: "/dishwasher-repair",
+      companies: ["bosch", "siemens", "samsung", "lg"],
     },
     {
       title: "Oven Repair",
       desc: "Complete oven repair services including temperature control, heating element replacement, door repairs, and electronic control fixes.",
       image: "/services/oven-repair.jpg",
       href: "/oven-repair",
+      companies: ["bosch", "siemens"],
     },
     {
       title: "Refrigerator Repair",
       desc: "Expert refrigerator repairs covering cooling systems, compressor issues, ice maker repairs, and temperature control problems.",
       image: "/services/fridge-repair.png",
       href: "/refrigerator-repair",
+      companies: ["bosch", "siemens", "samsung", "lg"],
     },
     {
       title: "Stove/Cooker Repair",
       desc: "Professional repair services for electric and gas stoves. We handle burner repairs, ignition problems, and control panel issues.",
       image: "/services/stove-repair.avif",
       href: "/stove-repair",
+      companies: ["bosch", "siemens"],
     },
     {
       title: "AC Repair",
       desc: "Expert AC repair services for all major brands. We fix cooling issues, compressor problems, and thermostat malfunctions.",
       image: "/services/ac-repair.webp",
       href: "/ac-repair",
+      companies: ["bosch", "siemens", "samsung", "lg"],
     },
   ];
+
+  const filteredServices = servicesList.filter(
+    (service) => !company || service.companies.includes(company),
+  );
 
   return (
     <div className="flex w-full flex-col items-center justify-center px-5 py-20">
@@ -89,9 +105,8 @@ const OurServices = () => {
           }}
           className="no-scrollbar flex w-full flex-col items-center gap-4 overflow-x-auto p-2 sm:flex-row sm:flex-wrap sm:justify-center"
         >
-          {servicesList.map((service, index) => (
-            <motion.a
-              href={pathname + "/" + service.href}
+          {filteredServices.map((service, index) => (
+            <motion.div
               key={index}
               variants={{
                 hidden: { opacity: 0, x: 50 },
@@ -105,28 +120,53 @@ const OurServices = () => {
               className="flex min-h-[300px] w-full cursor-pointer flex-col gap-3 rounded-lg bg-white px-5 pb-14 pt-10 shadow-[0px_0px_4px_0px_#00000030] md:min-w-[350px] md:max-w-[400px]"
             >
               {/* Icon Animation */}
-              <motion.div
-                whileHover={{ rotate: 10 }}
-                transition={{ type: "spring", stiffness: 150, damping: 10 }}
-                className="grid size-16 place-items-center rounded-lg border-[1.33px] border-[#EAECF0] shadow-[0px_1px_2px_0px_#1018280D]"
-              >
-                <Image
-                  src={`/services-icons/${index == 0 ? 7 : index}.png`}
-                  width={32}
-                  height={32}
-                  alt={service.title}
-                  loading="lazy"
-                  quality={100}
-                />
-              </motion.div>
+              <div className="flex items-center gap-2">
+                <motion.div
+                  onClick={dialPhone}
+                  whileHover={{ rotate: 10 }}
+                  transition={{ type: "spring", stiffness: 150, damping: 10 }}
+                  className="grid size-12 place-items-center rounded-lg border-[1.33px] border-[#EAECF0] bg-gray-400 shadow-[0px_1px_2px_0px_#1018280D]"
+                >
+                  <Image
+                    quality={100}
+                    src="/static/call.svg"
+                    alt="Call us"
+                    width={28}
+                    height={28}
+                  />
+                </motion.div>
+                <motion.div
+                  onClick={sendMessage}
+                  whileHover={{ rotate: 10 }}
+                  transition={{ type: "spring", stiffness: 150, damping: 10 }}
+                  className="grid size-12 place-items-center rounded-lg border-[1.33px] border-[#EAECF0] bg-green-400 shadow-[0px_1px_2px_0px_#1018280D]"
+                >
+                  <Image
+                    quality={100}
+                    src="/static/whatsapp-2.svg"
+                    alt="Whatsapp"
+                    width={30}
+                    height={30}
+                  />
+                </motion.div>
+              </div>
 
-              <span className="text-nowrap text-xl font-semibold md:text-2xl">
+              <Link
+                href={pathname + "/" + service.href}
+                className="text-nowrap text-xl font-semibold md:text-2xl"
+              >
                 {service.title}
-              </span>
-              <span className="text-sm text-[#475467] md:text-base">
+              </Link>
+              <Link
+                href={pathname + "/" + service.href}
+                className="text-sm text-[#475467] md:text-base"
+              >
                 {service.desc}
-              </span>
-              <div className="h-64 w-full">
+              </Link>
+              <Link
+                href={pathname + "/" + service.href}
+                className="h-64 w-full"
+              >
                 <Image
                   src={service.image}
                   loading="lazy"
@@ -136,8 +176,8 @@ const OurServices = () => {
                   quality={100}
                   className="w-ful h-full rounded-lg object-cover"
                 />
-              </div>
-            </motion.a>
+              </Link>
+            </motion.div>
           ))}
         </motion.div>
 

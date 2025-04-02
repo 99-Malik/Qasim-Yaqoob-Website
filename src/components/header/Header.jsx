@@ -3,7 +3,7 @@
 import Link from "next/link";
 import NavLink from "./NavLink";
 import HeaderSheet from "./HeaderSheet";
-import { headerLinks } from "@/lib/data";
+import { headerLinks, sendMessage } from "@/lib/data";
 import GetInTouchButton from "./GetInTouchButton";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -59,8 +59,9 @@ const Header = () => {
                 key={index}
               />
             ))}
+            <NavLink title="AC" company={company} href="/ac-repair" />
           </div>
-          <GetInTouchButton className="hidden md:flex" />
+          <GetInTouchButton className="hidden md:flex" onClick={sendMessage} />
           <div className="md:hidden">
             <HeaderSheet />
           </div>

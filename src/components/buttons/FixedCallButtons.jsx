@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function FixedCallButtons() {
   return (
-    <div className="fixed bottom-0 w-screen z-[101] px-3 py-2 pointer-events-none">
+    <div className="fixed bottom-2 w-screen z-[101] px-3 py-2 pointer-events-none">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <button
           onClick={sendMessage}

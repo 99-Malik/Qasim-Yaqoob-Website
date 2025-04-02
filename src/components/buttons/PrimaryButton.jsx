@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { usePathname } from "next/navigation";
 
-const PrimaryButton = ({ title, className = "" }) => {
+const PrimaryButton = ({ title, className = "", ...props }) => {
   const pathname = usePathname();
   const company = pathname.split("/")[2];
 
@@ -13,20 +13,26 @@ const PrimaryButton = ({ title, className = "" }) => {
     company === "bosch"
       ? "bg-boschPrimary hover:bg-boschSecondary"
       : company === "siemens"
-      ? "bg-siemensPrimary hover:bg-siemensSecondary"
-      : company === "samsung"
-      ? "bg-samsungPrimary hover:bg-samsungSecondary"
-      : company === "lg"
-      ? "bg-lgPrimary hover:bg-lgSecondary"
-      : "bg-primary hover:bg-primary-dark";
+        ? "bg-siemensPrimary hover:bg-siemensSecondary"
+        : company === "samsung"
+          ? "bg-samsungPrimary hover:bg-samsungSecondary"
+          : company === "lg"
+            ? "bg-lgPrimary hover:bg-lgSecondary"
+            : "bg-primary hover:bg-primary-dark";
 
   const textColor =
-    company === "bosch" || company === "siemens" || company === "samsung" || company === "lg"
+    company === "bosch" ||
+    company === "siemens" ||
+    company === "samsung" ||
+    company === "lg"
       ? "text-white"
       : "text-black";
 
   const strokeColor =
-    company === "bosch" || company === "siemens" || company === "samsung" || company === "lg"
+    company === "bosch" ||
+    company === "siemens" ||
+    company === "samsung" ||
+    company === "lg"
       ? "stroke-white"
       : "stroke-black";
 
@@ -45,6 +51,7 @@ const PrimaryButton = ({ title, className = "" }) => {
         `flex items-center gap-3 rounded-lg ${primaryBgColor} ${textColor} px-6 py-4 font-montserrat transition-all duration-150 ease-out md:px-16`,
         className,
       )}
+      {...props}
     >
       <motion.span
         whileHover={{

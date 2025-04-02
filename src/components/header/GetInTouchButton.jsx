@@ -4,7 +4,11 @@ import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
-const GetInTouchButton = ({ title = "Get in Touch", className = "" }) => {
+const GetInTouchButton = ({
+  title = "Get in Touch",
+  className = "",
+  ...props
+}) => {
   const router = useRouter();
   return (
     <motion.button
@@ -18,7 +22,7 @@ const GetInTouchButton = ({ title = "Get in Touch", className = "" }) => {
         "flex items-center justify-center gap-3 rounded-md border-[0.6px] border-secondary bg-white px-5 py-3 transition-all hover:border",
         className,
       )}
-      onClick={() => router.push("/contact")}
+      {...props}
     >
       {phoneIcon}
       <span className="font-medium text-secondary">{title}</span>

@@ -1,5 +1,6 @@
 "use client";
 
+import CallButtons from "@/components/buttons/CallButtons";
 import { usePathname } from "next/navigation";
 
 const ContactPage = () => {
@@ -10,23 +11,23 @@ const ContactPage = () => {
     company === "bosch"
       ? "bg-boschPrimary"
       : company === "siemens"
-      ? "bg-siemensPrimary"
-      : company === "samsung"
-      ? "bg-samsungPrimary"
-      : company === "lg"
-      ? "bg-lgPrimary"
-      : "bg-primary";
+        ? "bg-siemensPrimary"
+        : company === "samsung"
+          ? "bg-samsungPrimary"
+          : company === "lg"
+            ? "bg-lgPrimary"
+            : "bg-primary";
 
   const primaryTextColor =
     company === "bosch"
       ? "text-boschPrimary"
       : company === "siemens"
-      ? "text-siemensPrimary"
-      : company === "samsung"
-      ? "text-samsungPrimary"
-      : company === "lg"
-      ? "text-lgPrimary"
-      : "text-primary";
+        ? "text-siemensPrimary"
+        : company === "samsung"
+          ? "text-samsungPrimary"
+          : company === "lg"
+            ? "text-lgPrimary"
+            : "text-primary";
 
   const features = [
     {
@@ -62,26 +63,25 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="flex w-full flex-col gap-10 items-center pt-36">
-      <div className="flex items-center justify-center flex-col gap-3 py-20 max-w-7xl px-5">
-        <h1 className={`text-4xl font-medium ${primaryTextColor}`}>
-          Contact Us
-        </h1>
+    <div className="flex w-full flex-col items-center gap-10 pt-36">
+      <div className="flex max-w-7xl flex-col items-center justify-center gap-3 px-5 py-20">
+        <h1 className={`text-4xl font-medium`}>Contact Us</h1>
         <span className="text-secondary/70">Get in touch with us</span>
-        <span className={`text-center max-w-xl ${primaryTextColor}`}>
+        <span className={`max-w-xl text-center`}>
           Selecting the right appliance repair company is essential to keeping
           your home running smoothly. With our dedication to quality and years
           of expertise, we're the trusted choice for all your appliance repair
           needs. Here's what sets us apart:
         </span>
-        <div className="grid gap-4 mt-6 md:grid-cols-2 w-full max-w-5xl">
+        <CallButtons />
+        <div className="mt-6 grid w-full max-w-5xl gap-4 md:grid-cols-2">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`flex gap-3 p-4 rounded-lg bg-white border shadow border-${primaryBgColor}/40`}
+              className={`flex gap-3 rounded-lg border bg-white p-4 shadow border-${primaryBgColor}/40`}
             >
               <div
-                className={`size-2 mt-2 rounded-full shrink-0 ${primaryBgColor}`}
+                className={`mt-2 size-2 shrink-0 rounded-full ${primaryBgColor}`}
               ></div>
               <div>
                 <h3 className="font-medium">{feature.title}</h3>
