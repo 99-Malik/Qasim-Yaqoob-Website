@@ -1,5 +1,18 @@
 import Image from "next/image";
 
+const phoneNumber = "+1234567890";
+export const sendMessage = () => {
+  const message = "Hello, I want your repair services";
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+  window.open(url, "_blank"); // Opens WhatsApp in a new tab
+};
+
+export const dialPhone = () => {
+  window.location.href = `tel:${phoneNumber}`;
+};
+
 export const headerLinks = [
   {
     title: "Home",

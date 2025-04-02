@@ -16,23 +16,23 @@ const MainBanner = () => {
     company === "bosch"
       ? "bg-boschPrimary"
       : company === "siemens"
-      ? "bg-siemensPrimary"
-      : company === "samsung"
-      ? "bg-samsungPrimary"
-      : company === "lg"
-      ? "bg-lgPrimary"
-      : "bg-primary";
+        ? "bg-siemensPrimary"
+        : company === "samsung"
+          ? "bg-samsungPrimary"
+          : company === "lg"
+            ? "bg-lgPrimary"
+            : "bg-primary";
 
   const primaryGradient =
     company === "bosch"
       ? "from-boschPrimary to-boschSecondary"
       : company === "siemens"
-      ? "from-siemensPrimary to-siemensPrimary/50"
-      : company === "samsung"
-      ? "from-samsungPrimary to-samsungSecondary"
-      : company === "lg"
-      ? "from-lgPrimary to-lgSecondary"
-      : "from-primary to-secondary";
+        ? "from-siemensPrimary to-siemensPrimary/50"
+        : company === "samsung"
+          ? "from-samsungPrimary to-samsungSecondary"
+          : company === "lg"
+            ? "from-lgPrimary to-lgSecondary"
+            : "from-primary to-secondary";
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -51,7 +51,7 @@ const MainBanner = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="max-w-screen relative flex w-full flex-col items-center justify-center gap-3 overflow-hidden px-5 pb-24 pt-40 text-center md:min-h-[90vh] md:gap-5"
     >
-      <div className="text-white flex flex-col items-center gap-3 pt-10">
+      <div className="flex flex-col items-center gap-3 pt-10 text-white">
         <h2 className="text-sm font-medium uppercase tracking-wide md:text-xl">
           Expert Appliance Repair Services
         </h2>
@@ -61,7 +61,9 @@ const MainBanner = () => {
             <div
               className={`mt-1 inline-block w-fit -rotate-2 rounded-lg bg-gradient-to-r ${primaryGradient} px-2 py-1 text-white shadow-lg md:mt-3 md:-rotate-3 md:rounded-3xl md:px-6 md:py-4`}
             >
-              Premium
+              {company
+                ? company.charAt(0).toUpperCase() + company.slice(1)
+                : "Premium"}
             </div>{" "}
             <span className="mt-2">Home Appliances</span>
           </div>
@@ -80,9 +82,9 @@ const MainBanner = () => {
         </div>
         <p className="mb-4 mt-3 max-w-2xl leading-relaxed md:mt-8 md:text-xl">
           Specialized repair services for Bosch, Siemens, Samsung, and LG
-          appliances. Expert solutions for your TVs, washing machines, dryers, ACs,
-          dishwashers, ovens, fridges, and stoves. Fast, reliable service when
-          you need it most.
+          appliances. Expert solutions for your TVs, washing machines, dryers,
+          ACs, dishwashers, ovens, fridges, and stoves. Fast, reliable service
+          when you need it most.
         </p>
         <div className="flex items-center justify-center gap-2">
           <Link href="tel:+1234567890">
@@ -97,7 +99,7 @@ const MainBanner = () => {
           </Link>
         </div>
       </div>
-      <div className="absolute -z-10 h-full w-full bg-black/80 inset-0"></div>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-black/80"></div>
       <Image
         src="/static/main-banner.jpg"
         quality={100}

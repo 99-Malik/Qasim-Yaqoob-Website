@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header/Header";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/footer/Footer";
+import FixedCallButtons from "@/components/buttons/FixedCallButtons";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
           "max-w-screen flex flex-col overflow-x-hidden font-poppins text-custom-black",
         )}
       >
+        <FixedCallButtons />
         <Header />
         {children}
         <Footer />
