@@ -75,7 +75,9 @@ const MainBanner = () => {
             <div
               className={`mt-1 inline-block w-fit -rotate-3 rounded-xl bg-gradient-to-r ${primaryGradient} px-4 py-1 text-2xl text-white shadow-lg`}
             >
-              Premium
+              {company
+                ? company.charAt(0).toUpperCase() + company.slice(1)
+                : "Premium"}
             </div>{" "}
           </div>
           <span className="mt-1">Home Appliances</span>
