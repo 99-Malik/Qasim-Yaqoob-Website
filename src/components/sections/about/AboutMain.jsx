@@ -25,7 +25,7 @@ const AboutMain = ({
             : "text-primary";
 
   return (
-    <section className="relative flex min-h-[24rem] w-full flex-col items-center justify-center gap-3 px-5 pt-32 text-center text-white md:min-h-[33rem] md:gap-5">
+    <section className="relative flex min-h-[33rem] w-full flex-col items-center justify-center gap-3 px-5 pt-32 text-center text-white md:gap-5">
       <h1 className={`text-3xl font-medium ${primaryTextColor} md:text-6xl`}>
         {title}
       </h1>

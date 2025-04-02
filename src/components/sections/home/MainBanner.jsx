@@ -80,7 +80,7 @@ const MainBanner = () => {
         </div>
         <p className="mb-4 mt-3 max-w-2xl leading-relaxed md:mt-8 md:text-xl">
           Specialized repair services for Bosch, Siemens, Samsung, and LG
-          appliances. Expert solutions for your TVs, washing machines, dryers,
+          appliances. Expert solutions for your TVs, washing machines, dryers, ACs,
           dishwashers, ovens, fridges, and stoves. Fast, reliable service when
           you need it most.
         </p>
