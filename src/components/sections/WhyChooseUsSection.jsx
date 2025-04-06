@@ -20,43 +20,27 @@ const WhyChooseUs = () => {
           </div>
           <div className="mx-auto mb-6 max-w-6xl text-lg">
             <p className="mb-4">
-              We understand that choosing the right appliance repair service is
-              crucial for your home. Our commitment to excellence, combined with
-              our extensive experience, makes us the ideal choice for all your
-              appliance needs. Here’s why our customers trust us:
+              When it comes to <strong>AC repair in Dubai</strong>, we are the trusted
+              choice for residents across communities like JVC, Dubai Marina, Palm Jumeirah, Arabian Ranches, and Silicon Oasis. Our commitment to quality and fast response has earned us a strong reputation as a top-rated <strong>air conditioner repair company</strong>.
             </p>
             <ul className="list-inside list-disc space-y-2">
               <li>
-                <span className="font-bold">Expert Technicians:</span> Our
-                certified technicians are well-trained in the latest repair
-                techniques, ensuring efficient and reliable service.
+                <span className="font-bold">Expert Technicians:</span> Our certified AC technicians specialize in everything from <strong>AC maintenance in JVC</strong> to <strong>emergency AC repair in Dubai</strong>, ensuring quick diagnostics and effective solutions.
               </li>
               <li>
-                <span className="font-bold">Quality Repairs:</span> We use
-                top-quality parts and tools, restoring your appliances to their
-                optimal performance.
+                <span className="font-bold">Comprehensive HVAC Services:</span> Whether you need <strong>HVAC system installation</strong>, <strong>AC duct cleaning services in Dubai</strong>, or full <strong>AC maintenance in Palm Jumeirah</strong>, we’ve got you covered.
               </li>
               <li>
-                <span className="font-bold">Transparent Pricing:</span> Enjoy
-                clear and competitive pricing with no hidden fees, so you know
-                exactly what to expect.
+                <span className="font-bold">24/7 Emergency Support:</span> We provide <strong>24-hour air conditioning service</strong> and <strong>AC repair emergency service</strong> to help you stay cool no matter the time or day.
               </li>
               <li>
-                <span className="font-bold">Convenient Service:</span> We offer
-                flexible scheduling options, including same-day and emergency
-                services, to fit your busy lifestyle.
+                <span className="font-bold">Transparent Pricing:</span> Our rates are competitive and honest. Whether it’s a small fix or a full <strong>ducted air conditioning installation</strong>, you’ll always know what to expect.
               </li>
               <li>
-                <span className="font-bold">
-                  Customer Satisfaction Guarantee:
-                </span>{" "}
-                We back our work with a warranty on all repairs, ensuring peace
-                of mind with every service.
+                <span className="font-bold">Reliable Service Areas:</span> From <strong>AC repair in Dubai Marina</strong> to <strong>AC maintenance in Arabian Ranches</strong>, we serve all major neighborhoods with timely and efficient solutions.
               </li>
               <li>
-                <span className="font-bold">Responsive Support:</span> Our
-                friendly customer service team is always ready to assist with
-                any questions or concerns you may have.
+                <span className="font-bold">Trusted by Residents & Businesses:</span> We are known as one of the <strong>best AC maintenance companies in Dubai</strong>, serving both residential and <strong>commercial AC service near you</strong>.
               </li>
             </ul>
           </div>

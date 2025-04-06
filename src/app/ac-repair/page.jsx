@@ -9,8 +9,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const AcRepairPage = () => {
-  const serviceName = "AC Repair";
-  const serviceDesc = `We are your authorized repair specialists for ${serviceName} appliances. Our certified technicians provide reliable, efficient repairs for all your home appliances, ensuring minimal disruption to your daily life with quick turnaround times and quality service.`;
+  const serviceName = "Best AC & HVAC Repairs Across UAE";
+  const serviceDesc = `We are your authorized repair specialists for ${serviceName} . Our certified technicians provide reliable, efficient repairs for all your home appliances, ensuring minimal disruption to your daily life with quick turnaround times and quality service.`;
   return (
     <div className="flex w-full flex-col">
       <AboutMain title={serviceName} desc={serviceDesc} />

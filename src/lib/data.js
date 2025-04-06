@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const phoneNumber = "+1234567890";
+const phoneNumber = "+97156239007";
 export const sendMessage = () => {
   const message = "Hello, I want your repair services";
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
@@ -108,7 +108,7 @@ export const processData = [
       />
     ),
     title: "Transparent Quote",
-    image: "/static/ac4.jpg",
+    image: "/repairs.jpg",
     desc: "We provide a detailed cost breakdown with no hidden fees, ensuring you understand exactly what needs to be fixed and the associated costs.",
   },
   {

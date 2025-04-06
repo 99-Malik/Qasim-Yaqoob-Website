@@ -33,7 +33,7 @@ const AcServices = () => {
     },
     {
       title: "AC Coil Cleaning",
-      desc: "Expert coil cleaning services for Bosch, Siemens, Samsung, and LG AC units. We ensure optimal cooling performance and energy efficiency.",
+      desc: "Expert coil cleaning services to improve cooling efficiency, enhance air quality, and reduce energy consumption. Suitable for all types of AC units.",
       image: "/ac-6.webp",
     },
     {
