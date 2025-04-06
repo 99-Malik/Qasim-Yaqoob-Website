@@ -65,7 +65,7 @@ const OurServices = () => {
       desc: "Expert AC repair services for all major brands. We fix cooling issues, compressor problems, and thermostat malfunctions.",
       image: "/services/ac-repair.webp",
       href: "/ac-repair",
-      companies: ["bosch", "siemens", "samsung", "lg"],
+      companies: [ "samsung", "lg"],
     },
   ];
 

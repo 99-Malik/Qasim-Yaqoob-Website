@@ -51,14 +51,10 @@ const DeliveringSection = () => {
             Trusted Appliance Repair Experts
           </h2>
           <h1 className="text-2xl font-medium md:text-5xl md:leading-[3.8rem]">
-            Professional Repairs for Premium Brands
+            Specialized Appliance Repair Solutions
           </h1>
           <h2 className="mb-3 text-custom-black/70 md:text-xl">
-            We are your authorized repair specialists for Bosch, Siemens,
-            Samsung, and LG appliances. Our certified technicians provide
-            reliable, efficient repairs for all your home appliances, ensuring
-            minimal disruption to your daily life with quick turnaround times
-            and quality service.
+            We are your trusted repair specialists for all major home appliances. Our certified technicians deliver reliable and efficient repair services, ensuring minimal disruption to your daily routine with quick turnaround times and a commitment to quality workmanship.
           </h2>
           <Link href="/contact">
             <PrimaryButton title="Schedule Service" className="w-fit" />

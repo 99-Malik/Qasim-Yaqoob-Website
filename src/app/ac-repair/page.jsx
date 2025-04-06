@@ -16,7 +16,7 @@ const AcRepairPage = () => {
       <AboutMain title={serviceName} desc={serviceDesc} />
       <div className="grid w-full max-w-7xl items-center gap-5 self-center px-5 py-20 md:grid-cols-2">
         <Image
-          src="/static/ac2.jpg"
+          src="/ac-3.jpeg"
           className="w-full min-w-[300px] rounded-lg shadow"
           width={600}
           height={500}
@@ -27,7 +27,7 @@ const AcRepairPage = () => {
             Trusted AC Repair Experts
           </h2>
           <h1 className="text-2xl font-medium md:text-5xl md:leading-[3.8rem]">
-            AC Repair Services in Your Area
+            AC Repair Services in UAE
           </h1>
           <h2 className="mb-3 text-custom-black/70 md:text-xl">
             We are your authorized repair specialists for AC appliances. Our
@@ -44,17 +44,13 @@ const AcRepairPage = () => {
         <div className="grid w-full max-w-7xl gap-10 px-6 py-20 md:grid-cols-[5.2fr_4.8fr]">
           <div className="flex flex-col gap-5">
             <h2 className="font-medium text-secondary/70 md:text-xl">
-              Trusted Appliance Repair Experts
+              Trusted AC Repair Experts
             </h2>
             <h1 className="text-2xl font-medium md:text-5xl md:leading-[3.8rem]">
-              Professional Repairs for Premium Brands
+              Professional AC Repairs
             </h1>
             <h2 className="mb-3 text-custom-black/70 md:text-xl">
-              We are your authorized repair specialists for Bosch, Siemens,
-              Samsung, and LG appliances. Our certified technicians provide
-              reliable, efficient repairs for all your home appliances, ensuring
-              minimal disruption to your daily life with quick turnaround times
-              and quality service.
+              Professional repairs for premium AC brands, delivering end-to-end solutions for cooling inefficiencies, water leakage, unusual noises, and overall system malfunctions. Our certified technicians ensure optimal performance, extended unit lifespan, and energy-efficient operation through precise diagnostics and expert servicing.
             </h2>
             <Link href="/contact">
               <PrimaryButton title="Schedule Service" className="w-fit" />
@@ -62,28 +58,28 @@ const AcRepairPage = () => {
           </div>
           <div className="grid max-w-xl place-items-center gap-5 sm:grid-cols-2">
             <Image
-              src="/static/ac3.jpg"
+              src="/ac-1.png"
               className="w-full rounded-lg shadow"
               width={600}
               height={500}
               alt="ac"
             />
             <Image
-              src="/static/ac4.jpg"
+              src="/ac-2.jpg"
               className="w-full rounded-lg shadow"
               width={600}
               height={500}
               alt="ac"
             />
             <Image
-              src="/static/ac5.jpg"
+              src="/ac-3.png"
               className="w-full rounded-lg shadow"
               width={600}
               height={500}
               alt="ac"
             />
             <Image
-              src="/static/ac6.jpg"
+              src="/ac-4.webp"
               className="w-full rounded-lg shadow"
               width={600}
               height={500}

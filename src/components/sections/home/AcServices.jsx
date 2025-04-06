@@ -12,34 +12,34 @@ const AcServices = () => {
 
   const servicesList = [
     {
-      title: "AC Repair",
-      desc: "Expert repair services for Samsung and LG AC units, including cooling issues, compressor repairs, and thermostat replacements.",
-      image: "/static/ac5.jpg",
+      title: "Professional AC Repair",
+      desc: "Specialized repair services for air conditioning units, covering cooling inefficiencies, compressor malfunctions, and thermostat replacements — delivered by certified HVAC experts.",
+      image: "/ac-1.png",
     },
     {
-      title: "AC Service",
-      desc: "Comprehensive service for Bosch, Siemens, Samsung, and LG AC systems. We handle filter replacements, cleaning, and system checks.",
-      image: "/static/ac6.jpg",
+      title: "AC Water Leak Repair",
+      desc: "Comprehensive air conditioning service including filter replacements, deep cleaning, and full system diagnostics to ensure optimal performance and efficiency.",
+      image: "/ac-2.jpg",
     },
     {
-      title: "AC Fixing",
-      desc: "Professional fixing services for all major brands. We address noise issues, water leaks, and system malfunctions.",
-      image: "/static/ac4.jpg",
+      title: "HVAC Repair Services",
+      desc: "Expert repair solutions for all major HVAC systems, addressing unusual noises, water leakage, and overall system malfunctions.",
+      image: "/ac-3.jpeg",
     },
     {
       title: "AC Duct Cleaning",
       desc: "Thorough cleaning of AC ducts to improve air quality and system efficiency. We remove dust, allergens, and debris.",
-      image: "/static/ac3.jpg",
+      image: "/ac-3.png",
     },
     {
       title: "AC Coil Cleaning",
       desc: "Expert coil cleaning services for Bosch, Siemens, Samsung, and LG AC units. We ensure optimal cooling performance and energy efficiency.",
-      image: "/static/ac2.jpg",
+      image: "/ac-6.webp",
     },
     {
       title: "Air Duct Cleaning",
       desc: "Comprehensive air duct cleaning for all major brands. We remove dust, allergens, and debris to improve indoor air quality.",
-      image: "/static/ac1.jpg",
+      image: "/ac-4.webp",
     },
   ];
 
