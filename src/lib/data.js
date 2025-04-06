@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const phoneNumber = "+97156239007";
+const phoneNumber = "+971562397004";
 export const sendMessage = () => {
   const message = "Hello, I want your repair services";
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(

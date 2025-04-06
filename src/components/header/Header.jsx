@@ -43,7 +43,7 @@ const Header = () => {
           ) : (
             <Link href="/" className="flex items-center gap-2">
               <span className="text-2xl font-semibold text-primary">
-                Customer Service UAE
+                Customer CARE UAE
               </span>
             </Link>
           )}
