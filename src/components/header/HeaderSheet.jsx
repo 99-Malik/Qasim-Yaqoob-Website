@@ -64,12 +64,7 @@ const HeaderSheet = () => {
       image: "/services/stove-repair.avif",
       href: "/services/stove-repair",
     },
-    {
-      title: "AC Repair",
-      desc: "Expert AC repair services for all major brands. We fix cooling issues, compressor problems, and thermostat malfunctions.",
-      image: "/services/ac-repair.webp",
-      href: "/services/ac-repair",
-    },
+
   ];
   return (
     <Sheet>

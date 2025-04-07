@@ -20,7 +20,7 @@ const Header = () => {
     { name: "AC", href: "/ac-repair" },
   ];
   return (
-    <div className="absolute z-50 flex w-screen items-center justify-center px-2">
+    <div className="absolute z-50 flex w-screen items-center justify-center ">
       <div
         className={cn(
           "flex h-full w-full max-w-7xl flex-col items-center justify-center rounded-b-2xl border-b-2 bg-white shadow",
@@ -29,7 +29,7 @@ const Header = () => {
             : "border-primary/80",
         )}
       >
-        <div className="flex w-full items-center justify-between gap-5 px-8 py-5">
+        <div className="flex w-full items-center justify-between gap-5 px-4 py-5">
           {pathname.includes("/company/") ? (
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -42,7 +42,7 @@ const Header = () => {
             </Link>
           ) : (
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl font-semibold text-primary">
+              <span className="text-xl font-semibold text-primary">
                 Customer CARE UAE
               </span>
             </Link>

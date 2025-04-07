@@ -11,8 +11,8 @@ const ServiceCompanyPage = ({ params }) => {
   const unslugify = (str) => {
     return str.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
   };
-  const serviceName = unslugify(service);
-  const serviceDesc = `We are your authorized repair specialists for ${serviceName} appliances. Our certified technicians provide reliable, efficient repairs for all your home appliances, ensuring minimal disruption to your daily life with quick turnaround times and quality service.`;
+  const serviceName = "Best " + unslugify(service) + " Across UAE";
+  const serviceDesc = `We are your authorized repair specialists for ${serviceName}. Our certified technicians provide reliable, efficient repairs for all your home appliances, ensuring minimal disruption to your daily life with quick turnaround times and quality service.`;
   return (
     <div className="flex w-full flex-col">
       <AboutMain title={serviceName} desc={serviceDesc} />
@@ -48,7 +48,7 @@ const ServiceCompanyPage = ({ params }) => {
             <div className="grid w-full max-w-7xl gap-10 px-6 py-20 md:grid-cols-[5.2fr_4.8fr]">
               <div className="flex flex-col gap-5">
                 <h2 className="font-medium text-secondary/70 md:text-xl">
-                  Trusted Appliance Repair Experts
+                  Trusted  Appliance Repair Experts
                 </h2>
                 <h1 className="text-2xl font-medium md:text-5xl md:leading-[3.8rem]">
                   Professional Repairs for Premium Brands

@@ -11,22 +11,13 @@ const Footer = () => {
       href: "/about",
       title: "About",
     },
-    {
-      href: "/portfolio",
-      title: "Portfolio",
-    },
+ 
     {
       href: "/services",
       title: "Services",
     },
-    {
-      href: "/our-process",
-      title: "Our Process",
-    },
-    {
-      href: "/contact-us",
-      title: "Contact Us",
-    },
+ 
+  
   ];
   const socialLinks = [
     {
