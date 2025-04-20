@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import Footer from "@/components/footer/Footer";
 import FixedCallButtons from "@/components/buttons/FixedCallButtons";
 import { usePathname } from "next/navigation";
-
+import Script from "next/script";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -36,6 +36,19 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16918976305" />
+
+        {/* Include gtag.js initialization script */}
+        <Script dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config','AW-16918976305');
+        ` }} />
+
+
+      </head>
       <body
         className={cn(
           poppins.variable,
