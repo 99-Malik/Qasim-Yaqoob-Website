@@ -17,7 +17,7 @@ const Header = () => {
     { name: "Siemens", href: "/company/siemens" },
     { name: "Samsung", href: "/company/samsung" },
     { name: "LG", href: "/company/lg" },
-    { name: "AC", href: "/ac-repair" },
+    { name: "AC Repair", href: "/ac-repair" },
   ];
   return (
     <div className="absolute z-50 flex w-screen items-center justify-center ">
