@@ -76,7 +76,7 @@ const HeaderSheet = () => {
           <SheetTitle className="flex items-center justify-between py-6">
             <SheetClose asChild>
               <Link href="/">
-                <span className="text-2xl font-bold">Customer CARE UAE</span>
+                <span className="text-2xl font-bold">Repair Experts AE</span>
               </Link>
             </SheetClose>
             <SheetClose asChild>

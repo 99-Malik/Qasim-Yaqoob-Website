@@ -41,7 +41,7 @@ const ContactUsSection = () => {
               </div>
               <div className="flex w-full items-center gap-3">
                 <div className="min-w-10">{messageIcon}</div>
-                <span className="md:text-xl text-[#222222]">info@Customer CARE UAE.net</span>
+                <span className="md:text-xl text-[#222222]">info@Repair Experts AE.net</span>
               </div>
             </div>
           </div>
