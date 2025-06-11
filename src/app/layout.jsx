@@ -32,7 +32,7 @@ const inter = Inter({
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
-  const isAcRepairPage = pathname === "/ac-repair";
+  const isAcRepairPage = pathname === "/";
 
   return (
     <html lang="en">

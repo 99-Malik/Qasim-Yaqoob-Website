@@ -62,9 +62,9 @@ const Header = () => {
             ))}
           </div>
           <GetInTouchButton className="hidden md:flex" onClick={sendMessage} />
-          <div className="md:hidden">
+          {/* <div className="md:hidden">
             <HeaderSheet />
-          </div>
+          </div> */}
         </div>
      
       </div>
