@@ -49,7 +49,6 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: Phone, text: "+971 56 239 7004", href: "tel:+971562397004" },
-    { icon: Mail, text: "info@quickfixpro.ae", href: "mailto:info@quickfixpro.ae" },
     { icon: MapPin, text: "Dubai, UAE", href: "#" },
     { icon: Clock, text: "24/7 Emergency Service", href: "#" },
   ];

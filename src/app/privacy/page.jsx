@@ -149,9 +149,8 @@ export default function PrivacyPage() {
               please contact us:
             </p>
             <div className="space-y-2 text-gray-700">
-              <p><strong>Email:</strong> privacy@quickfixpro.ae</p>
-              <p><strong>Phone:</strong> +971 50 123 4567</p>
               <p><strong>Address:</strong> Dubai, UAE</p>
+              <p><strong>Phone:</strong> +971 56 239 7004</p>
             </div>
           </motion.div>
 

@@ -149,9 +149,8 @@ const CTASection = ({ brand = "default" }) => {
 
               {/* Contact Info */}
               {[
-                { icon: <Phone className="w-6 h-6" />, label: "Call Us", value: "+971 50 123 4567" },
-                { icon: <MessageCircle className="w-6 h-6" />, label: "Message Us", value: "info@quickfixpro.ae" },
-                { icon: <Clock className="w-6 h-6" />, label: "Service Hours", value: "24/7 Emergency Service" },
+                { icon: <Phone className="w-6 h-6" />, label: "Call Now", value: "+971 56 239 7004" },
+                { icon: <Clock className="w-6 h-6" />, label: "24/7 Service", value: "Emergency Repairs" },
               ].map((item, idx) => (
                 <div key={idx} className={`flex items-center gap-4 p-4 bg-gradient-to-r ${styles.gradientLightFrom} ${styles.gradientLightTo} rounded-xl mb-4`}>
                   <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${styles.gradientFrom} ${styles.gradientTo} text-white flex items-center justify-center`}>

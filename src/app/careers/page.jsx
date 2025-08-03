@@ -265,7 +265,7 @@ export default function CareersPage() {
               {
                 step: "1",
                 title: "Submit Application",
-                description: "Send your resume and cover letter to careers@quickfixpro.ae"
+                description: "Send your resume and cover letter to us"
               },
               {
                 step: "2",
@@ -320,7 +320,7 @@ export default function CareersPage() {
             viewport={{ once: true }}
             className="text-xl text-blue-100 mb-8"
           >
-            Send your resume to careers@quickfixpro.ae or call us for more information
+            Send your resume or call us for more information
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -41,16 +41,9 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+971 50 123 4567",
+      value: "+971 56 239 7004",
       href: "tel:+971562397004",
       description: "24/7 Emergency Service"
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      value: "info@quickfixpro.ae",
-      href: "mailto:info@quickfixpro.ae",
-      description: "Get a quick response"
     },
     {
       icon: MapPin,
