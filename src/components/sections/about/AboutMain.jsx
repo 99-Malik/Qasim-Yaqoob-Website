@@ -14,16 +14,17 @@ const AboutMain = ({
   const pathname = usePathname();
   const company = pathname.split("/")[2];
 
-  const primaryTextColor =
-    company === "bosch"
-      ? "text-boschPrimary"
-      : company === "siemens"
-        ? "text-siemensPrimary"
-        : company === "samsung"
-          ? "text-samsungPrimary"
-          : company === "lg"
-            ? "text-lgPrimary"
-            : "text-primary";
+  let primaryTextColor = "text-primary";
+
+  if (company === "lg") {
+    primaryTextColor = "text-[#A50034]";
+  } else if (company === "samsung") {
+    primaryTextColor = "text-[#1428a0]";
+  } else if (company === "bosch") {
+    primaryTextColor = "text-[#ed1c24]";
+  } else if (company === "siemens") {
+    primaryTextColor = "text-[#009999]";
+  }
 
   return (
     <section     className={`relative flex min-h-[33rem] w-full flex-col items-center justify-center gap-3 px-5 ${

@@ -1,73 +1,84 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 import NavLink from "./NavLink";
 import HeaderSheet from "./HeaderSheet";
-import { headerLinks, sendMessage } from "@/lib/data";
 import GetInTouchButton from "./GetInTouchButton";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { headerLinks, sendMessage } from "@/lib/data";
+import ACHeader from "./ACHeader";
 
 const Header = () => {
   const pathname = usePathname();
   const company = pathname.split("/")[2];
+  const isCompanyRoute =
+    pathname.startsWith("/company/") &&
+    company &&
+    company.toLowerCase() !== "ac";
+
+  const isHomeRoute = pathname === "/";
+
   const companies = [
     { name: "Bosch", href: "/company/bosch" },
     { name: "Siemens", href: "/company/siemens" },
     { name: "Samsung", href: "/company/samsung" },
     { name: "LG", href: "/company/lg" },
-    { name: "AC", href: "/ac-repair" },
   ];
+
   return (
-    <div className="absolute z-50 flex w-screen items-center justify-center ">
+    <div className="absolute z-50 flex w-screen items-center justify-center">
       <div
         className={cn(
-          "flex h-full w-full max-w-7xl flex-col items-center justify-center rounded-b-2xl border-b-2 bg-white shadow",
-          pathname.includes("/company/")
-            ? `border-${company}Primary/80`
-            : "border-primary/80",
+          "flex h-full w-full max-w-7xl flex-col items-center justify-center rounded-b-3xl border-b bg-white/90 shadow-lg backdrop-blur-md",
+          isCompanyRoute ? `border-${company}Primary/80` : "border-primary/80"
         )}
       >
-        <div className="flex w-full items-center justify-between gap-5 px-4 py-5">
-          {pathname.includes("/company/") ? (
-            <Link href="/" className="flex items-center gap-2">
+        <div className="flex w-full items-center justify-between gap-5 px-6 py-5 md:py-6 lg:px-10">
+          {/* Brand Logo or Default */}
+          {isCompanyRoute ? (
+            <Link href="/" className="flex items-center gap-2 transition-transform hover:scale-105">
               <Image
-                src={"/companies/" + company + ".svg"}
-                alt="Logo"
+                src={`/companies/${company}.svg`}
+                alt={`${company} Logo`}
                 width={150}
-                height={100}
-                className="w-[150px]"
+                height={60}
+                className="w-[130px] md:w-[150px] object-contain drop-shadow-sm"
               />
             </Link>
           ) : (
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-xl font-semibold text-primary">
-                Quick Appliances Fix
-              </span>
-            </Link>
+            <div className="flex items-center gap-2">
+              <span className="text-xl font-bold text-gray-900">Quick Fix</span>
+            </div>
           )}
-          <div className="hidden items-center gap-5 md:flex lg:gap-8">
+
+          {/* Navigation */}
+          <div className="hidden items-center gap-6 md:flex lg:gap-8">
             {headerLinks.map((link, index) => (
               <NavLink
+                key={index}
                 company={company}
                 title={link.title}
                 href={
-                  pathname.includes("/company/")
-                    ? "/company/" + company + link.href
+                  isCompanyRoute
+                    ? `/company/${company}${link.href}`
                     : link.href
                 }
-                key={index}
               />
             ))}
           </div>
+
+          {/* CTA and Mobile Menu */}
           <GetInTouchButton className="hidden md:flex" onClick={sendMessage} />
           <div className="md:hidden">
             <HeaderSheet />
           </div>
         </div>
-        {!company && (
-          <div className="flex w-full items-center justify-center gap-5 border-t border-black/10 px-5 py-4 md:justify-start">
+
+        {/* Company Selector on Home */}
+        {isHomeRoute && (
+          <div className="flex w-full items-center justify-center gap-4 border-t border-black/10 px-5 py-4 md:justify-start">
             {companies.map((company, index) => (
               <NavLink key={index} title={company.name} href={company.href} />
             ))}

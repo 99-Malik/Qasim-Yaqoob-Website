@@ -13,27 +13,22 @@ const MainBanner = () => {
   const pathname = usePathname();
   const company = pathname.split("/")[2];
 
-  const primaryColor =
-    company === "bosch"
-      ? "bg-boschPrimary"
-      : company === "siemens"
-        ? "bg-siemensPrimary"
-        : company === "samsung"
-          ? "bg-samsungPrimary"
-          : company === "lg"
-            ? "bg-lgPrimary"
-            : "bg-primary";
+  let primaryGradient = "from-primary to-secondary";
+  let brandName = "Premium";
 
-  const primaryGradient =
-    company === "bosch"
-      ? "from-boschPrimary to-boschSecondary"
-      : company === "siemens"
-        ? "from-siemensPrimary to-siemensPrimary/50"
-        : company === "samsung"
-          ? "from-samsungPrimary to-samsungSecondary"
-          : company === "lg"
-            ? "from-lgPrimary to-lgSecondary"
-            : "from-primary to-secondary";
+  if (company === "lg") {
+    primaryGradient = "from-[#A50034] to-[#8a0029]";
+    brandName = "LG";
+  } else if (company === "samsung") {
+    primaryGradient = "from-[#1428a0] to-[#0f1f7a]";
+    brandName = "Samsung";
+  } else if (company === "bosch") {
+    primaryGradient = "from-[#ed1c24] to-[#c41820]";
+    brandName = "Bosch";
+  } else if (company === "siemens") {
+    primaryGradient = "from-[#009999] to-[#007777]";
+    brandName = "Siemens";
+  }
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -62,9 +57,7 @@ const MainBanner = () => {
             <div
               className={`mt-1 inline-block w-fit -rotate-2 rounded-lg bg-gradient-to-r ${primaryGradient} px-2 py-1 text-white shadow-lg md:mt-3 md:-rotate-3 md:rounded-3xl md:px-6 md:py-4`}
             >
-              {company
-                ? company.charAt(0).toUpperCase() + company.slice(1)
-                : "Premium"}
+              {brandName}
             </div>{" "}
             <span className="mt-2">Home Appliances</span>
           </div>
@@ -76,9 +69,7 @@ const MainBanner = () => {
             <div
               className={`mt-1 inline-block w-fit -rotate-3 rounded-xl bg-gradient-to-r ${primaryGradient} px-4 py-1 text-2xl text-white shadow-lg`}
             >
-              {company
-                ? company.charAt(0).toUpperCase() + company.slice(1)
-                : "Premium"}
+              {brandName}
             </div>{"  "}
             <span className="mt-1">Appliances</span>
           </div>

@@ -9,32 +9,27 @@ const PrimaryButton = ({ title, className = "", ...props }) => {
   const pathname = usePathname();
   const company = pathname.split("/")[2];
 
-  const primaryBgColor =
-    company === "bosch"
-      ? "bg-boschPrimary hover:bg-boschSecondary"
-      : company === "siemens"
-        ? "bg-siemensPrimary hover:bg-siemensSecondary"
-        : company === "samsung"
-          ? "bg-samsungPrimary hover:bg-samsungSecondary"
-          : company === "lg"
-            ? "bg-lgPrimary hover:bg-lgSecondary"
-            : "bg-primary hover:bg-primary-dark";
+  let primaryBgColor = "bg-primary hover:bg-primary-dark";
+  let textColor = "text-black";
+  let strokeColor = "stroke-black";
 
-  const textColor =
-    company === "bosch" ||
-    company === "siemens" ||
-    company === "samsung" ||
-    company === "lg"
-      ? "text-white"
-      : "text-black";
-
-  const strokeColor =
-    company === "bosch" ||
-    company === "siemens" ||
-    company === "samsung" ||
-    company === "lg"
-      ? "stroke-white"
-      : "stroke-black";
+  if (company === "lg") {
+    primaryBgColor = "bg-[#A50034] hover:bg-[#8a0029]";
+    textColor = "text-white";
+    strokeColor = "stroke-white";
+  } else if (company === "samsung") {
+    primaryBgColor = "bg-[#1428a0] hover:bg-[#0f1f7a]";
+    textColor = "text-white";
+    strokeColor = "stroke-white";
+  } else if (company === "bosch") {
+    primaryBgColor = "bg-[#ed1c24] hover:bg-[#c41820]";
+    textColor = "text-white";
+    strokeColor = "stroke-white";
+  } else if (company === "siemens") {
+    primaryBgColor = "bg-[#009999] hover:bg-[#007777]";
+    textColor = "text-white";
+    strokeColor = "stroke-white";
+  }
 
   return (
     <motion.button

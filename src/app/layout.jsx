@@ -1,14 +1,15 @@
-'use client'
+'use client';
 
 import { Inter, Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
-import AcHeader from "@/components/header/ACHeader"; // assuming this is your AC header
+import AcHeader from "@/components/header/ACHeader";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/footer/Footer";
 import FixedCallButtons from "@/components/buttons/FixedCallButtons";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -27,26 +28,27 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-
-
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
   const isAcRepairPage = pathname === "/";
+  const hideFooter = pathname.startsWith("/company/");
 
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#10b981" />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17299909485" />
-
-        {/* Include gtag.js initialization script */}
         <Script dangerouslySetInnerHTML={{
           __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config','AW-17299909485');
-        ` }} />
+        `}} />
       </head>
       <body
         className={cn(
@@ -58,8 +60,15 @@ export default function RootLayout({ children }) {
       >
         <FixedCallButtons />
         {isAcRepairPage ? <AcHeader /> : <Header />}
-        {children}
-        <Footer />
+        <main
+          className={cn({
+            "pt-20": pathname === "/",
+            "pt-8": pathname.startsWith("/company/"),
+          })}
+        >
+          {children}
+        </main>
+        {!hideFooter && <Footer />}
       </body>
     </html>
   );

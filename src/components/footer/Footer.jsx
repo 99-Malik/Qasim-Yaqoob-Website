@@ -1,145 +1,274 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { 
+  Phone, 
+  Mail, 
+  MapPin, 
+  Clock, 
+  Wrench, 
+  Shield, 
+  Star,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  MessageCircle
+} from "lucide-react";
 
 const Footer = () => {
-  const footerLinks = [
-    {
-      href: "/",
-      title: "Home",
-    },
-    {
-      href: "/about",
-      title: "About",
-    },
- 
-    {
-      href: "/services",
-      title: "Services",
-    },
- 
-  
+  const currentYear = new Date().getFullYear();
+
+  const services = [
+    { name: "TV & Electronics Repair", href: "/tv-repair" },
+    { name: "Washing Machine Repair", href: "/washing-machine-repair" },
+    { name: "Refrigerator Repair", href: "/refrigerator-repair" },
+    { name: "Dishwasher Repair", href: "/dishwasher-repair" },
+    { name: "Oven & Stove Repair", href: "/oven-repair" },
+    { name: "AC & HVAC Repair", href: "/ac-repair" },
+    { name: "Dryer Repair", href: "/dryer-repair" },
+    { name: "Microwave Repair", href: "/microwave-repair" },
   ];
+
+  const companyLinks = [
+    { name: "About Us", href: "/about" },
+    { name: "Our Services", href: "/services" },
+    { name: "Contact", href: "/contact" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Careers", href: "/careers" },
+  ];
+
   const socialLinks = [
-    {
-      icon: (
-        <svg
-          width="21"
-          height="18"
-          viewBox="0 0 21 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M6.7918 17.2081C14.3371 17.2081 18.4652 10.9554 18.4652 5.53468C18.4652 5.3589 18.4613 5.17921 18.4535 5.00343C19.2566 4.42268 19.9496 3.70334 20.5 2.87921C19.7521 3.21196 18.958 3.42928 18.1449 3.52374C19.0011 3.01055 19.6421 2.20436 19.9492 1.2546C19.1438 1.73193 18.263 2.06864 17.3445 2.25031C16.7257 1.59276 15.9075 1.15739 15.0164 1.01151C14.1253 0.865618 13.211 1.01734 12.4148 1.44321C11.6186 1.86908 10.9848 2.54538 10.6115 3.36756C10.2382 4.18973 10.1462 5.11198 10.3496 5.99171C8.71874 5.90987 7.12328 5.48622 5.66665 4.74821C4.21002 4.01021 2.92474 2.97433 1.89414 1.70773C1.37033 2.61083 1.21005 3.6795 1.44586 4.69654C1.68167 5.71358 2.29589 6.60267 3.16367 7.18312C2.51219 7.16243 1.87498 6.98703 1.30469 6.6714V6.72218C1.3041 7.66992 1.63175 8.58862 2.23192 9.3221C2.8321 10.0556 3.66777 10.5586 4.59687 10.7456C3.99338 10.9107 3.35999 10.9348 2.7457 10.8159C3.00788 11.631 3.51798 12.3439 4.20481 12.8551C4.89164 13.3663 5.72093 13.6503 6.57695 13.6675C5.12369 14.8091 3.32848 15.4282 1.48047 15.4253C1.15274 15.4248 0.825333 15.4047 0.5 15.3651C2.37738 16.5696 4.56128 17.2093 6.7918 17.2081Z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
-      href: "#",
-      name: "twitter",
-    },
-    {
-      icon: (
-        <svg
-          width="21"
-          height="21"
-          viewBox="0 0 21 21"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M19.0195 0.0830078H1.97656C1.16016 0.0830078 0.5 0.727539 0.5 1.52441V18.6377C0.5 19.4346 1.16016 20.083 1.97656 20.083H19.0195C19.8359 20.083 20.5 19.4346 20.5 18.6416V1.52441C20.5 0.727539 19.8359 0.0830078 19.0195 0.0830078ZM6.43359 17.126H3.46484V7.5791H6.43359V17.126ZM4.94922 6.27832C3.99609 6.27832 3.22656 5.50879 3.22656 4.55957C3.22656 3.61035 3.99609 2.84082 4.94922 2.84082C5.89844 2.84082 6.66797 3.61035 6.66797 4.55957C6.66797 5.50488 5.89844 6.27832 4.94922 6.27832ZM17.543 17.126H14.5781V12.4854C14.5781 11.3799 14.5586 9.9541 13.0352 9.9541C11.4922 9.9541 11.2578 11.1611 11.2578 12.4072V17.126H8.29688V7.5791H11.1406V8.88379H11.1797C11.5742 8.13379 12.543 7.34082 13.9844 7.34082C16.9883 7.34082 17.543 9.31738 17.543 11.8877V17.126Z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
-      href: "#",
-      name: "linkedIn",
-    },
-    {
-      icon: (
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 22 22"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M11.9875 0.666504C13.1593 0.669629 13.7541 0.675879 14.2676 0.690462L14.4697 0.697753C14.703 0.706086 14.9332 0.716503 15.2113 0.729002C16.3196 0.781085 17.0758 0.956081 17.7393 1.21337C18.4268 1.47794 19.0059 1.83627 19.585 2.41438C20.1147 2.93509 20.5245 3.56497 20.786 4.26017C21.0433 4.9237 21.2183 5.67993 21.2704 6.78928C21.2829 7.06635 21.2933 7.29656 21.3016 7.53093L21.3079 7.73301C21.3235 8.24549 21.3297 8.84027 21.3318 10.0121L21.3329 10.7892V12.1537C21.3354 12.9135 21.3274 13.6733 21.3089 14.4328L21.3027 14.6349C21.2943 14.8693 21.2839 15.0995 21.2714 15.3766C21.2193 16.4859 21.0423 17.2411 20.786 17.9057C20.5253 18.6013 20.1153 19.2313 19.585 19.7515C19.0642 20.281 18.4344 20.6908 17.7393 20.9525C17.0758 21.2098 16.3196 21.3848 15.2113 21.4369C14.9641 21.4485 14.7169 21.4589 14.4697 21.4681L14.2676 21.4743C13.7541 21.4889 13.1593 21.4962 11.9875 21.4983L11.2105 21.4993H9.847C9.08689 21.502 8.32679 21.494 7.56691 21.4754L7.36483 21.4691C7.11756 21.4598 6.87035 21.449 6.6232 21.4369C5.51493 21.3848 4.75872 21.2098 4.09417 20.9525C3.39907 20.6914 2.76946 20.2815 2.24947 19.7515C1.71934 19.2309 1.30913 18.601 1.04745 17.9057C0.79017 17.2422 0.615178 16.4859 0.563098 15.3766C0.551493 15.1294 0.541077 14.8822 0.531849 14.6349L0.526641 14.4328C0.507447 13.6733 0.498766 12.9135 0.500601 12.1537V10.0121C0.497694 9.25235 0.505333 8.49257 0.523517 7.73301L0.530808 7.53093C0.539141 7.29656 0.549557 7.06635 0.562056 6.78928C0.614137 5.67993 0.789128 4.92474 1.04641 4.26017C1.30797 3.56425 1.719 2.93418 2.25051 2.41438C2.77037 1.88468 3.39956 1.4748 4.09417 1.21337C4.75872 0.956081 5.51389 0.781085 6.6232 0.729002C6.90027 0.716503 7.13151 0.706086 7.36483 0.697753L7.56691 0.691503C8.32644 0.672996 9.0862 0.665009 9.84595 0.667545L11.9875 0.666504ZM10.9167 5.87472C9.53547 5.87472 8.21078 6.42344 7.23407 7.40017C6.25737 8.37689 5.70867 9.70162 5.70867 11.0829C5.70867 12.4642 6.25737 13.789 7.23407 14.7657C8.21078 15.7424 9.53547 16.2911 10.9167 16.2911C12.298 16.2911 13.6227 15.7424 14.5994 14.7657C15.5761 13.789 16.1248 12.4642 16.1248 11.0829C16.1248 9.70162 15.5761 8.37689 14.5994 7.40017C13.6227 6.42344 12.298 5.87472 10.9167 5.87472ZM10.9167 7.958C11.3271 7.95793 11.7334 8.03869 12.1126 8.19567C12.4917 8.35265 12.8363 8.58277 13.1265 8.8729C13.4167 9.16303 13.6469 9.50748 13.804 9.88659C13.9611 10.2657 14.042 10.672 14.0421 11.0824C14.0422 11.4928 13.9614 11.8991 13.8044 12.2783C13.6475 12.6575 13.4173 13.002 13.1272 13.2922C12.8371 13.5824 12.4927 13.8127 12.1136 13.9698C11.7345 14.1269 11.3281 14.2078 10.9178 14.2079C10.089 14.2079 9.2942 13.8786 8.70818 13.2926C8.12216 12.7065 7.79294 11.9117 7.79294 11.0829C7.79294 10.2541 8.12216 9.45931 8.70818 8.87327C9.2942 8.28723 10.089 7.958 10.9178 7.958M16.3862 4.31225C16.0409 4.31225 15.7098 4.44943 15.4656 4.69361C15.2214 4.9378 15.0842 5.26898 15.0842 5.61431C15.0842 5.95963 15.2214 6.29081 15.4656 6.535C15.7098 6.77918 16.0409 6.91636 16.3862 6.91636C16.7316 6.91636 17.0627 6.77918 17.3069 6.535C17.5511 6.29081 17.6883 5.95963 17.6883 5.61431C17.6883 5.26898 17.5511 4.9378 17.3069 4.69361C17.0627 4.44943 16.7316 4.31225 16.3862 4.31225Z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
-      href: "#",
-      name: "instagram",
-    },
-    {
-      icon: (
-        <svg
-          width="21"
-          height="21"
-          viewBox="0 0 21 21"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clipPath="url(#clip0_285_835)">
-            <path
-              d="M20.3333 10.083C20.3333 4.56016 15.8561 0.0830078 10.3333 0.0830078C4.8104 0.0830078 0.333252 4.56016 0.333252 10.083C0.333252 15.0742 3.99009 19.2113 8.77075 19.9615V12.9736H6.23169V10.083H8.77075V7.87988C8.77075 5.37363 10.2637 3.98926 12.5479 3.98926C13.6417 3.98926 14.7864 4.18457 14.7864 4.18457V6.64551H13.5254C12.2833 6.64551 11.8958 7.41641 11.8958 8.20801V10.083H14.6692L14.2258 12.9736H11.8958V19.9615C16.6764 19.2113 20.3333 15.0742 20.3333 10.083Z"
-              fill="currentColor"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_285_835">
-              <rect
-                width="20"
-                height="20"
-                fill="white"
-                transform="translate(0.333252 0.0830078)"
-              />
-            </clipPath>
-          </defs>
-        </svg>
-      ),
-      href: "#",
-      name: "facebook",
-    },
+    { icon: Facebook, href: "#", name: "Facebook" },
+    { icon: Twitter, href: "#", name: "Twitter" },
+    { icon: Instagram, href: "#", name: "Instagram" },
+    { icon: Linkedin, href: "#", name: "LinkedIn" },
   ];
+
+  const contactInfo = [
+    { icon: Phone, text: "+971 56 239 7004", href: "tel:+971562397004" },
+    { icon: Mail, text: "info@quickfixpro.ae", href: "mailto:info@quickfixpro.ae" },
+    { icon: MapPin, text: "Dubai, UAE", href: "#" },
+    { icon: Clock, text: "24/7 Emergency Service", href: "#" },
+  ];
+
   return (
-    <div className="flex w-full flex-col items-center justify-center border-t-4 border-=primary text-black">
-      <div className="flex w-full max-w-7xl flex-col gap-5 px-6 pb-20 pt-20">
-        <span className="text-2xl font-bold">Quick Appliances Fix</span>
-        <span className="max-w-lg py-5">
-          We provide home appliance repair services for all brands and models.
-        </span>
-        <div className="flex w-full flex-wrap items-center gap-5 border-b-[0.8px] border-secondary px-1 py-5 text-sm font-medium">
-          {footerLinks.map((link, index) => (
-            <Link href={link.href} key={index}>
-              {link.title}
-            </Link>
-          ))}
-        </div>
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="sm:text-xs text-[10px]">
-            Licensed & Regulated by [Appropriate Regulatory Authority].
-          </span>
-          <div className="flex items-center gap-5">
-            {socialLinks.map((link) => (
-              <Link
-                href={link.href}
-                key={link.name}
-                className="transition-all duration-100 ease-in hover:text-secondary"
+    <footer className="relative bg-gradient-to-br from-gray-900 via-emerald-900 to-teal-900 text-white overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-gradient-to-br from-emerald-500/20 to-teal-500/20"></div>
+        <div className="absolute top-20 right-10 h-72 w-72 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 opacity-10 blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 h-96 w-96 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 opacity-10 blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Company Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="lg:col-span-1"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-lg">
+                Q
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">Quick Fix Pro</h3>
+                <p className="text-gray-300 text-sm">Home Appliance Repair</p>
+              </div>
+            </div>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Professional appliance repair services for all major brands. Fast, reliable, and guaranteed service that gets your appliances working like new again.
+            </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3">
+              {contactInfo.map((contact, index) => (
+                <motion.a
+                  key={index}
+                  href={contact.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  <contact.icon className="w-4 h-4 text-emerald-400" />
+                  <span className="text-sm">{contact.text}</span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Services */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
+              <Wrench className="w-5 h-5 text-emerald-400" />
+              Our Services
+            </h4>
+            <div className="space-y-3">
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                >
+                  <Link
+                    href={service.href}
+                    className="text-gray-300/100 hover:text-white transition-colors duration-300 text-sm block py-1"
+                  >
+                    {service.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Company Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
+              <Shield className="w-5 h-5 text-emerald-400" />
+              Company
+            </h4>
+            <div className="space-y-3">
+              {companyLinks.map((link, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                >
+                  <Link
+                    href={link.href}
+                    className="text-gray-300/100 hover:text-white transition-colors duration-300 text-sm block py-1"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
+              <Star className="w-5 h-5 text-emerald-400" />
+              Get Started
+            </h4>
+            <div className="space-y-4">
+              <p className="text-gray-300 text-sm mb-4">
+                Ready to fix your appliances? Get a free quote today!
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 flex items-center justify-center gap-2"
               >
-                {link.icon}
-              </Link>
-            ))}
+                <MessageCircle className="w-4 h-4" />
+                Get Free Quote
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full border-2 border-white/30 text-white font-semibold py-3 px-6 rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <Phone className="w-4 h-4" />
+                Call Now
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Social Links & Bottom Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="border-t border-white/20 pt-8"
+        >
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              <span className="text-gray-300 text-sm">Follow us:</span>
+              <div className="flex gap-3">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+
+            {/* Copyright */}
+            <div className="text-center md:text-right">
+              <p className="text-gray-300 text-sm">
+                © {currentYear} Quick Fix Pro. All rights reserved.
+              </p>
+              <p className="text-gray-400 text-xs mt-1">
+                Licensed & Regulated by Dubai Municipality
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Bottom Banner */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1 }}
+        viewport={{ once: true }}
+        className="bg-black/20 backdrop-blur-sm border-t border-white/10"
+      >
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-emerald-400" />
+              <span className="text-sm text-gray-300">Certified Technicians</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4 text-teal-400" />
+              <span className="text-sm text-gray-300">24/7 Emergency Service</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-emerald-400" />
+              <span className="text-sm text-gray-300">Warranty Guaranteed</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="w-full flex items-center justify-center bg-secondary text-white text-xs py-4 px-5">
-      Copyright © 2025 Quick Appliances Fix | Powered by Quick Appliances Fix
-      </div>
-    </div>
+      </motion.div>
+    </footer>
   );
 };
 

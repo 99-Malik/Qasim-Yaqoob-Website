@@ -10,6 +10,18 @@ const OurServices = () => {
   const pathname = usePathname();
   const company = pathname.split("/")[2];
 
+  let primaryTextColor = "text-secondary";
+
+  if (company === "lg") {
+    primaryTextColor = "text-[#A50034]";
+  } else if (company === "samsung") {
+    primaryTextColor = "text-[#1428a0]";
+  } else if (company === "bosch") {
+    primaryTextColor = "text-[#ed1c24]";
+  } else if (company === "siemens") {
+    primaryTextColor = "text-[#009999]";
+  }
+
   const servicesList = [
     {
       title: "TV Repair",
@@ -83,7 +95,7 @@ const OurServices = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex w-full flex-col items-center gap-3 text-center md:gap-5"
         >
-          <span className="text-lg text-secondary md:text-2xl">
+          <span className={`text-lg ${primaryTextColor} md:text-2xl`}>
             Our Services
           </span>
           <span className="text-3xl font-medium md:text-5xl">

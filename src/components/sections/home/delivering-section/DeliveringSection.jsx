@@ -6,6 +6,7 @@ import PrimaryButton from "@/components/buttons/PrimaryButton";
 import Image from "next/image";
 import DeliveringStat from "./DeliveringStat";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Counter = ({ value }) => {
   const [count, setCount] = useState(0);
@@ -43,11 +44,26 @@ const Counter = ({ value }) => {
 };
 
 const DeliveringSection = () => {
+  const pathname = usePathname();
+  const company = pathname?.split("/")[2];
+
+  let primaryTextColor = "text-secondary";
+
+  if (company === "lg") {
+    primaryTextColor = "text-[#A50034]";
+  } else if (company === "samsung") {
+    primaryTextColor = "text-[#1428a0]";
+  } else if (company === "bosch") {
+    primaryTextColor = "text-[#ed1c24]";
+  } else if (company === "siemens") {
+    primaryTextColor = "text-[#009999]";
+  }
+
   return (
     <div className="flex w-full flex-col items-center">
       <div className="grid w-full max-w-7xl gap-10 px-6 py-20 md:grid-cols-[5.2fr_4.8fr]">
         <div className="flex flex-col gap-5">
-          <h2 className="font-medium text-secondary/70 md:text-xl">
+          <h2 className={`font-medium ${primaryTextColor}/70 md:text-xl`}>
             Trusted Appliance Repair Experts
           </h2>
           <h1 className="text-2xl font-medium md:text-5xl md:leading-[3.8rem]">

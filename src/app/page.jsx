@@ -1,21 +1,19 @@
-import TestimonialsCarousel from "@/components/carousels/TestimonialsCarousel";
-import ContactUsSection from "@/components/sections/home/ContactUsSection";
-import DeliveringSection from "@/components/sections/home/delivering-section/DeliveringSection";
-import MainBanner from "@/components/sections/home/MainBanner";
-import OurClients from "@/components/sections/home/OurClients";
-import OurPortfolio from "@/components/sections/home/OurPortfolio";
-import OurServices from "@/components/sections/home/OurServices";
-import ProcessSection from "@/components/sections/home/process-section/ProcessSection";
+import HeroSection from "@/components/sections/home/HeroSection";
+import FeaturesSection from "@/components/sections/home/FeaturesSection";
+import ServicesGrid from "@/components/sections/home/ServicesGrid";
+import StatsSection from "@/components/sections/home/StatsSection";
+import TestimonialsSection from "@/components/sections/home/TestimonialsSection";
+import CTASection from "@/components/sections/home/CTASection";
 
 export default function Home() {
   return (
-    <div className="flex w-full flex-col">
-      <MainBanner />
-      <OurClients />
-      <DeliveringSection />
-      <ProcessSection />
-      <OurServices />
-      <TestimonialsCarousel />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50">
+      <HeroSection />
+      <FeaturesSection />
+      <ServicesGrid />
+      <StatsSection />
+      <TestimonialsSection />
+      <CTASection />
     </div>
   );
 }

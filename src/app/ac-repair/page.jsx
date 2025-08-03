@@ -1,98 +1,238 @@
-import PrimaryButton from "@/components/buttons/PrimaryButton";
-import AboutMain from "@/components/sections/about/AboutMain";
-import TransformingSection from "@/components/sections/about/TransformingSection";
-import AcServices from "@/components/sections/home/AcServices";
-import DeliveringSection from "@/components/sections/home/delivering-section/DeliveringSection";
-import ProcessSection from "@/components/sections/home/process-section/ProcessSection";
-import WhyChooseUs from "@/components/sections/WhyChooseUsSection";
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-const AcRepairPage = () => {
-  const serviceName = "Best AC & HVAC Repairs Across UAE";
-  const serviceDesc = `We are your authorized repair specialists for ${serviceName} . Our certified technicians provide reliable, efficient repairs for all your home appliances, ensuring minimal disruption to your daily life with quick turnaround times and quality service.`;
+import { motion } from "framer-motion";
+import { 
+  Snowflake, 
+  Wrench, 
+  Shield, 
+  Clock, 
+  Star,
+  Phone,
+  MessageCircle,
+  CheckCircle,
+  Thermometer
+} from "lucide-react";
+
+export default function ACRepairPage() {
+  const services = [
+    {
+      icon: Snowflake,
+      title: "Cooling Issues",
+      description: "Repair cooling problems, refrigerant leaks, and temperature control issues.",
+      features: ["Refrigerant Leaks", "Temperature Control", "Cooling Coils", "Compressor Issues"]
+    },
+    {
+      icon: Wrench,
+      title: "Compressor Repair",
+      description: "Professional repair of AC compressors, motors, and electrical components.",
+      features: ["Compressor Replacement", "Motor Repair", "Electrical Components", "Capacitor Issues"]
+    },
+    {
+      icon: Shield,
+      title: "Air Flow Problems",
+      description: "Fix air flow issues, fan problems, and ductwork repairs.",
+      features: ["Fan Motor Repair", "Ductwork Issues", "Air Filter Replacement", "Ventilation"]
+    },
+    {
+      icon: Clock,
+      title: "Thermostat Issues",
+      description: "Repair thermostat problems, control systems, and programming issues.",
+      features: ["Thermostat Replacement", "Control Systems", "Programming Issues", "Sensor Repair"]
+    }
+  ];
+
+  const brands = [
+    "Samsung", "LG", "Daikin", "Carrier", "Trane", "York", "Rheem", "Goodman", "Lennox", "Bryant"
+  ];
+
+  const benefits = [
+    {
+      icon: Clock,
+      title: "Same Day Service",
+      description: "Most AC repairs completed on the same day"
+    },
+    {
+      icon: Shield,
+      title: "Warranty Guaranteed",
+      description: "90-day warranty on all repairs and parts"
+    },
+    {
+      icon: Star,
+      title: "Expert Technicians",
+      description: "Certified professionals with brand training"
+    },
+    {
+      icon: Phone,
+      title: "24/7 Support",
+      description: "Emergency service available anytime"
+    }
+  ];
+
   return (
-    <div className="flex w-full flex-col">
-      <AboutMain title={serviceName} desc={serviceDesc} />
-      <div className="grid w-full max-w-7xl items-center gap-5 self-center px-5 py-20 md:grid-cols-2">
-        <Image
-          src="/ac-3.jpeg"
-          className="w-full min-w-[300px] rounded-lg shadow"
-          width={600}
-          height={500}
-          alt="ac"
-        />
-        <div className="flex flex-col gap-5">
-          <h2 className="font-medium text-secondary/70 md:text-xl">
-            Trusted AC Repair Experts
-          </h2>
-          <h1 className="text-2xl font-medium md:text-5xl md:leading-[3.8rem]">
-            AC Repair Services in UAE
-          </h1>
-          <h2 className="mb-3 text-custom-black/70 md:text-xl">
-            We are your authorized repair specialists for AC appliances. Our
-            certified technicians provide reliable, efficient repairs for all
-            your home appliances, ensuring minimal disruption to your daily life
-            with quick turnaround times and quality service.
-          </h2>
-          <Link href="/contact">
-            <PrimaryButton title="Schedule Service" className="w-fit" />
-          </Link>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50 mt-12">
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 bg-gradient-to-br from-gray-900 via-emerald-900 to-teal-900 text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 opacity-20 blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 opacity-20 blur-3xl"></div>
         </div>
-      </div>
-      <div className="flex w-full flex-col items-center">
-        <div className="grid w-full max-w-7xl gap-10 px-6 py-20 md:grid-cols-[5.2fr_4.8fr]">
-          <div className="flex flex-col gap-5">
-            <h2 className="font-medium text-secondary/70 md:text-xl">
-              Trusted AC Repair Experts
+        
+        <div className="relative z-10 max-w-7xl mx-auto text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-6xl font-bold mb-6"
+          >
+            AC & HVAC
+            <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+              Repair
+            </span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto"
+          >
+            Professional AC and HVAC repairs for all major brands and models
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Our AC & HVAC Repair Services
             </h2>
-            <h1 className="text-2xl font-medium md:text-5xl md:leading-[3.8rem]">
-              Professional AC Repairs
-            </h1>
-            <h2 className="mb-3 text-custom-black/70 md:text-xl">
-              Professional repairs for premium AC brands, delivering end-to-end solutions for cooling inefficiencies, water leakage, unusual noises, and overall system malfunctions. Our certified technicians ensure optimal performance, extended unit lifespan, and energy-efficient operation through precise diagnostics and expert servicing.
-            </h2>
-            <Link href="/contact">
-              <PrimaryButton title="Schedule Service" className="w-fit" />
-            </Link>
-          </div>
-          <div className="grid max-w-xl place-items-center gap-5 sm:grid-cols-2">
-            <Image
-              src="/ac-1.png"
-              className="w-full rounded-lg shadow"
-              width={600}
-              height={500}
-              alt="ac"
-            />
-            <Image
-              src="/ac-2.jpg"
-              className="w-full rounded-lg shadow"
-              width={600}
-              height={500}
-              alt="ac"
-            />
-            <Image
-              src="/ac-3.png"
-              className="w-full rounded-lg shadow"
-              width={600}
-              height={500}
-              alt="ac"
-            />
-            <Image
-              src="/ac-4.webp"
-              className="w-full rounded-lg shadow"
-              width={600}
-              height={500}
-              alt="ac"
-            />
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Professional repairs for all types of air conditioning and HVAC systems
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="inline-flex p-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white mb-4">
+                  <service.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  {service.description}
+                </p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-700">
+                      <CheckCircle className="w-4 h-4 text-emerald-500" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
-      <WhyChooseUs />
-      <AcServices />
-      <ProcessSection />
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Why Choose Our AC & HVAC Repair?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Professional service with guaranteed results
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="inline-flex p-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white mb-4">
+                  <benefit.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600">
+                  {benefit.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-emerald-600 to-teal-700 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold mb-6"
+          >
+            Need AC & HVAC Repair?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl text-emerald-100 mb-8"
+          >
+            Get professional AC and HVAC repair services for any brand or model
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <button className="px-8 py-3 bg-white text-emerald-600 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2">
+              <Phone className="w-4 h-4" />
+              Call Now
+            </button>
+            <button className="px-8 py-3 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 transition-colors duration-300 flex items-center justify-center gap-2">
+              <MessageCircle className="w-4 h-4" />
+              Get Quote
+            </button>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
-};
-
-export default AcRepairPage;
+}

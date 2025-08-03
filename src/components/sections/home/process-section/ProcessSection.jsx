@@ -11,27 +11,22 @@ const ProcessSection = () => {
   const pathname = usePathname();
   const company = pathname.split("/")[2];
 
-  const primaryBgColor =
-    company === "bosch"
-      ? "bg-boschPrimary"
-      : company === "siemens"
-      ? "bg-siemensPrimary"
-      : company === "samsung"
-      ? "bg-samsungPrimary"
-      : company === "lg"
-      ? "bg-lgPrimary"
-      : "bg-primary";
+  let primaryBgColor = "bg-primary";
+  let primaryTextColor = "text-primary";
 
-  const primaryTextColor =
-    company === "bosch"
-      ? "text-boschPrimary"
-      : company === "siemens"
-      ? "text-siemensPrimary"
-      : company === "samsung"
-      ? "text-samsungPrimary"
-      : company === "lg"
-      ? "text-lgPrimary"
-      : "text-primary";
+  if (company === "lg") {
+    primaryBgColor = "bg-[#A50034]";
+    primaryTextColor = "text-[#A50034]";
+  } else if (company === "samsung") {
+    primaryBgColor = "bg-[#1428a0]";
+    primaryTextColor = "text-[#1428a0]";
+  } else if (company === "bosch") {
+    primaryBgColor = "bg-[#ed1c24]";
+    primaryTextColor = "text-[#ed1c24]";
+  } else if (company === "siemens") {
+    primaryBgColor = "bg-[#009999]";
+    primaryTextColor = "text-[#009999]";
+  }
 
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({

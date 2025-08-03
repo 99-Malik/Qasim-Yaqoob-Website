@@ -4,111 +4,187 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import Image from "next/image";
+import { Menu, X, Clock, Shield, Star, Sparkles } from "lucide-react";
 import { headerLinks, sendMessage } from "@/lib/data";
-import NavLink from "./NavLink";
-import GetInTouchButton from "./GetInTouchButton";
 import NavSheetLink from "./NavSheetLink";
+import GetInTouchButton from "./GetInTouchButton";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 const HeaderSheet = () => {
   const pathname = usePathname();
   const company = pathname.split("/")[2];
-  const servicesList = [
-    {
-      title: "TV Repair",
-      desc: "Expert repair services for Samsung and LG TVs, including screen repairs, power issues, smart TV troubleshooting, and circuit board repairs.",
-      image: "/services/tv-repair.jpg",
-      href: "/services/tv-repair",
-    },
-    {
-      title: "Washing Machine Repair",
-      desc: "Repair solutions for Bosch, Siemens, Samsung, and LG washing machines. From drum problems to electronic faults, we fix it all.",
-      image: "/services/washing-machine-repair.webp",
-      href: "/services/washing-machine-repair",
-    },
-    {
-      title: "Dryer Repair",
-      desc: "Professional dryer repair services for all major brands. We handle heating issues, motor repairs, belt replacements, and sensor problems.",
-      image: "/services/dryer-repair.jpg",
-      href: "/services/dryer-repair",
-    },
-    {
-      title: "Dishwasher Repair",
-      desc: "Specialized repairs for Bosch, Siemens, Samsung, and LG dishwashers. We fix water leaks, drainage issues, and cleaning system problems.",
-      image: "/services/dishwasher-repair.jpg",
-      href: "/services/dishwasher-repair",
-    },
-    {
-      title: "Oven Repair",
-      desc: "Complete oven repair services including temperature control, heating element replacement, door repairs, and electronic control fixes.",
-      image: "/services/oven-repair.jpg",
-      href: "/services/oven-repair",
-    },
-    {
-      title: "Refrigerator Repair",
-      desc: "Expert refrigerator repairs covering cooling systems, compressor issues, ice maker repairs, and temperature control problems.",
-      image: "/services/fridge-repair.png",
-      href: "/services/refrigerator-repair",
-    },
-    {
-      title: "Stove/Cooker Repair",
-      desc: "Professional repair services for electric and gas stoves. We handle burner repairs, ignition problems, and control panel issues.",
-      image: "/services/stove-repair.avif",
-      href: "/services/stove-repair",
-    },
+  const isCompanyRoute = pathname.startsWith("/company/") && company && company.toLowerCase() !== "ac";
 
+  const brandColors = {
+    lg: "text-[#a50034]",
+    samsung: "text-[#1428a0]",
+    bosch: "text-[#ec111a]",
+    siemens: "text-[#009999]",
+  };
+
+  const brandTextColor = isCompanyRoute && brandColors[company?.toLowerCase()] || "text-gray-900";
+
+  const repairServices = [
+    { name: "TV Repair", href: "/tv-repair", icon: "📺" },
+    { name: "Washing Machine", href: "/washing-machine-repair", icon: "🧺" },
+    { name: "Refrigerator", href: "/refrigerator-repair", icon: "❄️" },
+    { name: "Dishwasher", href: "/dishwasher-repair", icon: "🍽️" },
+    { name: "Oven & Stove", href: "/oven-repair", icon: "🔥" },
+    { name: "Dryer", href: "/dryer-repair", icon: "👕" },
+    { name: "Microwave", href: "/microwave-repair", icon: "📡" },
+    { name: "AC & HVAC", href: "/ac-repair", icon: "❄️" },
   ];
+
   return (
     <Sheet>
-      <SheetTrigger>
-        <Menu />
+      <SheetTrigger asChild>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+        >
+          <Menu className="w-6 h-6" />
+        </motion.button>
       </SheetTrigger>
-      <SheetContent className="min-w-screen w-full px-8">
-        <SheetHeader>
-          <SheetTitle className="flex items-center justify-between py-6">
+      <SheetContent className="w-full max-w-sm bg-white flex flex-col">
+        <SheetHeader className="border-b border-gray-200 pb-4 flex-shrink-0">
+          <SheetTitle className="flex items-center justify-between py-4">
             <SheetClose asChild>
-              <Link href="/">
-                <span className="text-2xl font-bold">Quick Appliances Fix</span>
+              <Link href="/" className="flex items-center gap-2">
+                <span className={`text-xl font-bold ${brandTextColor}`}>
+                  {isCompanyRoute ? "AUTHORIZED REPAIRS" : "Quick Fix"}
+                </span>
               </Link>
             </SheetClose>
             <SheetClose asChild>
-              <X strokeWidth={0.6} className="size-8" />
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-1 rounded-full hover:bg-gray-100"
+              >
+                <X className="w-5 h-5" />
+              </motion.button>
             </SheetClose>
           </SheetTitle>
         </SheetHeader>
-        <div className="flex h-[92%] flex-col justify-between pb-20 pt-5">
-          <div className="flex flex-col gap-4">
+
+        <div className="flex-1 overflow-y-auto py-4 px-4 space-y-6">
+          <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-3 border border-emerald-200">
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+              ))}
+            </div>
+            <span className="text-sm font-medium text-gray-700">5-Star Service</span>
+          </div>
+
+          <div className="space-y-1">
+            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Navigation</h3>
             {headerLinks.map((link, index) => (
-              <NavSheetLink title={link.title} href={link.href} key={index} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <NavSheetLink 
+                  title={link.title} 
+                  href={isCompanyRoute ? `/company/${company}${link.href}` : link.href} 
+                />
+              </motion.div>
             ))}
           </div>
-          <div className="flex flex-col gap-2 rounded-lg border border-black/10 bg-gray-100/20 px-3 py-5">
-            {servicesList.map((service, index) => (
-              <div className="flex" key={index}>
-                <SheetClose asChild>
-                  <Link
-                    href={
-                      pathname.includes("/company/")
-                        ? "/company/" + company + service.href
-                        : service.href
-                    }
-                    className="flex w-full items-center gap-4 rounded-lg hover:bg-gray-200"
-                  >
-                    {service.title}
-                  </Link>
-                </SheetClose>
+
+          <div className="space-y-1">
+            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Repair Services</h3>
+            <div className="grid grid-cols-2 gap-2">
+              {repairServices.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 + index * 0.05 }}
+                >
+                  <SheetClose asChild>
+                    <Link
+                      href={service.href}
+                      className="flex flex-col items-center gap-2 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200 group"
+                    >
+                      <span className="text-2xl group-hover:scale-110 transition-transform duration-200">
+                        {service.icon}
+                      </span>
+                      <span className="text-xs font-medium text-gray-700 text-center leading-tight">
+                        {service.name}
+                      </span>
+                    </Link>
+                  </SheetClose>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Contact</h3>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Clock className="w-4 h-4 text-blue-500" />
+                <span>24/7 Emergency Service</span>
               </div>
-            ))}
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Shield className="w-4 h-4 text-green-500" />
+                <span>Warranty Included</span>
+              </div>
+            </div>
           </div>
-          <GetInTouchButton onClick={sendMessage} />
+
+          <div className="space-y-1">
+            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Additional Services</h3>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                <span>Same Day Service</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                <span>Free Diagnosis</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                <span>Licensed Technicians</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                <span>Emergency Repairs</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Service Areas</h3>
+            <div className="grid grid-cols-2 gap-2">
+              {["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain"].map((area, index) => (
+                <div key={index} className="text-xs text-gray-600 bg-gray-50 rounded-lg p-2 text-center">
+                  {area}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex-shrink-0 border-t border-gray-200 p-4">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <GetInTouchButton onClick={sendMessage} className="w-full" />
+          </motion.div>
         </div>
       </SheetContent>
     </Sheet>

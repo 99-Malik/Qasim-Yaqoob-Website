@@ -7,16 +7,17 @@ const OurProcess = () => {
   const pathname = usePathname();
   const company = pathname.split("/")[2];
 
-  const primaryColor =
-    company === "bosch"
-      ? "text-boschPrimary"
-      : company === "siemens"
-      ? "text-siemensPrimary"
-      : company === "samsung"
-      ? "text-samsungPrimary"
-      : company === "lg"
-      ? "text-lgPrimary"
-      : "text-primary";
+  let primaryColor = "text-primary";
+
+  if (company === "lg") {
+    primaryColor = "text-[#A50034]";
+  } else if (company === "samsung") {
+    primaryColor = "text-[#1428a0]";
+  } else if (company === "bosch") {
+    primaryColor = "text-[#ed1c24]";
+  } else if (company === "siemens") {
+    primaryColor = "text-[#009999]";
+  }
 
   return (
     <div className="flex w-full flex-col items-center justify-center py-20 px-5 md:px-10">
