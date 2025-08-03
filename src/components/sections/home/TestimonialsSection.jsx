@@ -44,7 +44,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Ahmed Al Mansouri",
       role: "Homeowner",
       content:
-        "Quick Fix Pro saved me from buying a new washing machine. Their technician was professional, knowledgeable, and fixed the issue in under an hour. Highly recommended!",
+        "Appliances Experts AE saved me from buying a new washing machine. Their technician was professional, knowledgeable, and fixed the issue in under an hour. Highly recommended!",
       rating: 5,
       avatar: "A",
     },
@@ -52,7 +52,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Sarah Johnson",
       role: "Restaurant Owner",
       content:
-        "We rely on our commercial appliances daily. Quick Fix Pro has been our go-to service for years. Fast, reliable, and always professional.",
+        "We rely on our commercial appliances daily. Appliances Experts AE has been our go-to service for years. Fast, reliable, and always professional.",
       rating: 5,
       avatar: "S",
     },
@@ -60,7 +60,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Mohammed Hassan",
       role: "Property Manager",
       content:
-        "Managing multiple properties means dealing with appliance issues regularly. Quick Fix Pro's team is always available and gets the job done right the first time.",
+        "Managing multiple properties means dealing with appliance issues regularly. Appliances Experts AE's team is always available and gets the job done right the first time.",
       rating: 5,
       avatar: "M",
     },
@@ -84,7 +84,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Aisha Rahman",
       role: "Homeowner",
       content:
-        "I was worried about my oven not working before a big dinner party. Quick Fix Pro came through and fixed it same day. Amazing service!",
+        "I was worried about my oven not working before a big dinner party. Appliances Experts AE came through and fixed it same day. Amazing service!",
       rating: 5,
       avatar: "A",
     },

@@ -79,7 +79,7 @@ const Footer = () => {
                 Q
               </div>
               <div>
-                <h3 className="text-xl font-bold">Quick Fix Pro</h3>
+                <h3 className="text-xl font-bold">Appliances Experts AE</h3>
                 <p className="text-gray-300 text-sm">Home Appliance Repair</p>
               </div>
             </div>
@@ -233,7 +233,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="text-center md:text-right">
               <p className="text-gray-300 text-sm">
-                © {currentYear} Quick Fix Pro. All rights reserved.
+                © {currentYear} Appliances Experts AE. All rights reserved.
               </p>
               <p className="text-gray-400 text-xs mt-1">
                 Licensed & Regulated by Dubai Municipality

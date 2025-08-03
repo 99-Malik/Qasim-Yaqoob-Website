@@ -110,7 +110,7 @@ export default function AboutPage() {
           >
             About
             <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              Quick Fix Pro
+              Appliances Experts AE
             </span>
           </motion.h1>
           <motion.p
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 Trusted Appliance Repair Experts
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Quick Fix Pro was established with a simple mission: to provide professional, 
+                Appliances Experts AE was established with a simple mission: to provide professional, 
                 reliable appliance repair services that customers can trust. We understand that 
                 when your appliances break down, it can disrupt your daily routine and cause 
                 unnecessary stress.
