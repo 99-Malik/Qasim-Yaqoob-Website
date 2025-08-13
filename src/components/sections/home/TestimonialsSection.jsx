@@ -72,7 +72,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Ahmed Al Mansouri",
       role: "Elite Homeowner",
       content:
-        "Instant service! Emirates Service Center saved me from buying a new washing machine with their cutting-edge technology. Fixed in under an hour - absolutely incredible!",
+        "Instant service! Emirates Repair Center saved me from buying a new washing machine with their cutting-edge technology. Fixed in under an hour - absolutely incredible!",
       rating: 5,
       avatar: "A",
       gradient: "from-violet-500 to-purple-600"
@@ -81,7 +81,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Sarah Johnson",
       role: "Premium Restaurant Owner",
       content:
-        "We rely on our commercial appliances daily. Emirates Service Center has been our elite service provider for years. Instant technology, lightning-fast, and always professional.",
+        "We rely on our commercial appliances daily. Emirates Repair Center has been our elite service provider for years. Instant technology, lightning-fast, and always professional.",
       rating: 5,
       avatar: "S",
       gradient: "from-amber-500 to-orange-600"
@@ -90,7 +90,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Mohammed Hassan",
       role: "Elite Property Manager",
       content:
-        "Managing multiple properties means dealing with appliance issues regularly. Emirates Service Center's Instant team is always available and gets the job done perfectly every time.",
+        "Managing multiple properties means dealing with appliance issues regularly. Emirates Repair Center's Instant team is always available and gets the job done perfectly every time.",
       rating: 5,
       avatar: "M",
       gradient: "from-emerald-500 to-teal-600"
@@ -117,7 +117,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Aisha Rahman",
       role: "Premium Homeowner",
       content:
-        "I was worried about my oven before a big dinner party. Emirates Service Center came through with Instant same-day service and fixed it perfectly. Elite service!",
+        "I was worried about my oven before a big dinner party. Emirates Repair Center came through with Instant same-day service and fixed it perfectly. Elite service!",
       rating: 5,
       avatar: "A",
       gradient: "from-rose-500 to-pink-600"

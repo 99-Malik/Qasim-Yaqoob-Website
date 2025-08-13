@@ -93,8 +93,8 @@ export default function TermsPage() {
               Agreement to Terms
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              By using Emirates Service Center's appliance repair services, you agree to be bound by these Terms of Service. 
-              These terms govern your use of our services and form a legally binding agreement between you and Emirates Service Center.
+              By using Emirates Repair Center's appliance repair services, you agree to be bound by these Terms of Service. 
+              These terms govern your use of our services and form a legally binding agreement between you and Emirates Repair Center.
             </p>
             <p className="text-gray-600 leading-relaxed">
               We may update these terms from time to time. Continued use of our services after changes constitutes acceptance of the new terms.

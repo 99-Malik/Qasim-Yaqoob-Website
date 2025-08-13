@@ -93,12 +93,12 @@ export default function PrivacyPage() {
               Our Commitment to Privacy
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              At Emirates Service Center, we are committed to protecting your privacy and ensuring the security of your personal information. 
+              At Emirates Repair Center, we are committed to protecting your privacy and ensuring the security of your personal information. 
               This Privacy Policy explains how we collect, use, and safeguard your data when you use our appliance repair services.
             </p>
             <p className="text-gray-600 leading-relaxed">
               We believe in transparency and want you to understand how your information is handled. 
-              This policy applies to all services provided by Emirates Service Center and our website.
+              This policy applies to all services provided by Emirates Repair Center and our website.
             </p>
           </motion.div>
 

@@ -90,7 +90,7 @@ export default function ContactPage() {
           >
             Contact
             <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              Emirates Service Center
+              Emirates Repair Center
             </span>
           </motion.h1>
           <motion.p

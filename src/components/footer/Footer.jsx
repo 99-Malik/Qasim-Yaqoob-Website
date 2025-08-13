@@ -95,7 +95,7 @@ const Footer = () => {
                 {/* Glow Effect */}
               </div>
               <div>
-                <h3 className="text-2xl font-black text-white tracking-tight">Emirates Service Center</h3>
+                <h3 className="text-2xl font-black text-white tracking-tight">Emirates Repair Center</h3>
                 <div className="flex items-center gap-2 mt-1">
                   <Sparkles className="h-4 w-4 text-amber-400 animate-pulse" />
                   <span className="text-sm font-bold text-white/80 uppercase tracking-widest">Elite Solutions</span>
@@ -288,7 +288,7 @@ const Footer = () => {
               className="text-center sm:text-right"
             >
               <p className="text-sm text-white/60">
-                © {currentYear} Emirates Service Center. All rights reserved.
+                © {currentYear} Emirates Repair Center. All rights reserved.
               </p>
               <p className="text-xs text-white/40 mt-1">
                 Elite Appliance Repair Services in UAE
