@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Star, Quote, Sparkles, Heart, Award, Zap } from "lucide-react";
 
-// Revolutionary new brand color system
+// Instant new brand color system
 const getBrandClasses = (brand) => {
   switch (brand) {
     case "lg":
@@ -72,7 +72,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Ahmed Al Mansouri",
       role: "Elite Homeowner",
       content:
-        "Revolutionary service! Appliances Experts AE saved me from buying a new washing machine with their cutting-edge technology. Fixed in under an hour - absolutely incredible!",
+        "Instant service! Emirates Service Center saved me from buying a new washing machine with their cutting-edge technology. Fixed in under an hour - absolutely incredible!",
       rating: 5,
       avatar: "A",
       gradient: "from-violet-500 to-purple-600"
@@ -81,7 +81,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Sarah Johnson",
       role: "Premium Restaurant Owner",
       content:
-        "We rely on our commercial appliances daily. Appliances Experts AE has been our elite service provider for years. Revolutionary technology, lightning-fast, and always professional.",
+        "We rely on our commercial appliances daily. Emirates Service Center has been our elite service provider for years. Instant technology, lightning-fast, and always professional.",
       rating: 5,
       avatar: "S",
       gradient: "from-amber-500 to-orange-600"
@@ -90,7 +90,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Mohammed Hassan",
       role: "Elite Property Manager",
       content:
-        "Managing multiple properties means dealing with appliance issues regularly. Appliances Experts AE's revolutionary team is always available and gets the job done perfectly every time.",
+        "Managing multiple properties means dealing with appliance issues regularly. Emirates Service Center's Instant team is always available and gets the job done perfectly every time.",
       rating: 5,
       avatar: "M",
       gradient: "from-emerald-500 to-teal-600"
@@ -99,7 +99,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Fatima Al Zahra",
       role: "Premium Homeowner",
       content:
-        "Exceptional elite service! The technician used advanced diagnostic systems, diagnosed the refrigerator problem instantly, and had it working perfectly. Revolutionary technology!",
+        "Exceptional elite service! The technician used advanced diagnostic systems, diagnosed the refrigerator problem instantly, and had it working perfectly. Instant technology!",
       rating: 5,
       avatar: "F",
       gradient: "from-cyan-500 to-blue-600"
@@ -108,7 +108,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "David Chen",
       role: "Elite Business Owner",
       content:
-        "Revolutionary service from start to finish. They fixed our AC system with cutting-edge technology and the price was fair. Elite communication throughout the entire process.",
+        "Instant service from start to finish. They fixed our AC system with cutting-edge technology and the price was fair. Elite communication throughout the entire process.",
       rating: 5,
       avatar: "D",
       gradient: "from-purple-500 to-pink-600"
@@ -117,7 +117,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       name: "Aisha Rahman",
       role: "Premium Homeowner",
       content:
-        "I was worried about my oven before a big dinner party. Appliances Experts AE came through with revolutionary same-day service and fixed it perfectly. Elite service!",
+        "I was worried about my oven before a big dinner party. Emirates Service Center came through with Instant same-day service and fixed it perfectly. Elite service!",
       rating: 5,
       avatar: "A",
       gradient: "from-rose-500 to-pink-600"
@@ -126,7 +126,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
 
   return (
     <section className="relative py-24 px-4 overflow-hidden">
-      {/* Revolutionary Background */}
+      {/* Instant Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-500/20 blur-3xl float"></div>
@@ -135,7 +135,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Revolutionary Heading */}
+        {/* Instant Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -143,7 +143,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          {/* Revolutionary Badge */}
+          {/* Instant Badge */}
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl mb-8">
             <Sparkles className="w-5 h-5 text-amber-400" />
             <span className="text-sm font-semibold text-white">Elite Customer Stories</span>
@@ -156,11 +156,11 @@ const TestimonialsSection = ({ brand = "default" }) => {
             </span>
           </h2>
           <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our elite customers have to say about our revolutionary service and cutting-edge technology.
+            Don't just take our word for it. Here's what our elite customers have to say about our Instant service and cutting-edge technology.
           </p>
         </motion.div>
 
-        {/* Revolutionary Testimonials */}
+        {/* Instant Testimonials */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -198,7 +198,7 @@ const TestimonialsSection = ({ brand = "default" }) => {
           ))}
         </div>
 
-        {/* Revolutionary Stats */}
+        {/* Instant Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -208,13 +208,13 @@ const TestimonialsSection = ({ brand = "default" }) => {
         >
           <div className={`bg-gradient-to-br ${badgeBg} backdrop-blur-xl rounded-3xl p-12 border border-white/20 shadow-2xl`}>
             <h3 className="text-2xl md:text-5xl font-black text-white mb-12">
-              Revolutionary Success Metrics
+              Instant Success Metrics
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
                 { label: "Elite Customers", value: "100,000+", icon: Heart, gradient: "from-violet-500 to-purple-600" },
                 { label: "Perfect Rating", value: "5.0/5", icon: Award, gradient: "from-amber-500 to-orange-600" },
-                { label: "Revolutionary Support", value: "24/7", icon: Zap, gradient: "from-emerald-500 to-teal-600" },
+                { label: "Instant Support", value: "24/7", icon: Zap, gradient: "from-emerald-500 to-teal-600" },
               ].map((stat, index) => (
                 <motion.div 
                   key={index}

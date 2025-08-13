@@ -109,10 +109,10 @@ const HeroSection = ({ brand }) => {
           </div>
         </div>
 
-        {/* Revolutionary 3D Main Heading */}
+        {/* Instant 3D Main Heading */}
         <div className="relative mb-6 sm:mb-8">
           <h1 className="text-4xl font-black tracking-tighter text-white sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] leading-none transform-gpu hover:scale-105 transition-transform duration-700">
-            <span className="block mb-2 sm:mb-4 opacity-90 drop-shadow-2xl">Revolutionary</span>
+            <span className="block mb-2 sm:mb-4 opacity-90 drop-shadow-2xl">Instant</span>
             <span className="block mb-3 sm:mb-6 drop-shadow-2xl">Appliance</span>
             <span className="block mb-4 sm:mb-8 drop-shadow-2xl">Solutions</span>
             <span className={`block text-3xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl bg-gradient-to-r ${textGradient} bg-clip-text text-transparent font-extrabold tracking-wider drop-shadow-2xl`}>
@@ -122,7 +122,7 @@ const HeroSection = ({ brand }) => {
           
           {/* 3D Text Shadow Effect */}
           <div className="absolute inset-0 -z-10 text-4xl font-black tracking-tighter text-black/20 sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] leading-none transform translate-x-1 translate-y-1">
-            <span className="block mb-2 sm:mb-4">Revolutionary</span>
+            <span className="block mb-2 sm:mb-4">Instant</span>
             <span className="block mb-3 sm:mb-6">Appliance</span>
             <span className="block mb-4 sm:mb-8">Solutions</span>
             <span className="block text-3xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">{brandName}</span>
@@ -131,9 +131,9 @@ const HeroSection = ({ brand }) => {
 
         {/* Ultra-Modern Description */}
         <p className="mt-8 sm:mt-12 max-w-3xl sm:max-w-4xl text-lg sm:text-3xl md:mt-16 md:max-w-6xl leading-tight font-bold px-4 sm:px-0">
-          <span className="text-white font-black">Quantum</span> Repair Technology • 
+          <span className="text-white font-black">Instant</span> Repair Technology • 
           <span className="text-white font-black"> Instant</span> Expert Dispatch • 
-          <span className="text-white font-black"> Revolutionary</span> Customer Experience
+          <span className="text-white font-black"> Instant</span> Customer Experience
         </p>
 
         {/* Advanced Features Grid with 3D Effects */}

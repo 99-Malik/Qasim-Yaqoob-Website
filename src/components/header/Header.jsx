@@ -51,8 +51,7 @@ const Header = () => {
                 <Zap className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <div>
-                <div className="text-lg lg:text-xl font-bold text-gray-900">Quick Fix</div>
-                <div className="text-xs lg:text-sm text-gray-600 font-medium">Elite Solutions</div>
+                <div className="text-lg lg:text-xl font-bold text-gray-900">Emirates Service Center</div>
               </div>
             </Link>
           )}

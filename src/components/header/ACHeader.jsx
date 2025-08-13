@@ -62,7 +62,7 @@ const ACHeader = () => {
                 <Wrench className="w-6 h-6" />
               </div>
               <div>
-                <div className="font-bold text-lg sm:text-xl text-gray-900">Appliances Experts AE</div>
+                <div className="font-bold text-lg sm:text-xl text-gray-900">Emirates Service Center</div>
                 <div className="text-xs sm:text-sm text-gray-600">Home Appliance Repair</div>
               </div>
             </Link>

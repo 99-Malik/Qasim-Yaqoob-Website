@@ -18,7 +18,7 @@ import {
   TrendingUp
 } from "lucide-react";
 
-// Revolutionary new brand color system
+// Instant new brand color system
 const getBrandClasses = (brand) => {
   switch (brand) {
     case "lg":
@@ -87,7 +87,7 @@ const StatsSection = ({ brand = "default" }) => {
     {
       icon: Clock,
       number: "24/7",
-      label: "Revolutionary Support",
+      label: "Instant Support",
       gradient: "from-amber-500 to-orange-600"
     },
     {
@@ -108,7 +108,7 @@ const StatsSection = ({ brand = "default" }) => {
     {
       icon: Zap,
       title: "Lightning Fast Service",
-      description: "Revolutionary same-day repair technology",
+      description: "Instant same-day repair technology",
       gradient: "from-amber-500 to-orange-600"
     },
     {
@@ -126,14 +126,14 @@ const StatsSection = ({ brand = "default" }) => {
     {
       icon: Award,
       title: "Free Elite Quotes",
-      description: "Transparent pricing with revolutionary technology",
+      description: "Transparent pricing with Instant technology",
       gradient: "from-cyan-500 to-blue-600"
     },
   ];
 
   return (
     <section className="relative py-24 px-4 overflow-hidden">
-      {/* Revolutionary Background */}
+      {/* Instant Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-500/20 blur-3xl float"></div>
@@ -142,7 +142,7 @@ const StatsSection = ({ brand = "default" }) => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Revolutionary Stats */}
+        {/* Instant Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, i) => (
             <motion.div
@@ -164,7 +164,7 @@ const StatsSection = ({ brand = "default" }) => {
           ))}
         </div>
 
-        {/* Revolutionary Features Header */}
+        {/* Instant Features Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -172,7 +172,7 @@ const StatsSection = ({ brand = "default" }) => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          {/* Revolutionary Badge */}
+          {/* Instant Badge */}
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl mb-8">
             <Sparkles className="w-5 h-5 text-amber-400" />
             <span className="text-sm font-semibold text-white">Elite Service Network</span>
@@ -181,15 +181,15 @@ const StatsSection = ({ brand = "default" }) => {
           <h2 className="text-3xl md:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-tight">
             Why Choose{" "}
             <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 bg-clip-text text-transparent">
-              Revolutionary Repair?
+              Instant Repair?
             </span>
           </h2>
           <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Experience the future of appliance repair with our revolutionary technology and elite service network
+            Experience the future of appliance repair with our Instant technology and elite service network
           </p>
         </motion.div>
 
-        {/* Revolutionary Features Grid */}
+        {/* Instant Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {features.map((feature, i) => (
             <motion.div
@@ -215,7 +215,7 @@ const StatsSection = ({ brand = "default" }) => {
           ))}
         </div>
 
-        {/* Revolutionary CTA */}
+        {/* Instant CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -225,11 +225,11 @@ const StatsSection = ({ brand = "default" }) => {
         >
           <div className={`bg-gradient-to-br ${badgeBg} backdrop-blur-xl rounded-3xl p-12 border border-white/20 shadow-2xl`}>
             <h3 className="text-2xl md:text-5xl font-black text-white mb-6">
-              Ready for Revolutionary Service?
+              Ready for Instant Service?
             </h3>
             <p className="text-slate-300 mb-10 max-w-3xl mx-auto text-xl leading-relaxed">
               Experience the future of appliance repair with our elite technology and expert technicians. 
-              Same-day revolutionary service available for most repairs.
+              Same-day Instant service available for most repairs.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button className="px-6 py-4 bg-white text-slate-900 rounded-2xl font-bold hover:bg-slate-100 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl group">

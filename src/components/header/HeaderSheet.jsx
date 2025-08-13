@@ -58,7 +58,7 @@ const HeaderSheet = () => {
             <SheetClose asChild>
               <Link href="/" className="flex items-center gap-2">
                 <span className={`text-xl font-bold ${brandTextColor}`}>
-                  {isCompanyRoute ? "AUTHORIZED REPAIRS" : "Quick Fix"}
+                  {isCompanyRoute ? "AUTHORIZED REPAIRS" : "Emirates Service Center"}
                 </span>
               </Link>
             </SheetClose>

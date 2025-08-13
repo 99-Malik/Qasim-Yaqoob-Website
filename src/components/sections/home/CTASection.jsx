@@ -14,7 +14,7 @@ import {
   ArrowRight
 } from "lucide-react";
 
-// Revolutionary new brand color system
+// Instant new brand color system
 const getBrandClasses = (brand) => {
   switch (brand) {
     case "lg":
@@ -79,17 +79,17 @@ const CTASection = ({ brand = "default" }) => {
   const { primary, accent, iconBg, cardBg, textPrimary, textSecondary, badgeBg, buttonGradient } = getBrandClasses(brand);
 
   const benefits = [
-    "Revolutionary same-day service technology",
+    "Instant same-day service technology",
     "Lifetime elite warranty guaranteed",
-    "Certified revolutionary technicians",
+    "Certified Instant technicians",
     "Premium genuine parts only",
     "24/7 elite emergency support",
-    "Free revolutionary diagnosis and quotes",
+    "Free Instant diagnosis and quotes",
   ];
 
   return (
     <section className="relative py-24 px-4 overflow-hidden">
-      {/* Revolutionary Background */}
+      {/* Instant Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-500/20 blur-3xl float"></div>
@@ -99,32 +99,32 @@ const CTASection = ({ brand = "default" }) => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Revolutionary Content */}
+          {/* Instant Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* Revolutionary Badge */}
+            {/* Instant Badge */}
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl mb-8">
               <Zap className="w-5 h-5 text-amber-400" />
-              <span className="text-sm font-semibold text-white">Revolutionary Service Available</span>
+              <span className="text-sm font-semibold text-white">Service Available</span>
             </div>
 
             <h2 className="text-3xl md:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-tight">
-              Ready for Revolutionary
+              Ready for 
               <span className="block bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 bg-clip-text text-transparent">
                 Appliance Repair?
               </span>
             </h2>
 
             <p className="text-xl md:text-2xl text-slate-300 mb-10 leading-relaxed">
-              Experience the future of appliance repair with our revolutionary technology and elite service network.
+              Experience the future of appliance repair with our Instant technology and elite service network.
               Same-day service available for most repairs with cutting-edge diagnostic systems.
             </p>
 
-            {/* Revolutionary Benefits Grid */}
+            {/* Instant Benefits Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
               {benefits.map((benefit, index) => (
                 <motion.div
@@ -143,7 +143,7 @@ const CTASection = ({ brand = "default" }) => {
               ))}
             </div>
 
-            {/* Revolutionary CTA Buttons */}
+            {/* Instant CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +163,7 @@ const CTASection = ({ brand = "default" }) => {
             </motion.div>
           </motion.div>
 
-          {/* Revolutionary Contact Card */}
+          {/* Instant Contact Card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -172,7 +172,7 @@ const CTASection = ({ brand = "default" }) => {
           >
             <div className={`${cardBg} rounded-3xl p-10 border shadow-2xl backdrop-blur-xl`}>
               <div className="text-center mb-10">
-                {/* Revolutionary Badge */}
+                {/* Instant Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-white/10 to-white/5 rounded-xl border border-white/20 mb-6">
                   <Star className="w-4 h-4 text-amber-400" />
                   <span className="text-xs font-medium text-white">Elite Service</span>
@@ -182,11 +182,11 @@ const CTASection = ({ brand = "default" }) => {
                   Get Started Today
                 </h3>
                 <p className="text-slate-300 text-lg">
-                  Contact us for revolutionary appliance repair services
+                  Contact us for Instant appliance repair services
                 </p>
               </div>
 
-              {/* Revolutionary Contact Info */}
+              {/* Instant Contact Info */}
               {[
                 { icon: <Phone className="w-6 h-6" />, label: "Call Elite Team", value: "+971 56 239 7004", gradient: "from-violet-500 to-purple-600" },
                 { icon: <Clock className="w-6 h-6" />, label: "24/7 Elite Service", value: "Emergency Repairs", gradient: "from-amber-500 to-orange-600" },
@@ -210,13 +210,13 @@ const CTASection = ({ brand = "default" }) => {
                 </motion.div>
               ))}
 
-              {/* Revolutionary Trust Indicator */}
+              {/* Instant Trust Indicator */}
               <div className="text-center pt-6 border-t border-white/10">
                 <div className="flex items-center justify-center gap-2 mb-3">
                   <Award className="w-5 h-5 text-amber-400" />
                   <span className="text-sm font-semibold text-white">Elite Certified</span>
                 </div>
-                <p className="text-xs text-slate-400">Revolutionary technology • Elite service • Perfect results</p>
+                <p className="text-xs text-slate-400">Instant technology • Elite service • Perfect results</p>
               </div>
             </div>
           </motion.div>

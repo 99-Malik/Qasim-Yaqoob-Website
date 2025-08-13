@@ -95,7 +95,7 @@ const Footer = () => {
                 {/* Glow Effect */}
               </div>
               <div>
-                <h3 className="text-2xl font-black text-white tracking-tight">Appliances Experts AE</h3>
+                <h3 className="text-2xl font-black text-white tracking-tight">Emirates Service Center</h3>
                 <div className="flex items-center gap-2 mt-1">
                   <Sparkles className="h-4 w-4 text-amber-400 animate-pulse" />
                   <span className="text-sm font-bold text-white/80 uppercase tracking-widest">Elite Solutions</span>
@@ -104,7 +104,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-white/80 mb-8 leading-relaxed text-base">
-              Revolutionary appliance repair services for all major brands. Quantum technology, instant expert dispatch, and elite customer experience that transforms your appliances.
+             Appliance repair services for all major brands. Instant technology, instant expert dispatch, and elite customer experience that transforms your appliances.
             </p>
             
             {/* Ultra-Modern Contact Info */}
@@ -223,7 +223,7 @@ const Footer = () => {
             </h4>
             <div className="space-y-6">
               <p className="text-white/80 text-sm mb-6 leading-relaxed">
-                Ready to experience revolutionary appliance repair? Get your elite quote today!
+                Ready to experience Instant appliance repair? Get your elite quote today!
               </p>
               <motion.button
                 onClick={sendMessage}
@@ -288,7 +288,7 @@ const Footer = () => {
               className="text-center sm:text-right"
             >
               <p className="text-sm text-white/60">
-                © {currentYear} Appliances Experts AE. All rights reserved.
+                © {currentYear} Emirates Service Center. All rights reserved.
               </p>
               <p className="text-xs text-white/40 mt-1">
                 Elite Appliance Repair Services in UAE

@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 const ServicesGrid = ({ brand }) => {
-  // Revolutionary new brand color system
+  // Instant new brand color system
   let cardGradient = "from-violet-500 to-purple-600";
   let arrowGradient = "from-amber-500 to-orange-600";
   let titleText = "from-amber-400 to-orange-500";
@@ -64,7 +64,7 @@ const ServicesGrid = ({ brand }) => {
   const services = [
     {
       icon: Tv,
-      title: "Revolutionary TV & Electronics",
+      title: "Instant TV & Electronics",
       description: "Next-generation repair technology for all modern entertainment systems",
       href: "/tv-repair",
       gradient: "from-violet-500 to-purple-600"
@@ -86,7 +86,7 @@ const ServicesGrid = ({ brand }) => {
     {
       icon: Utensils,
       title: "Advanced Dishwasher Solutions",
-      description: "Revolutionary cleaning system optimization and repair",
+      description: "Instant cleaning system optimization and repair",
       href: "/dishwasher-repair",
       gradient: "from-purple-500 to-pink-600"
     },
@@ -114,7 +114,7 @@ const ServicesGrid = ({ brand }) => {
     {
       icon: Zap,
       title: "Lightning Microwave Repair",
-      description: "Instant microwave troubleshooting with revolutionary safety systems",
+      description: "Instant microwave troubleshooting with Instant safety systems",
       href: "/microwave-repair",
       gradient: "from-yellow-500 to-orange-600"
     }
@@ -122,7 +122,7 @@ const ServicesGrid = ({ brand }) => {
 
   return (
     <section className={`relative py-24 px-4 overflow-hidden bg-gradient-to-br ${sectionBg}`}>
-      {/* Revolutionary Background Elements */}
+      {/* Instant Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 blur-3xl float"></div>
         <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 blur-3xl float-delay-1"></div>
@@ -130,7 +130,7 @@ const ServicesGrid = ({ brand }) => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Revolutionary Header */}
+        {/* Instant Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -138,24 +138,24 @@ const ServicesGrid = ({ brand }) => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          {/* Revolutionary Badge */}
+          {/* Instant Badge */}
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-xl rounded-2xl border border-white/30 shadow-2xl mb-8">
             <Sparkles className="w-5 h-5 text-amber-500" />
             <span className="text-sm font-semibold text-slate-700">Elite Service Network</span>
           </div>
 
           <h2 className="text-3xl md:text-6xl lg:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-tight">
-            Our Revolutionary
+            Our Instant
             <span className={`block bg-gradient-to-r ${titleText} bg-clip-text text-transparent`}>
               Elite Services
             </span>
           </h2>
           <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-            Experience the future of appliance repair with our revolutionary technology and elite service network
+            Experience the future of appliance repair with our Instant technology and elite service network
           </p>
         </motion.div>
 
-        {/* Revolutionary Services Grid */}
+        {/* Instant Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {services.map((service, index) => (
             <motion.div
@@ -188,7 +188,7 @@ const ServicesGrid = ({ brand }) => {
           ))}
         </div>
 
-        {/* Revolutionary CTA */}
+        {/* Instant CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -198,11 +198,11 @@ const ServicesGrid = ({ brand }) => {
         >
           <div className={`bg-gradient-to-br ${ctaBg} rounded-3xl p-12 text-white shadow-2xl border border-white/20`}>
             <h3 className="text-2xl md:text-5xl font-black mb-6">
-              Ready for Revolutionary Service?
+              Ready for Instant Service?
             </h3>
             <p className={`${ctaText} mb-10 max-w-3xl mx-auto text-xl leading-relaxed`}>
               Experience the future of appliance repair with our elite technology and expert technicians.
-              Same-day revolutionary service available for most repairs.
+              Same-day Instant service available for most repairs.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link

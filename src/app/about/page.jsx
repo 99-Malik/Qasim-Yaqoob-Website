@@ -96,7 +96,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-responsive-xl font-bold mb-6">
-              About <span className="gradient-text">Quick Fix</span>
+              About <span className="gradient-text">Emirates Service Center</span>
             </h1>
             <p className="text-responsive-md text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Leading appliance repair service in Dubai with over 15 years of experience. 

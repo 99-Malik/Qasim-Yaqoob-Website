@@ -41,13 +41,13 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#10b981" />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17409704964" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17455039352" />
         <Script dangerouslySetInnerHTML={{
           __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config','AW-17409704964');
+          gtag('config','AW-17455039352');
         `}} />
       </head>
       <body

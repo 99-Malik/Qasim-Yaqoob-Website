@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { getBrandConfig } from "@/lib/brandConfig";
 
-// Revolutionary new brand color system
+// Instant new brand color system
 const getBrandClasses = (brand) => {
   switch (brand) {
     case "lg":
@@ -86,13 +86,13 @@ const FeaturesSection = ({ brand = null }) => {
     {
       icon: Zap,
       title: "Lightning Fast Service",
-      description: "Revolutionary same-day repair technology that gets your appliances running instantly",
+      description: "Instant same-day repair technology that gets your appliances running instantly",
       gradient: "from-amber-400 to-orange-500"
     },
     {
       icon: Shield,
       title: "Unlimited Warranty",
-      description: "Lifetime guarantee on all repairs with our revolutionary repair technology",
+      description: "Lifetime guarantee on all repairs with our Instant repair technology",
       gradient: "from-emerald-400 to-teal-500"
     },
     {
@@ -116,7 +116,7 @@ const FeaturesSection = ({ brand = null }) => {
     {
       icon: Award,
       title: "100,000+ Satisfied",
-      description: "Join our elite community of customers who trust our revolutionary service",
+      description: "Join our elite community of customers who trust our Instant service",
       gradient: "from-violet-400 to-purple-500"
     },
   ];
@@ -132,7 +132,7 @@ const FeaturesSection = ({ brand = null }) => {
 
   return (
     <section className="relative py-24 px-4 overflow-hidden">
-      {/* Revolutionary Background */}
+      {/* Instant Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-500/20 blur-3xl float"></div>
@@ -147,26 +147,26 @@ const FeaturesSection = ({ brand = null }) => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          {/* Revolutionary Badge */}
+          {/* Instant Badge */}
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl mb-8">
             <Sparkles className="w-5 h-5 text-amber-400" />
-            <span className="text-sm font-semibold text-white">Revolutionary Technology</span>
+            <span className="text-sm font-semibold text-white">Instant Technology</span>
           </div>
 
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-tight">
             Why Choose{" "}
             <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 bg-clip-text text-transparent">
-              {brandConfig ? `${brandConfig.name} Elite Service` : "Revolutionary Repair?"}
+              {brandConfig ? `${brandConfig.name} Elite Service` : "Instant Repair?"}
             </span>
           </h2>
           <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
             {brandConfig
-              ? `Experience the future of ${brandConfig.name} appliance repair with our revolutionary technology and elite service`
-              : "Experience the future of appliance repair with our revolutionary technology and elite service"}
+              ? `Experience the future of ${brandConfig.name} appliance repair with our Instant technology and elite service`
+              : "Experience the future of appliance repair with our Instant technology and elite service"}
           </p>
         </motion.div>
 
-        {/* Revolutionary Features Grid */}
+        {/* Instant Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
             <motion.div
@@ -192,7 +192,7 @@ const FeaturesSection = ({ brand = null }) => {
           ))}
         </div>
 
-        {/* Revolutionary Benefits Section */}
+        {/* Instant Benefits Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -202,12 +202,12 @@ const FeaturesSection = ({ brand = null }) => {
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-5xl font-black text-white mb-6">
-              Revolutionary Benefits
+              Instant Benefits
             </h3>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               {brandConfig
-                ? `When you choose our ${brandConfig.name} elite service, you get access to revolutionary technology`
-                : "When you choose our elite service, you get access to revolutionary technology"}
+                ? `When you choose our ${brandConfig.name} elite service, you get access to Instant technology`
+                : "When you choose our elite service, you get access to Instant technology"}
             </p>
           </div>
 
