@@ -1,36 +1,29 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
-const NavLink = ({ title = "", href = "/" }) => {
+const NavLink = ({ title, href, company }) => {
   const pathname = usePathname();
-  const company = pathname.split("/")[2];
-  
-  let activeColor = "text-primary hover:text-primary";
-  
-  if (company === "lg") {
-    activeColor = "text-[#A50034] hover:text-[#A50034]";
-  } else if (company === "samsung") {
-    activeColor = "text-[#1428a0] hover:text-[#1428a0]";
-  } else if (company === "bosch") {
-    activeColor = "text-[#ed1c24] hover:text-[#ed1c24]";
-  } else if (company === "siemens") {
-    activeColor = "text-[#009999] hover:text-[#009999]";
-  }
-  
+  const isActive = pathname === href;
+
   return (
     <Link
-      className={cn(
-        "font-medium text-custom-black/70",
-        pathname === href
-          ? activeColor
-          : "transition-all duration-100 ease-in",
-      )}
       href={href}
+      className={cn(
+        "relative px-3 py-2 text-sm font-medium transition-all duration-200 hover:text-emerald-600",
+        isActive 
+          ? "text-emerald-600 font-semibold" 
+          : "text-gray-700 hover:text-emerald-600"
+      )}
     >
       {title}
+      
+      {/* Active Indicator */}
+      {isActive && (
+        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600 rounded-full"></div>
+      )}
     </Link>
   );
 };

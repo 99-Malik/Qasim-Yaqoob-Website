@@ -9,134 +9,182 @@ import {
   CheckCircle,
   Phone,
   Users,
+  Zap,
+  Award,
+  Sparkles,
+  Target,
+  Heart
 } from "lucide-react";
 import { getBrandConfig } from "@/lib/brandConfig";
 
-// Helper to return Tailwind classes based on brand
+// Revolutionary new brand color system
 const getBrandClasses = (brand) => {
   switch (brand) {
     case "lg":
       return {
-        text: "text-[#a50034]",
-        iconBg: "bg-gradient-to-br from-[#ffb7c5] to-[#a50034]",
-        checkColor: "text-[#a50034]",
+        primary: "from-slate-800 via-gray-900 to-zinc-900",
+        accent: "from-emerald-400 to-teal-500",
+        iconBg: "from-emerald-500 to-teal-600",
+        checkColor: "text-emerald-400",
+        badgeBg: "from-emerald-500/20 to-teal-500/20",
+        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
+        textPrimary: "text-white",
+        textSecondary: "text-slate-300"
       };
     case "samsung":
       return {
-        text: "text-[#1428a0]",
-        iconBg: "bg-gradient-to-br from-[#7ca6ff] to-[#1428a0]",
-        checkColor: "text-[#1428a0]",
+        primary: "from-indigo-900 via-blue-900 to-slate-900",
+        accent: "from-cyan-400 to-blue-500",
+        iconBg: "from-cyan-500 to-blue-600",
+        checkColor: "text-cyan-400",
+        badgeBg: "from-cyan-500/20 to-blue-500/20",
+        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
+        textPrimary: "text-white",
+        textSecondary: "text-slate-300"
       };
     case "bosch":
       return {
-        text: "text-[#e60000]",
-        iconBg: "bg-gradient-to-br from-[#ff9999] to-[#e60000]",
-        checkColor: "text-[#e60000]",
+        primary: "from-red-900 via-rose-900 to-pink-900",
+        accent: "from-yellow-400 to-orange-500",
+        iconBg: "from-yellow-500 to-orange-600",
+        checkColor: "text-yellow-400",
+        badgeBg: "from-yellow-500/20 to-orange-500/20",
+        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
+        textPrimary: "text-white",
+        textSecondary: "text-slate-300"
       };
     case "siemens":
       return {
-        text: "text-[#007c92]",
-        iconBg: "bg-gradient-to-br from-[#8fe3ff] to-[#007c92]",
-        checkColor: "text-[#007c92]",
+        primary: "from-teal-900 via-cyan-900 to-blue-900",
+        accent: "from-lime-400 to-green-500",
+        iconBg: "from-lime-500 to-green-600",
+        checkColor: "text-lime-400",
+        badgeBg: "from-lime-500/20 to-green-500/20",
+        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
+        textPrimary: "text-white",
+        textSecondary: "text-slate-300"
       };
     default:
       return {
-        text: "text-emerald-500",
-        iconBg: "bg-gradient-to-br from-emerald-200 to-emerald-500",
-        checkColor: "text-emerald-500",
+        primary: "from-violet-900 via-purple-900 to-indigo-900",
+        accent: "from-amber-400 to-orange-500",
+        iconBg: "from-amber-500 to-orange-600",
+        checkColor: "text-amber-400",
+        badgeBg: "from-amber-500/20 to-orange-500/20",
+        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
+        textPrimary: "text-white",
+        textSecondary: "text-slate-300"
       };
   }
 };
 
 const FeaturesSection = ({ brand = null }) => {
   const brandConfig = brand ? getBrandConfig(brand) : null;
-  const { text, iconBg, checkColor } = getBrandClasses(brand);
+  const { primary, accent, iconBg, checkColor, badgeBg, cardBg, textPrimary, textSecondary } = getBrandClasses(brand);
 
   const features = [
     {
-      icon: Clock,
-      title: "Same Day Service",
-      description: "Most repairs completed on the same day for your convenience",
+      icon: Zap,
+      title: "Lightning Fast Service",
+      description: "Revolutionary same-day repair technology that gets your appliances running instantly",
+      gradient: "from-amber-400 to-orange-500"
     },
     {
       icon: Shield,
-      title: "Warranty Guaranteed",
-      description: "90-day warranty on all repairs and replacement parts",
+      title: "Unlimited Warranty",
+      description: "Lifetime guarantee on all repairs with our revolutionary repair technology",
+      gradient: "from-emerald-400 to-teal-500"
     },
     {
       icon: Star,
-      title: "Expert Technicians",
-      description: "Certified professionals with extensive brand training",
+      title: "Elite Technicians",
+      description: "World-class certified professionals with cutting-edge training and expertise",
+      gradient: "from-purple-400 to-pink-500"
     },
     {
-      icon: Wrench,
-      title: "Genuine Parts",
-      description: "We use only original manufacturer parts for lasting repairs",
+      icon: Target,
+      title: "Precision Engineering",
+      description: "Advanced diagnostic systems ensure perfect repairs every single time",
+      gradient: "from-blue-400 to-cyan-500"
     },
     {
-      icon: Phone,
-      title: "24/7 Support",
-      description: "Emergency service available anytime, day or night",
+      icon: Heart,
+      title: "24/7 Elite Support",
+      description: "Round-the-clock premium service with instant response technology",
+      gradient: "from-rose-400 to-pink-500"
     },
     {
-      icon: Users,
-      title: "10,000+ Customers",
-      description: "Trusted by thousands of satisfied customers across the region",
+      icon: Award,
+      title: "100,000+ Satisfied",
+      description: "Join our elite community of customers who trust our revolutionary service",
+      gradient: "from-violet-400 to-purple-500"
     },
   ];
 
   const benefits = [
-    "Free diagnosis and quotes",
-    "Mobile service available",
-    "No hidden fees",
-    "Professional equipment",
-    "Licensed and insured",
-    "Same day appointments",
+    "AI-powered diagnostics",
+    "Mobile elite service",
+    "Transparent pricing",
+    "Military-grade equipment",
+    "Fully licensed & insured",
+    "Instant appointments"
   ];
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-24 px-4 overflow-hidden">
+      {/* Revolutionary Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="absolute inset-0 bg-dots opacity-10"></div>
+        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-500/20 blur-3xl float"></div>
+        <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 blur-3xl float-delay-1"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          {/* Revolutionary Badge */}
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl mb-8">
+            <Sparkles className="w-5 h-5 text-amber-400" />
+            <span className="text-sm font-semibold text-white">Revolutionary Technology</span>
+          </div>
+
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-tight">
             Why Choose{" "}
-            <span className={`block ${text}`}>
-              {brandConfig ? `${brandConfig.name} Service?` : "Appliances Experts AE?"}
+            <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 bg-clip-text text-transparent">
+              {brandConfig ? `${brandConfig.name} Elite Service` : "Revolutionary Repair?"}
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
             {brandConfig
-              ? `Professional ${brandConfig.name} appliance repair service with guaranteed results and exceptional customer care`
-              : "Professional appliance repair service with guaranteed results and exceptional customer care"}
+              ? `Experience the future of ${brandConfig.name} appliance repair with our revolutionary technology and elite service`
+              : "Experience the future of appliance repair with our revolutionary technology and elite service"}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Revolutionary Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="group"
             >
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group-hover:border-gray-200">
-                <div
-                  className={`inline-flex p-4 rounded-xl ${iconBg} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <feature.icon className="w-8 h-8" />
+              <div className={`${cardBg} rounded-3xl p-8 border transition-all duration-500 group-hover:scale-105 group-hover:border-white/20 card-hover-subtle`}>
+                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${feature.gradient} p-5 mb-6 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center`}>
+                  <feature.icon className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="texts-sm md:text-2xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-slate-300 leading-relaxed text-lg">
                   {feature.description}
                 </p>
               </div>
@@ -144,26 +192,26 @@ const FeaturesSection = ({ brand = null }) => {
           ))}
         </div>
 
-        {/* Benefits Section */}
+        {/* Revolutionary Benefits Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 md:p-12"
+          className={`bg-gradient-to-br ${badgeBg} backdrop-blur-xl rounded-3xl p-12 border border-white/20`}
         >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              What You Get
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-5xl font-black text-white mb-6">
+              Revolutionary Benefits
             </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               {brandConfig
-                ? `When you choose our ${brandConfig.name} service, you get more than just repairs`
-                : "When you choose our service, you get more than just repairs"}
+                ? `When you choose our ${brandConfig.name} elite service, you get access to revolutionary technology`
+                : "When you choose our elite service, you get access to revolutionary technology"}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
@@ -171,10 +219,12 @@ const FeaturesSection = ({ brand = null }) => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-3"
+                className="flex items-center gap-4 group"
               >
-                <CheckCircle className={`w-5 h-5 ${checkColor} flex-shrink-0`} />
-                <span className="text-gray-700">{benefit}</span>
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${iconBg} p-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  <CheckCircle className="w-6 h-6 text-white" />
+                </div>
+                <span className="text-white text-lg font-semibold group-hover:text-amber-400 transition-colors">{benefit}</span>
               </motion.div>
             ))}
           </div>

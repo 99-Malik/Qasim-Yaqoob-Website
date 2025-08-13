@@ -2,6 +2,7 @@ import HeroSection from "@/components/sections/home/HeroSection";
 import FeaturesSection from "@/components/sections/home/FeaturesSection";
 import ServicesGrid from "@/components/sections/home/ServicesGrid";
 import StatsSection from "@/components/sections/home/StatsSection";
+import AppliancesRepairSection from "@/components/sections/home/AppliancesRepairSection";
 import TestimonialsSection from "@/components/sections/home/TestimonialsSection";
 import CTASection from "@/components/sections/home/CTASection";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <FeaturesSection />
       <ServicesGrid />
       <StatsSection />
+      <AppliancesRepairSection />
       <TestimonialsSection />
       <CTASection />
     </div>

@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
         )}
       >
         <FixedCallButtons />
-        {isAcRepairPage ? <AcHeader /> : <Header />}
+        <Header />
         <main
           className={cn({
             "pt-20": pathname === "/",

@@ -103,7 +103,7 @@ const HeaderSheet = () => {
 
           <div className="space-y-1">
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Repair Services</h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {repairServices.map((service, index) => (
                 <motion.div
                   key={index}
@@ -114,9 +114,9 @@ const HeaderSheet = () => {
                   <SheetClose asChild>
                     <Link
                       href={service.href}
-                      className="flex flex-col items-center gap-2 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200 group"
+                      className="flex flex-row sm:flex-col items-center gap-2 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200 group"
                     >
-                      <span className="text-2xl group-hover:scale-110 transition-transform duration-200">
+                      <span className="text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-200">
                         {service.icon}
                       </span>
                       <span className="text-xs font-medium text-gray-700 text-center leading-tight">
@@ -167,7 +167,7 @@ const HeaderSheet = () => {
 
           <div className="space-y-1">
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Service Areas</h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain"].map((area, index) => (
                 <div key={index} className="text-xs text-gray-600 bg-gray-50 rounded-lg p-2 text-center">
                   {area}

@@ -8,7 +8,7 @@ import NavLink from "./NavLink";
 import HeaderSheet from "./HeaderSheet";
 import GetInTouchButton from "./GetInTouchButton";
 import { headerLinks, sendMessage } from "@/lib/data";
-import ACHeader from "./ACHeader";
+import { Zap } from "lucide-react";
 
 const Header = () => {
   const pathname = usePathname();
@@ -28,33 +28,37 @@ const Header = () => {
   ];
 
   return (
-    <div className="absolute z-50 flex w-screen items-center justify-center">
-      <div
-        className={cn(
-          "flex h-full w-full max-w-7xl flex-col items-center justify-center rounded-b-3xl border-b bg-white/90 shadow-lg backdrop-blur-md",
-          isCompanyRoute ? `border-${company}Primary/80` : "border-primary/80"
-        )}
-      >
-        <div className="flex w-full items-center justify-between gap-5 px-6 py-5 md:py-6 lg:px-10">
-          {/* Brand Logo or Default */}
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Brand Logo */}
           {isCompanyRoute ? (
-            <Link href="/" className="flex items-center gap-2 transition-transform hover:scale-105">
+            <Link href="/" className="flex items-center gap-3 group">
               <Image
                 src={`/companies/${company}.svg`}
                 alt={`${company} Logo`}
-                width={150}
-                height={60}
-                className="w-[130px] md:w-[150px] object-contain drop-shadow-sm"
+                width={120}
+                height={48}
+                className="h-8 lg:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
               />
+              <div className="hidden sm:flex items-center gap-2 px-2 py-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-lg">
+                <span className="text-xs font-bold text-white uppercase tracking-wide">Elite</span>
+              </div>
             </Link>
           ) : (
-            <div className="flex items-center gap-2">
-              <span className="text-xl font-bold text-gray-900">Quick Fix</span>
-            </div>
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-r from-[#FB923C] to-[#FB923C] flex items-center justify-center shadow-md">
+                <Zap className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+              </div>
+              <div>
+                <div className="text-lg lg:text-xl font-bold text-gray-900">Quick Fix</div>
+                <div className="text-xs lg:text-sm text-gray-600 font-medium">Elite Solutions</div>
+              </div>
+            </Link>
           )}
 
-          {/* Navigation */}
-          <div className="hidden items-center gap-6 md:flex lg:gap-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
             {headerLinks.map((link, index) => (
               <NavLink
                 key={index}
@@ -67,25 +71,38 @@ const Header = () => {
                 }
               />
             ))}
-          </div>
+          </nav>
 
-          {/* CTA and Mobile Menu */}
-          <GetInTouchButton className="hidden md:flex" onClick={sendMessage} />
-          <div className="md:hidden">
-            <HeaderSheet />
+          {/* CTA Button & Mobile Menu */}
+          <div className="flex items-center gap-4">
+            <GetInTouchButton className="hidden sm:flex" onClick={sendMessage} />
+            <div className="lg:hidden">
+              <HeaderSheet />
+            </div>
           </div>
         </div>
 
-        {/* Company Selector on Home */}
-        {isHomeRoute && (
-          <div className="flex w-full items-center justify-center gap-4 border-t border-black/10 px-5 py-4 md:justify-start">
-            {companies.map((company, index) => (
-              <NavLink key={index} title={company.name} href={company.href} />
-            ))}
+        {/* Company Selector Bar - Only on Home */}
+        {/* {isHomeRoute && (
+          <div className="border-t border-gray-200/50 bg-gradient-to-r from-gray-50 to-gray-100/50">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-6 py-3 px-4">
+              <span className="text-sm font-medium text-gray-700 mb-2 sm:mb-0">Choose Brand:</span>
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+                {companies.map((company, index) => (
+                  <Link
+                    key={index}
+                    href={company.href}
+                    className="text-xs sm:text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors duration-200 hover:scale-105 px-2 py-1 rounded-md hover:bg-gray-100"
+                  >
+                    {company.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
-        )}
+        )} */}
       </div>
-    </div>
+    </header>
   );
 };
 
