@@ -1,239 +1,143 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Quote, Sparkles, Heart, Award, Zap } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Star, Sparkles, Heart, Award, Zap } from "lucide-react";
 
-// Instant new brand color system
-const getBrandClasses = (brand) => {
-  switch (brand) {
-    case "lg":
-      return {
-        primary: "from-slate-800 via-gray-900 to-zinc-900",
-        accent: "from-emerald-400 to-teal-500",
-        iconBg: "from-emerald-500 to-teal-600",
-        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
-        textPrimary: "text-white",
-        textSecondary: "text-slate-300",
-        badgeBg: "from-emerald-500/20 to-teal-500/20",
-        starColor: "text-emerald-400"
-      };
-    case "samsung":
-      return {
-        primary: "from-indigo-900 via-blue-900 to-slate-900",
-        accent: "from-cyan-400 to-blue-500",
-        iconBg: "from-cyan-500 to-blue-600",
-        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
-        textPrimary: "text-white",
-        textSecondary: "text-slate-300",
-        badgeBg: "from-cyan-500/20 to-blue-500/20",
-        starColor: "text-cyan-400"
-      };
-    case "bosch":
-      return {
-        primary: "from-red-900 via-rose-900 to-pink-900",
-        accent: "from-yellow-400 to-orange-500",
-        iconBg: "from-yellow-500 to-orange-600",
-        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
-        textPrimary: "text-white",
-        textSecondary: "text-slate-300",
-        badgeBg: "from-yellow-500/20 to-orange-500/20",
-        starColor: "text-yellow-400"
-      };
-    case "siemens":
-      return {
-        primary: "from-teal-900 via-cyan-900 to-blue-900",
-        accent: "from-lime-400 to-green-500",
-        iconBg: "from-lime-500 to-green-600",
-        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
-        textPrimary: "text-white",
-        textSecondary: "text-slate-300",
-        badgeBg: "from-lime-500/20 to-green-500/20",
-        starColor: "text-lime-400"
-      };
-    default:
-      return {
-        primary: "from-violet-900 via-purple-900 to-indigo-900",
-        accent: "from-amber-400 to-orange-500",
-        iconBg: "from-amber-500 to-orange-600",
-        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
-        textPrimary: "text-white",
-        textSecondary: "text-slate-300",
-        badgeBg: "from-amber-500/20 to-orange-500/20",
-        starColor: "text-amber-400"
-      };
-  }
+// ✅ Canonical brand colors
+const brandColors = {
+  lg: { name: "LG", primary: "text-[#a50034]", secondary: "bg-[#a50034]" },
+  bosch: { name: "Bosch", primary: "text-[#ed0007]", secondary: "bg-[#ed0007]" },
+  siemens: { name: "Siemens", primary: "text-[#00a4b4]", secondary: "bg-[#00a4b4]" },
+  samsung: { name: "Samsung", primary: "text-[#1428a0]", secondary: "bg-[#1428a0]" },
+  default: { name: "UAE", primary: "text-[#6d28d9]", secondary: "bg-[#6d28d9]" },
 };
 
-const TestimonialsSection = ({ brand = "default" }) => {
-  const { primary, accent, iconBg, cardBg, textPrimary, textSecondary, badgeBg, starColor } = getBrandClasses(brand);
+const TestimonialsSection = () => {
+  const pathname = usePathname();
+
+  // 🔑 detect brand from URL
+  let brandKey = "default";
+  if (pathname.includes("/company/lg")) brandKey = "lg";
+  else if (pathname.includes("/company/samsung")) brandKey = "samsung";
+  else if (pathname.includes("/company/bosch")) brandKey = "bosch";
+  else if (pathname.includes("/company/siemens")) brandKey = "siemens";
+
+  const { name, primary, secondary } = brandColors[brandKey];
 
   const testimonials = [
     {
       name: "Ahmed Al Mansouri",
-      role: "Elite Homeowner",
+      role: "Homeowner",
       content:
-        "Instant service! Emirates Repair Center saved me from buying a new washing machine with their cutting-edge technology. Fixed in under an hour - absolutely incredible!",
+        "Emirates Repair Center saved me from buying a new washing machine. Fixed in under an hour – brilliant service!",
       rating: 5,
       avatar: "A",
-      gradient: "from-violet-500 to-purple-600"
     },
     {
       name: "Sarah Johnson",
-      role: "Premium Restaurant Owner",
+      role: "Restaurant Owner",
       content:
-        "We rely on our commercial appliances daily. Emirates Repair Center has been our elite service provider for years. Instant technology, lightning-fast, and always professional.",
+        "We rely on appliances daily. Their team is always fast, professional, and reliable.",
       rating: 5,
       avatar: "S",
-      gradient: "from-amber-500 to-orange-600"
     },
     {
       name: "Mohammed Hassan",
-      role: "Elite Property Manager",
+      role: "Property Manager",
       content:
-        "Managing multiple properties means dealing with appliance issues regularly. Emirates Repair Center's Instant team is always available and gets the job done perfectly every time.",
+        "Managing properties means constant repairs. The team never disappoints – always on time, always accurate.",
       rating: 5,
       avatar: "M",
-      gradient: "from-emerald-500 to-teal-600"
-    },
-    {
-      name: "Fatima Al Zahra",
-      role: "Premium Homeowner",
-      content:
-        "Exceptional elite service! The technician used advanced diagnostic systems, diagnosed the refrigerator problem instantly, and had it working perfectly. Instant technology!",
-      rating: 5,
-      avatar: "F",
-      gradient: "from-cyan-500 to-blue-600"
-    },
-    {
-      name: "David Chen",
-      role: "Elite Business Owner",
-      content:
-        "Instant service from start to finish. They fixed our AC system with cutting-edge technology and the price was fair. Elite communication throughout the entire process.",
-      rating: 5,
-      avatar: "D",
-      gradient: "from-purple-500 to-pink-600"
-    },
-    {
-      name: "Aisha Rahman",
-      role: "Premium Homeowner",
-      content:
-        "I was worried about my oven before a big dinner party. Emirates Repair Center came through with Instant same-day service and fixed it perfectly. Elite service!",
-      rating: 5,
-      avatar: "A",
-      gradient: "from-rose-500 to-pink-600"
     },
   ];
 
   return (
-    <section className="relative py-24 px-4 overflow-hidden">
-      {/* Instant Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        <div className="absolute inset-0 bg-dots opacity-10"></div>
-        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-500/20 blur-3xl float"></div>
-        <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 blur-3xl float-delay-1"></div>
-        <div className="absolute top-1/2 left-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-500/20 blur-3xl float-delay-2"></div>
-      </div>
-
+    <section className="relative py-20 px-4 bg-gray-900">
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Instant Heading */}
+        {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-14"
         >
-          {/* Instant Badge */}
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl mb-8">
-            <Sparkles className="w-5 h-5 text-amber-400" />
-            <span className="text-sm font-semibold text-white">Elite Customer Stories</span>
+          <div
+            className={`inline-flex items-center gap-2 px-5 py-2 rounded-full text-white text-sm font-medium mb-6 ${secondary}`}
+          >
+            <Sparkles className="w-4 h-4" />
+            Customer Stories
           </div>
-
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-tight">
-            What Our Elite Customers
-            <span className="block bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 bg-clip-text text-transparent">
-              Say About Us
-            </span>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
+            What Our{" "}
+            <span className={`${primary}`}>Customers Say</span>
           </h2>
-          <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our elite customers have to say about our Instant service and cutting-edge technology.
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
+            Hear directly from customers who trust our certified repair experts.
           </p>
         </motion.div>
 
-        {/* Instant Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {testimonials.map((testimonial, index) => (
+        {/* Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+          {testimonials.map((t, i) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group"
+              className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:shadow-lg transition"
             >
-              <div className={`${cardBg} rounded-3xl p-8 border transition-all duration-500 group-hover:scale-105 group-hover:border-white/20 card-hover-subtle`}>
-                <div className="flex items-center gap-1 mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-6 h-6 ${starColor} group-hover:scale-110 transition-transform duration-300`}
-                      fill="currentColor"
-                    />
-                  ))}
+              <div className="flex items-center gap-1 mb-3">
+                {[...Array(t.rating)].map((_, idx) => (
+                  <Star
+                    key={idx}
+                    className={`w-4 h-4 ${primary}`}
+                    fill="currentColor"
+                  />
+                ))}
+              </div>
+              <p className="text-gray-300 italic mb-5">“{t.content}”</p>
+              <div className="flex items-center gap-3">
+                <div
+                  className={`w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold ${secondary}`}
+                >
+                  {t.avatar}
                 </div>
-                <p className="text-slate-300 mb-8 leading-relaxed text-lg italic">
-                  "{testimonial.content}"
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${testimonial.gradient} flex items-center justify-center text-white font-black text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
-                    <p className="text-slate-400 font-medium">{testimonial.role}</p>
-                  </div>
+                <div>
+                  <h4 className="text-white font-semibold">{t.name}</h4>
+                  <p className="text-gray-400 text-sm">{t.role}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Instant Stats */}
+        {/* Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 text-center"
         >
-          <div className={`bg-gradient-to-br ${badgeBg} backdrop-blur-xl rounded-3xl p-12 border border-white/20 shadow-2xl`}>
-            <h3 className="text-2xl md:text-5xl font-black text-white mb-12">
-              Instant Success Metrics
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              {[
-                { label: "Elite Customers", value: "100,000+", icon: Heart, gradient: "from-violet-500 to-purple-600" },
-                { label: "Perfect Rating", value: "5.0/5", icon: Award, gradient: "from-amber-500 to-orange-600" },
-                { label: "Instant Support", value: "24/7", icon: Zap, gradient: "from-emerald-500 to-teal-600" },
-              ].map((stat, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center group"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { label: "Customers", value: "100K+", icon: Heart },
+              { label: "Rating", value: "5.0", icon: Award },
+              { label: "Support", value: "24/7", icon: Zap },
+            ].map((stat, idx) => (
+              <div key={idx}>
+                <div
+                  className={`w-14 h-14 mx-auto mb-3 rounded-xl flex items-center justify-center ${secondary} text-white`}
                 >
-                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-r ${stat.gradient} p-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
-                    <stat.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-4xl md:text-5xl font-black text-white mb-3 group-hover:text-amber-400 transition-colors">
-                    {stat.value}
-                  </div>
-                  <div className="text-slate-300 font-semibold text-lg">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
+                  <stat.icon className="w-7 h-7" />
+                </div>
+                <div className="text-2xl font-bold text-white">{stat.value}</div>
+                <p className="text-gray-300">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

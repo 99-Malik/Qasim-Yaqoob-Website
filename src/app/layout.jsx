@@ -61,10 +61,7 @@ export default function RootLayout({ children }) {
         <FixedCallButtons />
         <Header />
         <main
-          className={cn({
-            "pt-20": pathname === "/",
-            "pt-8": pathname.startsWith("/company/"),
-          })}
+        
         >
           {children}
         </main>

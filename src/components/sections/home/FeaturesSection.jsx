@@ -2,229 +2,173 @@
 
 import { motion } from "framer-motion";
 import {
-  Clock,
   Shield,
   Star,
-  Wrench,
-  CheckCircle,
-  Phone,
-  Users,
-  Zap,
-  Award,
-  Sparkles,
   Target,
-  Heart
+  Heart,
+  Award,
+  Zap,
+  Sparkles,
+  CheckCircle,
 } from "lucide-react";
-import { getBrandConfig } from "@/lib/brandConfig";
 
-// Instant new brand color system
 const getBrandClasses = (brand) => {
-  switch (brand) {
+  switch ((brand || "").toLowerCase()) {
     case "lg":
       return {
+        name: "LG",
         primary: "from-slate-800 via-gray-900 to-zinc-900",
-        accent: "from-emerald-400 to-teal-500",
-        iconBg: "from-emerald-500 to-teal-600",
-        checkColor: "text-emerald-400",
-        badgeBg: "from-emerald-500/20 to-teal-500/20",
-        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
-        textPrimary: "text-white",
-        textSecondary: "text-slate-300"
+        accent: "from-pink-400 to-red-500",
+        iconBg: "from-pink-500 to-red-600",
+        badge: "from-pink-500/20 to-red-500/20",
+        card: "bg-white/5 backdrop-blur-xl border-white/10",
       };
     case "samsung":
       return {
+        name: "Samsung",
         primary: "from-indigo-900 via-blue-900 to-slate-900",
-        accent: "from-cyan-400 to-blue-500",
-        iconBg: "from-cyan-500 to-blue-600",
-        checkColor: "text-cyan-400",
-        badgeBg: "from-cyan-500/20 to-blue-500/20",
-        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
-        textPrimary: "text-white",
-        textSecondary: "text-slate-300"
+        accent: "from-blue-400 to-cyan-500",
+        iconBg: "from-blue-500 to-cyan-600",
+        badge: "from-blue-500/20 to-cyan-500/20",
+        card: "bg-white/5 backdrop-blur-xl border-white/10",
       };
     case "bosch":
       return {
+        name: "Bosch",
         primary: "from-red-900 via-rose-900 to-pink-900",
-        accent: "from-yellow-400 to-orange-500",
-        iconBg: "from-yellow-500 to-orange-600",
-        checkColor: "text-yellow-400",
-        badgeBg: "from-yellow-500/20 to-orange-500/20",
-        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
-        textPrimary: "text-white",
-        textSecondary: "text-slate-300"
+        accent: "from-red-500 to-red-600",
+        iconBg: "from-red-600 to-red-700",
+        badge: "from-red-500/20 to-red-600/20",
+        card: "bg-white/5 backdrop-blur-xl border-white/10",
       };
     case "siemens":
       return {
+        name: "Siemens",
         primary: "from-teal-900 via-cyan-900 to-blue-900",
-        accent: "from-lime-400 to-green-500",
-        iconBg: "from-lime-500 to-green-600",
-        checkColor: "text-lime-400",
-        badgeBg: "from-lime-500/20 to-green-500/20",
-        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
-        textPrimary: "text-white",
-        textSecondary: "text-slate-300"
+        accent: "from-teal-400 to-emerald-500",
+        iconBg: "from-teal-500 to-emerald-600",
+        badge: "from-teal-500/20 to-emerald-500/20",
+        card: "bg-white/5 backdrop-blur-xl border-white/10",
       };
     default:
       return {
+        name: "UAE",
         primary: "from-violet-900 via-purple-900 to-indigo-900",
         accent: "from-amber-400 to-orange-500",
         iconBg: "from-amber-500 to-orange-600",
-        checkColor: "text-amber-400",
-        badgeBg: "from-amber-500/20 to-orange-500/20",
-        cardBg: "bg-white/5 backdrop-blur-xl border-white/10",
-        textPrimary: "text-white",
-        textSecondary: "text-slate-300"
+        badge: "from-amber-500/20 to-orange-500/20",
+        card: "bg-white/5 backdrop-blur-xl border-white/10",
       };
   }
 };
 
-const FeaturesSection = ({ brand = null }) => {
-  const brandConfig = brand ? getBrandConfig(brand) : null;
-  const { primary, accent, iconBg, checkColor, badgeBg, cardBg, textPrimary, textSecondary } = getBrandClasses(brand);
+const FeaturesSection = ({ brand = "default" }) => {
+  const brandConfig = getBrandClasses(brand);
 
   const features = [
-    {
-      icon: Zap,
-      title: "Lightning Fast Service",
-      description: "Instant same-day repair technology that gets your appliances running instantly",
-      gradient: "from-amber-400 to-orange-500"
-    },
-    {
-      icon: Shield,
-      title: "Unlimited Warranty",
-      description: "Lifetime guarantee on all repairs with our Instant repair technology",
-      gradient: "from-emerald-400 to-teal-500"
-    },
-    {
-      icon: Star,
-      title: "Elite Technicians",
-      description: "World-class certified professionals with cutting-edge training and expertise",
-      gradient: "from-purple-400 to-pink-500"
-    },
-    {
-      icon: Target,
-      title: "Precision Engineering",
-      description: "Advanced diagnostic systems ensure perfect repairs every single time",
-      gradient: "from-blue-400 to-cyan-500"
-    },
-    {
-      icon: Heart,
-      title: "24/7 Elite Support",
-      description: "Round-the-clock premium service with instant response technology",
-      gradient: "from-rose-400 to-pink-500"
-    },
-    {
-      icon: Award,
-      title: "100,000+ Satisfied",
-      description: "Join our elite community of customers who trust our Instant service",
-      gradient: "from-violet-400 to-purple-500"
-    },
+    { icon: Zap, title: "Lightning Fast", desc: "Same-day repair service that gets your appliances running instantly" },
+    { icon: Shield, title: "Warranty Backed", desc: "Every repair comes with a trusted service warranty" },
+    { icon: Star, title: "Certified Experts", desc: "World-class technicians with professional training" },
+    { icon: Target, title: "Precision Repair", desc: "Advanced diagnostics ensure accurate and reliable fixes" },
+    { icon: Heart, title: "24/7 Support", desc: "Round-the-clock service with instant response" },
+    { icon: Award, title: "Trusted by Thousands", desc: "Over 100,000 satisfied UAE customers" },
   ];
 
   const benefits = [
     "AI-powered diagnostics",
     "Mobile elite service",
     "Transparent pricing",
-    "Military-grade equipment",
-    "Fully licensed & insured",
-    "Instant appointments"
+    "Licensed & insured",
+    "Premium parts",
+    "Instant appointments",
   ];
 
   return (
-    <section className="relative py-24 px-4 overflow-hidden">
-      {/* Instant Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        <div className="absolute inset-0 bg-dots opacity-10"></div>
-        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-r from-violet-500/20 to-purple-500/20 blur-3xl float"></div>
-        <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 blur-3xl float-delay-1"></div>
-      </div>
+    <section className="relative py-20 px-4 overflow-hidden">
+      {/* Background */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${brandConfig.primary}`} />
 
       <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          {/* Instant Badge */}
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl mb-8">
-            <Sparkles className="w-5 h-5 text-amber-400" />
-            <span className="text-sm font-semibold text-white">Instant Technology</span>
-          </div>
-
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-tight">
-            Why Choose{" "}
-            <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 bg-clip-text text-transparent">
-              {brandConfig ? `${brandConfig.name} Elite Service` : "Instant Repair?"}
+          <div
+            className={`inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r ${brandConfig.badge} backdrop-blur-xl rounded-full border border-white/10 mb-6`}
+          >
+            <Sparkles className="w-4 h-4 text-white/80" />
+            <span className="text-sm font-semibold text-white/90">
+              Elite {brandConfig.name} Service
             </span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+            Why Choose{" "}
+            <span
+              className={`bg-gradient-to-r ${brandConfig.accent} bg-clip-text text-transparent`}
+            >
+              {brandConfig.name}
+            </span>{" "}
+            Repairs?
           </h2>
-          <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            {brandConfig
-              ? `Experience the future of ${brandConfig.name} appliance repair with our Instant technology and elite service`
-              : "Experience the future of appliance repair with our Instant technology and elite service"}
+          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
+            Experience the future of appliance care with trusted technology,
+            certified experts, and 24/7 support.
           </p>
         </motion.div>
 
-        {/* Instant Features Grid */}
+        {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {features.map((feature, index) => (
+          {features.map((f, i) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group"
+              className={`${brandConfig.card} rounded-2xl p-8 border group hover:scale-[1.03] transition-all`}
             >
-              <div className={`${cardBg} rounded-3xl p-8 border transition-all duration-500 group-hover:scale-105 group-hover:border-white/20 card-hover-subtle`}>
-                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${feature.gradient} p-5 mb-6 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center`}>
-                  <feature.icon className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="texts-sm md:text-2xl font-bold text-white mb-4 group-hover:text-amber-400 transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-slate-300 leading-relaxed text-lg">
-                  {feature.description}
-                </p>
+              <div
+                className={`w-16 h-16 rounded-xl bg-gradient-to-r ${brandConfig.iconBg} flex items-center justify-center mb-6`}
+              >
+                <f.icon className="w-8 h-8 text-white" />
               </div>
+              <h3 className="text-xl font-bold text-white mb-3">{f.title}</h3>
+              <p className="text-slate-300 text-sm">{f.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Instant Benefits Section */}
+        {/* Benefits */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className={`bg-gradient-to-br ${badgeBg} backdrop-blur-xl rounded-3xl p-12 border border-white/20`}
+          className={`bg-gradient-to-br ${brandConfig.badge} backdrop-blur-xl rounded-2xl p-10 border border-white/10`}
         >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-5xl font-black text-white mb-6">
-              Instant Benefits
-            </h3>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              {brandConfig
-                ? `When you choose our ${brandConfig.name} elite service, you get access to Instant technology`
-                : "When you choose our elite service, you get access to Instant technology"}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => (
+          <h3 className="text-2xl md:text-4xl font-bold text-white mb-6 text-center">
+            What You Get
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {benefits.map((b, i) => (
               <motion.div
-                key={index}
+                key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-4 group"
+                className="flex items-center gap-3 text-white/90"
               >
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${iconBg} p-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <CheckCircle className="w-6 h-6 text-white" />
+                <div
+                  className={`w-8 h-8 rounded-full bg-gradient-to-r ${brandConfig.iconBg} flex items-center justify-center`}
+                >
+                  <CheckCircle className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-white text-lg font-semibold group-hover:text-amber-400 transition-colors">{benefit}</span>
+                <span className="text-sm font-medium">{b}</span>
               </motion.div>
             ))}
           </div>

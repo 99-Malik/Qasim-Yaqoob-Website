@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // ✅ correct hook for your case
 import {
   Tv,
   WashingMachine,
@@ -10,218 +11,158 @@ import {
   Flame,
   Shirt,
   Zap,
-  Wrench,
   ArrowRight,
   Sparkles,
   Settings,
-  Phone
+  Phone,
 } from "lucide-react";
 
-const ServicesGrid = ({ brand }) => {
-  // Instant new brand color system
-  let cardGradient = "from-violet-500 to-purple-600";
-  let arrowGradient = "from-amber-500 to-orange-600";
-  let titleText = "from-amber-400 to-orange-500";
-  let hoverText = "text-amber-400";
-  let ctaBg = "from-violet-600 to-purple-700";
-  let ctaText = "text-violet-100";
-  let sectionBg = "from-slate-50 via-white to-violet-50";
+// Brand colors (HEX → Tailwind-safe classes)
+const brandColors = {
+  lg: {
+    name: "LG",
+    primary: "bg-[#a50034]",
+    text: "text-[#a50034]",
+    gradient: "from-[#a50034] to-[#a50034]/80",
+  },
+  bosch: {
+    name: "Bosch",
+    primary: "bg-[#ed0007]",
+    text: "text-[#ed0007]",
+    gradient: "from-[#ed0007] to-[#ed0007]/80",
+  },
+  siemens: {
+    name: "Siemens",
+    primary: "bg-[#00a4b4]",
+    text: "text-[#00a4b4]",
+    gradient: "from-[#00a4b4] to-[#00a4b4]/80",
+  },
+  samsung: {
+    name: "Samsung",
+    primary: "bg-[#1428a0]",
+    text: "text-[#1428a0]",
+    gradient: "from-[#1428a0] to-[#1428a0]/80",
+  },
+  default: {
+    name: "UAE",
+    primary: "bg-[#6d28d9]",
+    text: "text-[#6d28d9]",
+    gradient: "from-[#6d28d9] to-[#7c3aed]/80",
+  },
+};
 
-  if (brand === "lg") {
-    cardGradient = "from-emerald-500 to-teal-600";
-    arrowGradient = "from-emerald-500 to-teal-600";
-    titleText = "from-emerald-400 to-teal-500";
-    hoverText = "text-emerald-400";
-    ctaBg = "from-emerald-600 to-teal-700";
-    ctaText = "text-emerald-100";
-    sectionBg = "from-slate-50 via-white to-emerald-50";
-  } else if (brand === "samsung") {
-    cardGradient = "from-cyan-500 to-blue-600";
-    arrowGradient = "from-cyan-500 to-blue-600";
-    titleText = "from-cyan-400 to-blue-500";
-    hoverText = "text-cyan-400";
-    ctaBg = "from-cyan-600 to-blue-700";
-    ctaText = "text-cyan-100";
-    sectionBg = "from-slate-50 via-white to-blue-50";
-  } else if (brand === "bosch") {
-    cardGradient = "from-yellow-500 to-orange-600";
-    arrowGradient = "from-yellow-500 to-orange-600";
-    titleText = "from-yellow-400 to-orange-500";
-    hoverText = "text-yellow-400";
-    ctaBg = "from-yellow-600 to-orange-700";
-    ctaText = "text-yellow-100";
-    sectionBg = "from-slate-50 via-white to-orange-50";
-  } else if (brand === "siemens") {
-    cardGradient = "from-lime-500 to-green-600";
-    arrowGradient = "from-lime-500 to-green-600";
-    titleText = "from-lime-400 to-green-500";
-    hoverText = "text-lime-400";
-    ctaBg = "from-lime-600 to-green-700";
-    ctaText = "text-lime-100";
-    sectionBg = "from-slate-50 via-white to-green-50";
-  }
+const ServicesGrid = () => {
+  const pathname = usePathname();
+
+  // Detect brand from the current path
+  let brandKey= "default";
+  if (pathname.includes("/company/lg")) brandKey = "lg";
+  else if (pathname.includes("/company/bosch")) brandKey = "bosch";
+  else if (pathname.includes("/company/siemens")) brandKey = "siemens";
+  else if (pathname.includes("/company/samsung")) brandKey = "samsung";
+
+  const brandConfig = brandColors[brandKey];
 
   const services = [
-    {
-      icon: Tv,
-      title: "Instant TV & Electronics",
-      description: "Next-generation repair technology for all modern entertainment systems",
-      href: "/tv-repair",
-      gradient: "from-violet-500 to-purple-600"
-    },
-    {
-      icon: WashingMachine,
-      title: "Elite Washing Machine Service",
-      description: "Advanced diagnostic systems for all premium washing machine brands",
-      href: "/washing-machine-repair",
-      gradient: "from-blue-500 to-cyan-600"
-    },
-    {
-      icon: Snowflake,
-      title: "Precision Refrigerator Repair",
-      description: "Cutting-edge cooling system technology and expert maintenance",
-      href: "/refrigerator-repair",
-      gradient: "from-emerald-500 to-teal-600"
-    },
-    {
-      icon: Utensils,
-      title: "Advanced Dishwasher Solutions",
-      description: "Instant cleaning system optimization and repair",
-      href: "/dishwasher-repair",
-      gradient: "from-purple-500 to-pink-600"
-    },
-    {
-      icon: Flame,
-      title: "Elite Oven & Stove Service",
-      description: "Professional cooking appliance specialists with safety technology",
-      href: "/oven-repair",
-      gradient: "from-red-500 to-rose-600"
-    },
-    {
-      icon: Snowflake,
-      title: "Premium AC & HVAC Systems",
-      description: "Advanced climate control technology and expert repair services",
-      href: "/ac-repair",
-      gradient: "from-cyan-500 to-blue-600"
-    },
-    {
-      icon: Shirt,
-      title: "Professional Dryer Solutions",
-      description: "Elite dryer repair and advanced maintenance technology",
-      href: "/dryer-repair",
-      gradient: "from-orange-500 to-amber-600"
-    },
-    {
-      icon: Zap,
-      title: "Lightning Microwave Repair",
-      description: "Instant microwave troubleshooting with Instant safety systems",
-      href: "/microwave-repair",
-      gradient: "from-yellow-500 to-orange-600"
-    }
+    { icon: Tv, title: "TV & Electronics", href: "/tv-repair", desc: "Smart TVs, LEDs, and home entertainment systems." },
+    { icon: WashingMachine, title: "Washing Machines", href: "/washing-machine-repair", desc: "All brands, front & top load machines." },
+    { icon: Snowflake, title: "Refrigerators", href: "/refrigerator-repair", desc: "Cooling, compressor, and temperature fixes." },
+    { icon: Utensils, title: "Dishwashers", href: "/dishwasher-repair", desc: "Cleaning performance, drainage & installation." },
+    { icon: Flame, title: "Ovens & Stoves", href: "/oven-repair", desc: "Gas & electric cooking range expert service." },
+    { icon: Snowflake, title: "AC & HVAC", href: "/ac-repair", desc: "Climate control, cooling issues, full servicing." },
+    { icon: Shirt, title: "Dryers", href: "/dryer-repair", desc: "Efficient drying, heating & mechanical repairs." },
+    { icon: Zap, title: "Microwaves", href: "/microwave-repair", desc: "Instant heating, power & safety system repairs." },
   ];
 
   return (
-    <section className={`relative py-24 px-4 overflow-hidden bg-gradient-to-br ${sectionBg}`}>
-      {/* Instant Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 blur-3xl float"></div>
-        <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 blur-3xl float-delay-1"></div>
-        <div className="absolute top-1/2 left-1/2 h-64 w-64 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 blur-3xl float-delay-2"></div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Instant Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
+    <section className="relative py-20 px-4 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <div
+          className={`inline-flex items-center gap-3 px-6 py-2 ${brandConfig.primary} text-white rounded-full shadow-md mb-6`}
         >
-          {/* Instant Badge */}
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-xl rounded-2xl border border-white/30 shadow-2xl mb-8">
-            <Sparkles className="w-5 h-5 text-amber-500" />
-            <span className="text-sm font-semibold text-slate-700">Elite Service Network</span>
-          </div>
-
-          <h2 className="text-3xl md:text-6xl lg:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-tight">
-            Our Instant
-            <span className={`block bg-gradient-to-r ${titleText} bg-clip-text text-transparent`}>
-              Elite Services
-            </span>
-          </h2>
-          <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-            Experience the future of appliance repair with our Instant technology and elite service network
-          </p>
-        </motion.div>
-
-        {/* Instant Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-              className="group"
-            >
-              <Link href={service.href} className="block">
-                <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-white/20 group-hover:border-white/40 card-hover-subtle">
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${service.gradient} p-5 mb-6 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center shadow-lg`}>
-                    <service.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-amber-600 transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed text-base">{service.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-amber-600 font-semibold text-sm group-hover:text-amber-700 transition-colors">Learn More</span>
-                    <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${arrowGradient} text-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                      <ArrowRight className="w-5 h-5" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+          <Sparkles className="w-5 h-5" />
+          <span className="text-sm font-semibold">
+            Elite {brandConfig.name} Services
+          </span>
         </div>
+        <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">
+          Our <span className={`${brandConfig.text}`}>Specialized Repairs</span>
+        </h2>
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          Tailored {brandConfig.name} appliance repair services with expert
+          technicians and same-day availability.
+        </p>
+      </motion.div>
 
-        {/* Instant CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className={`bg-gradient-to-br ${ctaBg} rounded-3xl p-12 text-white shadow-2xl border border-white/20`}>
-            <h3 className="text-2xl md:text-5xl font-black mb-6">
-              Ready for Instant Service?
-            </h3>
-            <p className={`${ctaText} mb-10 max-w-3xl mx-auto text-xl leading-relaxed`}>
-              Experience the future of appliance repair with our elite technology and expert technicians.
-              Same-day Instant service available for most repairs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link
-                href="/services"
-                className="px-6 py-4 text-md bg-white text-slate-900 rounded-2xl font-bold hover:bg-slate-100 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl group"
-              >
-                <Settings className="w-8 h-8 group-hover:rotate-180 transition-transform duration-500" />
-                Call Us              </Link>
-              <Link
-                href="/contact"
-                className="px-6 py-4 border-2 border-white/30 text-white rounded-2xl font-bold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 backdrop-blur-sm"
-              >
-                <Phone className="w-8 h-8" />
-                Whstapp Us
-              </Link>
-            </div>
-          </div>
-        </motion.div>
+      {/* Services Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {services.map((service, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+            viewport={{ once: true }}
+          >
+            <Link href={service.href}>
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 p-6 transition group">
+                <div
+                  className={`w-14 h-14 rounded-lg ${brandConfig.primary} flex items-center justify-center mb-4`}
+                >
+                  <service.icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className={`text-lg font-bold mb-2 ${brandConfig.text}`}>
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">{service.desc}</p>
+                <span
+                  className={`inline-flex items-center gap-2 text-sm font-medium ${brandConfig.text}`}
+                >
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+            </Link>
+          </motion.div>
+        ))}
       </div>
+
+      {/* CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className={`mt-16 rounded-2xl p-10 text-center text-white bg-gradient-to-r ${brandConfig.gradient}`}
+      >
+        <h3 className="text-2xl md:text-3xl font-bold mb-4">
+          Need Same-Day {brandConfig.name} Service?
+        </h3>
+        <p className="mb-6 max-w-2xl mx-auto">
+          Book a technician now and restore your appliance performance with
+          trusted {brandConfig.name} repairs.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/contact"
+            className="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold shadow hover:bg-gray-100"
+          >
+            <Settings className="w-5 h-5 inline mr-2" /> Call Us
+          </Link>
+          <Link
+            href="/contact"
+            className="px-6 py-3 border-2 border-white text-white rounded-lg font-bold hover:bg-white/10"
+          >
+            <Phone className="w-5 h-5 inline mr-2" /> WhatsApp
+          </Link>
+        </div>
+      </motion.div>
     </section>
   );
 };
